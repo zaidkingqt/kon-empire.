@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0716">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>إمبراطورية بائع الكون</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div>
+      <div class="coins"><span id="coins">0</span> 🪙</div>
+      <div class="sub"><span id="inc">0</span> /ث<span id="shardTag"></span></div>
+    </div>
+    <div class="btns">
+      <button id="snd" aria-label="الصوت">🔊</button>
+      <button id="rst" aria-label="مسح التقدم">⟲</button>
+    </div>
+  </header>
+
+  <div id="stage">
+    <canvas id="scene" aria-label="مدينتك"></canvas>
+    <div class="toast" id="toast" role="status"></div>
+  </div>
+
+  <div id="dock">
+    <button id="sell">
+      <span id="emoji">💧</span>
+      <span class="t"><b id="iname"></b><span id="price"></span></span>
+    </button>
+    <div class="prog">
+      <div class="bar"><i id="fill"></i></div>
+      <small id="left"></small>
+    </div>
+  </div>
+
+  <nav id="tabs">
+    <button data-tab="city" class="on">🏙️ المدينة</button>
+    <button data-tab="up">⚡ ترقيات</button>
+    <button data-tab="uni">🌌 الكون</button>
+  </nav>
+  <section id="panel"></section>
+</div>
+
+<div id="end">
+  <div>
+    <h1>بعت الكون 🌌</h1>
+    <p>لم يبق شيء. لا نجوم ولا قمر ولا مشتري. أنت وثقب أسود وكوب ماء فارغ.<br>لكن الثقب دفع لك «شظية» تزيد أرباحك 50% في الجولة القادمة.</p>
+    <button id="again">ابدأ إمبراطورية جديدة</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
