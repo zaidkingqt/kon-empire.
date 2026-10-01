@@ -255,7 +255,7 @@ function drawMeteor(dt){
 export function frame(t){
   const S=G.S;if(!S||!cx)return false;const minGap=1000/quality.fps-2;if(t-lastDraw<minGap)return false;
   const dt=Math.min(.05,(t-(lastT||t))/1000);lastT=t;lastDraw=t;
-  drawSky(S,t);drawWaterFeature(t);drawLandmarks(t);drawGround(S,t);drawDecor(t);drawVehicle(t);
+  drawSky(S,t);drawGround(S,t);drawWaterFeature(t);drawLandmarks(t);drawDecor(t);drawVehicle(t);
   const Z=S.zones[view.zone];
   for(let s=0;s<=2*GRID-2;s++)for(let gx=0;gx<GRID;gx++){const gy=s-gx;if(gy<0||gy>=GRID)continue;const pi=gx+gy*GRID;if(Z.plots[pi])drawBuilding(S,pi,Z.plots[pi],t,dt);}
   drawParticles(dt);drawMeteor(dt);
