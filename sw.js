@@ -1,5 +1,5 @@
 // Service Worker: الشبكة أولًا لملفات اللعبة (فتصلك التحديثات فورًا) مع الاحتياط من الذاكرة عند انقطاع الإنترنت.
-const CACHE = "kon-empire-shell-v3";
+const CACHE = "kon-empire-shell-v4";
 const SHELL = ["./", "index.html", "style.css", "manifest.webmanifest", "icon-192.png", "icon-512.png",
   "main.js", "icons.js", "data.js", "state.js", "bus.js", "util.js", "economy.js", "engine.js", "missions.js",
   "render.js", "uicore.js", "panels.js", "ui.js", "audio.js", "ads.js", "analytics.js"];
