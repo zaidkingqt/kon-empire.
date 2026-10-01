@@ -155,15 +155,17 @@ export function upgradeCost(S, zi, p, n = 1){
 export function upgradeAt(S, zi, pi, n = 1){
   const p = S.zones[zi]?.plots?.[pi];
   if(!p || p.l >= MAX_LEVEL) return false;
-  const target = Math.min(MAX_LEVEL, p.l + Math.max(1, n | 0));
-  const c = upgradeCost(S, zi, p, target - p.l);
+  const oldLevel = p.l;
+  const target = Math.min(MAX_LEVEL, oldLevel + Math.max(1, n | 0));
+  const levels = target - oldLevel;
+  const c = upgradeCost(S, zi, p, levels);
   if(!(c > 0) || S.coins < c) return false;
   S.coins -= c;
   p.l = target;
   p.s += c;
-  S.stats.upgrades += target - (target - (n | 0));
+  S.stats.upgrades += levels;
   recalc(S);
-  emit("upgrade", {zi, pi, levels:n, cost:c});
+  emit("upgrade", {zi, pi, levels, cost:c});
   return true;
 }
 
@@ -391,7 +393,8 @@ export function recalc(S){
   const trade = 1 + lv[T.trade] * 0.02;
   const techMkt = 1 + positive(S.techs?.mkt) * 0.15;
   const treeSale = 1 + positive(S.tree?.sale) * 0.25;
-  const sm = mkt * trade * techMkt * treeSale * achievementMult(S) * shardMult(S);
+  const sm = mkt * trade * techMkt * treeSale * achievementMult(S) * shardMult(S) *
+    (S.boost > 0 ? CONST.BOOST_MULT : 1);
   const click = 1 + positive(S.click);
   const sps = AS.reduce((n, a, i) => n + positive(S.as?.[i]) * a.sps, 0);
   const rps = researchRate({...S, calc:{lv}});
@@ -434,11 +437,15 @@ export function tick(S, dt){
   const got = earn(S, S.calc.inc * n);
   const rp = positive(S.calc.rps) * n;
   S.rp = Math.min(BIG, S.rp + rp);
-  if(rp > 0) S.total = S.total; // research points do not count as coin earnings
   S.boost = Math.max(0, positive(S.boost) - n);
-  // التقدم التلقائي للمبيعات يحافظ على عدد البيعات متسقًا مع الدخل؛ الإنتاج المباشر لا يُحتسب كـ "بيعة".
-  if(S.calc.sps > 0) autoSales(S, n);
+  if(S.calc.sps > 0){
+    const sales = S.calc.sps * n;
+    S.sold += sales;
+    S.stats.sales += sales;
+  }
   checkTier(S);
+  // Boost انتهاءه يغيّر الاقتصاد، لذلك نعيد الحساب فورًا.
+  if((S.boost <= 0 && S.calc.gp > 1) || (S.boost > 0 && S.calc.gp <= 1)) recalc(S);
   return got;
 }
 
