@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Workspace } from '../components/Workspace';
+import { AdContainer } from '../components/AdContainer';
+import FaqSection from '../components/FaqSection.astro';
+
+const homeFaqs = [
+  {
+    question: 'Are my SVG files uploaded to any server or cloud database?',
+    answer: 'No. VectorForge is built 100% on modern client-side Web APIs (Canvas, DOMParser, WebAssembly, and JavaScript). All parsing, optimization, and conversion happen entirely in your browser. Your files never leave your device.',
+  },
+  {
+    question: 'How does VectorForge SVG Optimizer reduce file size without losing quality?',
+    answer: 'VectorForge utilizes browser-bundled SVGO algorithms to remove redundant editor metadata (from Figma, Sketch, Illustrator, Inkscape), collapse unnecessary container groups, round excessive floating-point coordinates, and minify style definitions while preserving 100% of the visual fidelity.',
+  },
+  {
+    question: 'Can I generate TypeScript React components with forwarded refs?',
+    answer: 'Yes. The React/JSX tool provides native TypeScript (.tsx) output with typed SVGProps, forwarded React refs (forwardRef), spreadable props ({...props}), and automatic camelCasing of SVG attributes (e.g. stroke-width to strokeWidth, class to className).',
+  },
+  {
+    question: 'How are high-resolution PNG and WebP images generated without a backend?',
+    answer: 'VectorForge renders your vector markup directly onto an in-browser HTML5 Canvas at your chosen scaling factor (up to 8x / 8K resolution). The resulting bitmap is exported directly into memory via native Canvas toBlob and downloaded instantly to your local disk.',
+  },
+  {
+    question: 'Is VectorForge completely free to use for commercial projects?',
+    answer: 'Yes, VectorForge is 100% free and open for personal, commercial, and enterprise software development workflows.',
+  },
+];
+
+const toolsList = [
+  {
+    title: 'SVG Optimizer',
+    tag: 'SVGO Powered',
+    desc: 'Compress and clean bloated SVG markup from Figma, Illustrator, and Inkscape. Shave up to 70% file size.',
+    href: '/svg-optimizer',
+    icon: '⚡',
+  },
+  {
+    title: 'SVG → React / JSX',
+    tag: 'React 19 & TS',
+    desc: 'Transform SVG markup into production-ready React JSX or TypeScript components with proper camelCase attributes.',
+    href: '/svg-to-react',
+    icon: '⚛️',
+  },
+  {
+    title: 'SVG → Flutter',
+    tag: 'Dart & SvgPicture',
+    desc: 'Generate null-safe Flutter widgets supporting SvgPicture and CustomPainter native canvas rendering.',
+    href: '/svg-to-flutter',
+    icon: '💙',
+  },
+  {
+    title: 'SVG → SwiftUI',
+    tag: 'iOS 16+ / macOS',
+    desc: 'Convert vector paths into native SwiftUI Shape structs and scalable vector Views with dynamic tint support.',
+    href: '/svg-to-swiftui',
+    icon: '🍎',
+  },
+  {
+    title: 'SVG → Android XML',
+    tag: 'VectorDrawable',
+    desc: 'Export clean Android VectorDrawable XML files compatible with Android API 21+ and Jetpack Compose.',
+    href: '/svg-to-android-vector',
+    icon: '🤖',
+  },
+  {
+    title: 'SVG → PNG Rasterizer',
+    tag: 'Up to 8x Ultra HD',
+    desc: 'Render crystal clear PNG bitmaps at 1x, 2x Retina, 4x, or custom resolutions with transparent backgrounds.',
+    href: '/svg-to-png',
+    icon: '🖼️',
+  },
+  {
+    title: 'SVG → WebP Exporter',
+    tag: 'Modern Web Image',
+    desc: 'Export lightweight WebP images with custom compression quality settings directly in the browser.',
+    href: '/svg-to-webp',
+    icon: '🌐',
+  },
+];
+---
+
+<BaseLayout
+  title="VectorForge — SVG Engineering Tools for Developers & Designers"
+  description="Convert, optimize, and export SVGs to React JSX, Flutter, SwiftUI, Android Vector XML, PNG, and WebP instantly. 100% client-side and privacy-first."
+  canonicalPath="/"
+>
+  <!-- Hero Section -->
+  <section class="relative pt-12 pb-6 px-4 sm:px-6 text-center max-w-5xl mx-auto">
+    <!-- Privacy Badge -->
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-6">
+      <span class="flex h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      100% Client-Side • Zero Server Uploads • Privacy First
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-forge-text leading-[1.15]">
+      Convert, Optimize & Export <br class="hidden sm:inline" />
+      <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
+        SVGs Instantly
+      </span>
+    </h1>
+
+    <p class="mt-4 text-sm sm:text-lg text-forge-textMuted max-w-2xl mx-auto leading-relaxed">
+      Fast, privacy-first SVG tools for developers and designers. Your files are processed locally in your browser.
+    </p>
+
+    <!-- CTAs -->
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+      <a
+        href="#workspace"
+        class="px-5 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-400 text-black font-semibold text-sm shadow-lg shadow-brand-500/20 transition-all hover:-translate-y-0.5"
+      >
+        Open SVG Toolkit
+      </a>
+      <a
+        href="#tools-grid"
+        class="px-5 py-2.5 rounded-xl bg-forge-surface hover:bg-forge-surfaceHover border border-forge-border text-forge-text font-medium text-sm transition-all"
+      >
+        Explore Tools
+      </a>
+    </div>
+  </section>
+
+  <!-- Top Leaderboard Ad Slot -->
+  <AdContainer slot="top-leaderboard" client:load />
+
+  <!-- Main Interactive SVG Workspace -->
+  <section id="workspace" class="w-full scroll-mt-20">
+    <Workspace client:load initialTool="optimize" />
+  </section>
+
+  <!-- In-Content Ad Slot -->
+  <AdContainer slot="in-content" client:load />
+
+  <!-- 7 Core Tools Showcase Grid -->
+  <section id="tools-grid" class="max-w-7xl mx-auto px-4 sm:px-6 my-16">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-forge-text">
+        7 Purpose-Built Vector Engineering Tools
+      </h2>
+      <p class="text-xs sm:text-sm text-forge-textMuted mt-1.5 max-w-xl mx-auto">
+        Specialized utilities engineered to bridge the gap between design tools and native multi-platform codebases.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {toolsList.map((tool) => (
+        <a
+          href={tool.href}
+          class="group p-6 rounded-2xl bg-forge-surface border border-forge-border hover:border-brand-500/40 hover:bg-forge-surfaceHover/80 transition-all duration-200 flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">{tool.icon}</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-forge-surfaceHover text-brand-400 border border-forge-border">
+                {tool.tag}
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-forge-text group-hover:text-brand-400 transition-colors">
+              {tool.title}
+            </h3>
+            <p class="text-xs text-forge-textMuted mt-2 leading-relaxed">
+              {tool.desc}
+            </p>
+          </div>
+          <div class="mt-6 flex items-center gap-1 text-xs font-semibold text-brand-400 group-hover:translate-x-1 transition-transform">
+            <span>Launch Tool</span>
+            <span>→</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Technical Value Proposition Section -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 my-16">
+    <div class="p-8 rounded-3xl bg-gradient-to-b from-forge-surface to-forge-bg border border-forge-border">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <div class="text-brand-400 font-mono text-xl font-bold mb-2">01. Privacy</div>
+          <h4 class="text-sm font-bold text-forge-text mb-1">Zero Cloud Uploads</h4>
+          <p class="text-xs text-forge-textMuted leading-relaxed">
+            Corporate vector assets, unreleased UI designs, and proprietary brand icons are processed strictly inside your browser memory.
+          </p>
+        </div>
+
+        <div>
+          <div class="text-brand-400 font-mono text-xl font-bold mb-2">02. Speed</div>
+          <h4 class="text-sm font-bold text-forge-text mb-1">Sub-100ms Execution</h4>
+          <p class="text-xs text-forge-textMuted leading-relaxed">
+            No server round-trips, network queues, or file size upload throttles. Transformations finish in milliseconds.
+          </p>
+        </div>
+
+        <div>
+          <div class="text-brand-400 font-mono text-xl font-bold mb-2">03. Standards</div>
+          <h4 class="text-sm font-bold text-forge-text mb-1">Clean Framework Code</h4>
+          <p class="text-xs text-forge-textMuted leading-relaxed">
+            Outputs syntactically valid React JSX, TypeScript, Flutter Dart, SwiftUI, and Android XML ready for production git repos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section with Schema.org JSON-LD -->
+  <FaqSection faqs={homeFaqs} />
+</BaseLayout>

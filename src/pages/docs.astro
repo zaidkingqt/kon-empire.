@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { AdContainer } from '../components/AdContainer';
+---
+
+<BaseLayout
+  title="Documentation & Technical Architecture | VectorForge"
+  description="Learn about VectorForge client-side architecture, SVG sanitization, framework output conventions, and privacy guarantees."
+  canonicalPath="/docs"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <!-- Header -->
+    <div class="mb-10 pb-6 border-b border-forge-border">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-3">
+        Developer Guide & Architecture
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-forge-text tracking-tight">
+        VectorForge Documentation
+      </h1>
+      <p class="text-sm sm:text-base text-forge-textMuted mt-2">
+        A technical breakdown of how VectorForge securely processes, optimizes, and transforms SVG vector assets inside the browser.
+      </p>
+    </div>
+
+    <AdContainer slot="top-leaderboard" client:load />
+
+    <!-- Content Sections -->
+    <div class="flex flex-col gap-10 text-xs sm:text-sm text-forge-textMuted leading-relaxed">
+      <!-- Section 1: Privacy & Zero-Cloud Guarantee -->
+      <section class="p-6 rounded-2xl bg-forge-surface border border-forge-border">
+        <h2 class="text-lg font-bold text-forge-text mb-3 flex items-center gap-2">
+          <span class="w-6 h-6 rounded bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xs">🔒</span>
+          1. Privacy & Zero-Server-Upload Guarantee
+        </h2>
+        <p class="mb-3">
+          VectorForge was engineered from the ground up to operate as a completely standalone, client-side utility. When you drag and drop, paste, or select an SVG file:
+        </p>
+        <ul class="list-disc list-inside space-y-1.5 ml-2">
+          <li><strong>No Network Transmission:</strong> The file content is read into browser memory via the HTML5 <code>FileReader</code> API.</li>
+          <li><strong>Zero Cloud Databases:</strong> We do not log, persist, or inspect your vector graphics on any remote server.</li>
+          <li><strong>Enterprise Safe:</strong> Developers working on proprietary software or unreleased UI designs can safely use VectorForge without violating corporate security policies.</li>
+        </ul>
+      </section>
+
+      <!-- Section 2: Security & XSS Sanitization -->
+      <section class="p-6 rounded-2xl bg-forge-surface border border-forge-border">
+        <h2 class="text-lg font-bold text-forge-text mb-3 flex items-center gap-2">
+          <span class="w-6 h-6 rounded bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xs">🛡️</span>
+          2. Security & SVG Sanitization Pipeline
+        </h2>
+        <p class="mb-3">
+          SVG is an XML-based format that can theoretically contain malicious JavaScript, unescaped entity definitions (XXE), or embedded iframe elements. VectorForge enforces a strict sanitization pipeline prior to rendering or transformation:
+        </p>
+        <ul class="list-disc list-inside space-y-1.5 ml-2">
+          <li>Strips all <code>&lt;script&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;object&gt;</code>, and <code>&lt;embed&gt;</code> tags.</li>
+          <li>Removes inline JavaScript event attributes (e.g. <code>onclick</code>, <code>onload</code>, <code>onerror</code>).</li>
+          <li>Disallows <code>javascript:</code> and <code>data:text/html</code> protocols in URI references.</li>
+          <li>Ignores DOCTYPE entity declarations to prevent XML entity expansion attacks.</li>
+        </ul>
+      </section>
+
+      <!-- Section 3: Framework Integration Guides -->
+      <section class="p-6 rounded-2xl bg-forge-surface border border-forge-border">
+        <h2 class="text-lg font-bold text-forge-text mb-3 flex items-center gap-2">
+          <span class="w-6 h-6 rounded bg-violet-500/10 text-violet-400 flex items-center justify-center text-xs">⚙️</span>
+          3. Framework Integration Notes
+        </h2>
+        
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-sm font-bold text-forge-text mb-1">React (JSX / TSX)</h3>
+            <p>
+              Generated React components are fully compatible with React 18, React 19, Next.js (App & Pages Router), Vite, and Remix. All SVG presentation attributes (such as <code>stroke-width</code>, <code>fill-rule</code>) are converted to standard camelCase properties.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-bold text-forge-text mb-1">Flutter (Dart)</h3>
+            <p>
+              Flutter projects using <code>flutter_svg</code> can paste the generated <code>StatelessWidget</code> directly. It includes built-in support for <code>ColorFilter.mode(color, BlendMode.srcIn)</code> and custom sizing.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-bold text-forge-text mb-1">SwiftUI (iOS & macOS)</h3>
+            <p>
+              Outputs clean Swift 5/6 compliant structs. The <code>View</code> mode utilizes <code>Canvas</code> and <code>GraphicsContext</code> for responsive scaling, while <code>Shape</code> mode conforms to SwiftUI's native vector shape protocols.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-bold text-forge-text mb-1">Android VectorDrawable (XML)</h3>
+            <p>
+              VectorDrawables generated by VectorForge are compatible with Android API 21+ and can be referenced in XML layouts or loaded in Jetpack Compose via <code>painterResource(id = R.drawable.ic_custom)</code>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Performance & Hardware Boundaries -->
+      <section class="p-6 rounded-2xl bg-forge-surface border border-forge-border">
+        <h2 class="text-lg font-bold text-forge-text mb-3 flex items-center gap-2">
+          <span class="w-6 h-6 rounded bg-amber-500/10 text-amber-400 flex items-center justify-center text-xs">⚡</span>
+          4. Performance & Memory Safety
+        </h2>
+        <p class="mb-3">
+          To prevent browser crashes on extremely large SVGs (e.g. multi-megabyte CAD exports or high-density map shapes), VectorForge limits canvas rasterization dimensions to a maximum of 8,192 × 8,192 pixels while maintaining the exact aspect ratio.
+        </p>
+      </section>
+    </div>
+
+    <AdContainer slot="in-content" client:load />
+  </div>
+</BaseLayout>
