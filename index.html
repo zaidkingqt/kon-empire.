@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DailyBrain — Daily Word, Number & Trivia Puzzles</title>
+<meta name="description" content="DailyBrain: free daily brain-training puzzles. A 5-letter word challenge, a numbers game and a 5-question trivia quiz — new every midnight. Five minutes. One brain. Every day.">
+<meta name="theme-color" content="#0B1020">
+<link rel="canonical" href="https://dailybrain.example/">
+<meta property="og:site_name" content="DailyBrain">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DailyBrain — Daily Word, Number & Trivia Puzzles">
+<meta property="og:description" content="Free daily brain-training puzzles. New every midnight. Five minutes. One brain. Every day.">
+<meta property="og:url" content="https://dailybrain.example/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DailyBrain — Daily Word, Number & Trivia Puzzles">
+<meta name="twitter:description" content="Free daily brain-training puzzles. New every midnight.">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><radialGradient id="g" cx="50%25" cy="50%25" r="50%25"><stop offset="0%25" stop-color="%23B9A6FF"/><stop offset="60%25" stop-color="%237C5CFF"/><stop offset="100%25" stop-color="%234b2fd6"/></radialGradient></defs><g stroke="%237C5CFF" stroke-width="2"><line x1="32" y1="32" x2="32" y2="6"/><line x1="32" y1="32" x2="54" y2="19"/><line x1="32" y1="32" x2="56" y2="40"/><line x1="32" y1="32" x2="42" y2="58"/><line x1="32" y1="32" x2="18" y2="56"/><line x1="32" y1="32" x2="7" y2="36"/><line x1="32" y1="32" x2="12" y2="14"/></g><g fill="%232EE6A6"><circle cx="32" cy="6" r="3"/><circle cx="54" cy="19" r="3"/><circle cx="56" cy="40" r="3"/><circle cx="42" cy="58" r="3"/><circle cx="18" cy="56" r="3"/><circle cx="7" cy="36" r="3"/><circle cx="12" cy="14" r="3"/></g><circle cx="32" cy="32" r="13" fill="url(%23g)"/></svg>'>
+<link rel="manifest" href='data:application/manifest+json,{"name":"DailyBrain","short_name":"DailyBrain","description":"Daily word, number and trivia puzzles.","start_url":".","display":"standalone","background_color":"%230B1020","theme_color":"%230B1020","icons":[{"src":"data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27><rect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230B1020%27/><circle cx=%2732%27 cy=%2732%27 r=%2713%27 fill=%27%237C5CFF%27/><circle cx=%2732%27 cy=%2710%27 r=%273%27 fill=%27%232EE6A6%27/><circle cx=%2752%27 cy=%2722%27 r=%273%27 fill=%27%232EE6A6%27/><circle cx=%2750%27 cy=%2748%27 r=%273%27 fill=%27%232EE6A6%27/><circle cx=%2714%27 cy=%2744%27 r=%273%27 fill=%27%232EE6A6%27/></svg>","sizes":"any","type":"image/svg+xml"}]}'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"DailyBrain","url":"https://dailybrain.example/","description":"Free daily brain-training puzzles: word, number and trivia challenges refreshed every midnight.","potentialAction":{"@type":"PlayAction","target":"https://dailybrain.example/#word"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is DailyBrain free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every DailyBrain puzzle is completely free to play, every day, with no account required."}},
+{"@type":"Question","name":"When do new puzzles arrive?","acceptedAnswer":{"@type":"Answer","text":"A fresh word, number and trivia puzzle unlocks at midnight in your local timezone, and everyone gets the same puzzle on the same date."}},
+{"@type":"Question","name":"Do I need an account?","acceptedAnswer":{"@type":"Answer","text":"No account is needed. Your streaks and statistics are stored privately on your own device."}},
+{"@type":"Question","name":"How do streaks work?","acceptedAnswer":{"@type":"Answer","text":"Finish at least one puzzle each calendar day to keep your streak alive. Your Spark companion evolves as your streak grows."}},
+{"@type":"Question","name":"Can I play on my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. DailyBrain is designed mobile-first and can be installed to your home screen like an app."}},
+{"@type":"Question","name":"What is the Daily Trio badge?","acceptedAnswer":{"@type":"Answer","text":"Complete the word, number and trivia puzzles all in one day to earn the Daily Trio badge on your stats page."}}]}
+</script>
+<style>
+/* ============ DESIGN TOKENS ============ */
+:root{
+  --bg:#0B1020; --surface:#121935; --surface2:#1A2347; --line:rgba(255,255,255,.08);
+  --violet:#7C5CFF; --violet-2:#5A3FE0; --mint:#2EE6A6; --amber:#FFB547; --coral:#FF5C7A;
+  --text:#EAF0FF; --muted:#9AA6CC; --absent:#3A4262; --key:#232C52; --tile-border:rgba(255,255,255,.14);
+  --glass:rgba(18,25,53,.72); --glow:rgba(124,92,255,.16); --shadow:0 10px 30px rgba(3,6,20,.5),0 2px 8px rgba(3,6,20,.4);
+  --r:20px; --maxg:560px; --maxw:1100px;
+  --fs-h1:clamp(1.9rem,5.6vw,3.2rem); --fs-h2:clamp(1.35rem,3.4vw,1.9rem); --fs-h3:clamp(1.05rem,2.6vw,1.25rem);
+  --font-h:"Space Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-b:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:dark;
+}
+html[data-theme="light"]{
+  --bg:#F6F7FF; --surface:#FFFFFF; --surface2:#EEF0FE; --line:rgba(16,22,54,.1);
+  --violet:#6A49F2; --violet-2:#4D2FD6; --mint:#0FB97E; --amber:#E6920F; --coral:#E8486A;
+  --text:#121735; --muted:#5A648C; --absent:#A8B0CC; --key:#E4E7F7; --tile-border:rgba(16,22,54,.18);
+  --glass:rgba(255,255,255,.78); --glow:rgba(106,73,242,.1); --shadow:0 10px 30px rgba(40,50,120,.12),0 2px 8px rgba(40,50,120,.08);
+  color-scheme:light;
+}
+html[data-cb="1"]{ --mint:#4A9DF8; --amber:#F5793A; }
+/* ============ BASE ============ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-b);font-size:16px;line-height:1.6;min-height:100svh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background-image:radial-gradient(rgba(154,166,204,.13) 1px,transparent 1.4px);background-size:26px 26px;}
+#bgGlow{position:fixed;left:50%;top:0;width:min(90vw,900px);height:900px;z-index:-1;transform:translate(-50%,var(--glow-y,-20%));
+  background:radial-gradient(circle at center,var(--glow),transparent 62%);pointer-events:none;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+#grain{position:fixed;inset:0;z-index:40;pointer-events:none;opacity:.5;mix-blend-mode:overlay}
+h1,h2,h3,h4{font-family:var(--font-h);line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2)} h3{font-size:var(--fs-h3)}
+p{margin:0 0 1em} a{color:var(--violet);text-decoration:none} a:hover{text-decoration:underline}
+img,svg,canvas{max-width:100%;height:auto}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px;border-radius:8px}
+.skip{position:absolute;left:8px;top:-60px;z-index:200;background:var(--violet);color:#fff;padding:10px 18px;border-radius:12px;transition:top .2s}
+.skip:focus{top:8px}
+.visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 16px}
+.wrap-g{max-width:var(--maxg)}
+.muted{color:var(--muted)} .tnum{font-variant-numeric:tabular-nums}
+/* ============ GLASS & CARDS ============ */
+.card{background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);position:relative}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(165deg,rgba(255,255,255,.07),transparent 36%)}
+.card>*{position:relative;z-index:1}
+.pad{padding:clamp(18px,4vw,28px)}
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;font-family:var(--font-h);
+  font-weight:600;padding:13px 26px;font-size:1rem;transition:transform .12s,box-shadow .2s,filter .2s;user-select:none}
+.btn:active{transform:scale(.97)}
+.btn-p{background:linear-gradient(135deg,var(--violet),var(--violet-2) 70%,#3C27B8);color:#fff;
+  box-shadow:0 6px 20px rgba(124,92,255,.38),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-p:hover{filter:brightness(1.08)}
+.btn-g{background:var(--surface2);border:1px solid var(--line);color:var(--text)}
+.btn-g:hover{filter:brightness(1.12)}
+.btn-sm{padding:8px 16px;font-size:.88rem}
+.btn[disabled]{opacity:.45;cursor:not-allowed;pointer-events:none}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:600;
+  border:1px solid var(--line);background:var(--surface2);color:var(--muted)}
+.chip.ok{color:var(--mint);border-color:color-mix(in srgb,var(--mint) 45%,transparent)}
+.chip.go{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,transparent)}
+/* ============ HEADER ============ */
+header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 78%,transparent);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;gap:10px;height:62px;max-width:var(--maxw);margin:0 auto;padding:0 14px}
+.logo{display:flex;align-items:center;gap:9px;font-family:var(--font-h);font-weight:700;font-size:1.18rem;color:var(--text);letter-spacing:-.02em}
+.logo:hover{text-decoration:none}
+nav.main{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+nav.main::-webkit-scrollbar{display:none}
+nav.main a{padding:8px 12px;border-radius:12px;color:var(--muted);font-weight:600;font-size:.9rem;white-space:nowrap}
+nav.main a:hover{color:var(--text);text-decoration:none;background:var(--surface2)}
+nav.main a[aria-current="page"]{color:var(--text);background:var(--surface2)}
+.hbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--surface2);border:1px solid var(--line)}
+.hbtn:hover{filter:brightness(1.15)}
+#streakBadge{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:999px;background:var(--surface2);
+  border:1px solid var(--line);font-family:var(--font-h);font-weight:700;font-size:.9rem;color:var(--amber)}
+#streakBadge.bounce{animation:bounce .6s cubic-bezier(.3,1.6,.4,1)}
+@keyframes bounce{0%{transform:scale(1)}35%{transform:scale(1.35) rotate(-6deg)}70%{transform:scale(.94)}100%{transform:scale(1)}}
+/* ============ ROUTE TRANSITIONS ============ */
+main{display:block;padding:24px 0 56px}
+.route{display:none}
+.route.active{display:block;animation:routeIn .18s ease-out}
+@keyframes routeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* ============ SPARK ============ */
+.spark{display:inline-block;position:relative}
+.spark svg{display:block;overflow:visible}
+.spark .core{transform-origin:50% 50%;animation:breath 4.5s ease-in-out infinite}
+.spark[data-stage="0"] .core{animation-duration:6.5s}
+@keyframes breath{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.spark .ring{transform-origin:50% 50%;animation:ringspin 22s linear infinite}
+.spark .ring.r2{animation-duration:34s;animation-direction:reverse}
+.spark .ring.r3{animation-duration:48s}
+@keyframes ringspin{to{transform:rotate(360deg)}}
+.spark .syn-dot{transform-origin:50% 50%}
+.spark[data-stage="2"] .syn-dot,.spark[data-stage="3"] .syn-dot,.spark[data-stage="4"] .syn-dot,.spark[data-stage="5"] .syn-dot{animation:twinkle 2.8s ease-in-out infinite}
+.spark .syn-dot:nth-of-type(2n){animation-delay:.7s}.spark .syn-dot:nth-of-type(3n){animation-delay:1.4s}
+@keyframes twinkle{0%,100%{opacity:.55}50%{opacity:1}}
+.spark .orbit{transform-origin:50% 50%;animation:ringspin 9s linear infinite}
+.spark .orbit.o2{animation-duration:14s;animation-direction:reverse}
+.spark .halo{transform-origin:50% 50%;animation:ringspin 12s linear infinite}
+.spark.react-win .core{animation:winpulse .9s cubic-bezier(.2,1.4,.4,1)}
+.spark.react-win .syn{animation:synflash .9s ease-out}
+@keyframes winpulse{0%{transform:scale(1)}30%{transform:scale(1.3)}60%{transform:scale(.95)}100%{transform:scale(1)}}
+@keyframes synflash{0%{opacity:1;filter:brightness(2.2)}100%{filter:brightness(1)}}
+.spark.react-lose{animation:wobble 1s ease-in-out}
+.spark.react-lose svg{filter:saturate(.5) brightness(.8);transition:filter .4s}
+@keyframes wobble{0%,100%{transform:rotate(0)}20%{transform:rotate(-7deg)}45%{transform:rotate(5deg)}70%{transform:rotate(-3deg)}}
+/* ============ HERO ============ */
+.hero{text-align:center;padding:clamp(28px,6vw,64px) 0 20px}
+.hero .tag{display:inline-block;font-family:var(--font-h);font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--violet);background:color-mix(in srgb,var(--violet) 14%,transparent);border:1px solid color-mix(in srgb,var(--violet) 35%,transparent);
+  padding:6px 16px;border-radius:999px;margin-bottom:18px}
+.hero p.sub{max-width:520px;margin:0 auto 26px;color:var(--muted);font-size:1.08rem}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;align-items:center}
+/* ============ GAME CARDS (home) ============ */
+.gamegrid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));margin:34px 0 8px}
+.gcard{display:flex;flex-direction:column;gap:12px;padding:22px;transition:transform .22s cubic-bezier(.2,.8,.3,1.2),box-shadow .25s;color:var(--text)}
+.gcard:hover{transform:translateY(-5px);text-decoration:none;box-shadow:0 18px 44px rgba(3,6,20,.55),0 0 0 1px color-mix(in srgb,var(--violet) 32%,transparent)}
+.gcard h3{margin:0;display:flex;align-items:center;gap:10px}
+.gcard .mini{height:84px;border-radius:14px;border:1px solid var(--line);background:var(--surface2);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;gap:6px}
+.mini-tile{width:26px;height:26px;border-radius:6px;font-family:var(--font-h);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;color:#fff}
+.gcard .meta{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.84rem;color:var(--muted)}
+/* ============ TILES & BOARD ============ */
+.board{display:grid;grid-template-rows:repeat(6,1fr);gap:6px;max-width:330px;margin:0 auto;user-select:none}
+.brow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.brow.shake{animation:shake .5s}
+@keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+.tile{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-family:var(--font-h);font-weight:700;
+  font-size:clamp(1.3rem,6vw,1.75rem);text-transform:uppercase;border-radius:10px;border:2px solid var(--tile-border);
+  background:transparent;color:var(--text);transition:border-color .15s;transform-style:preserve-3d}
+.tile.filled{border-color:color-mix(in srgb,var(--violet) 60%,var(--tile-border));animation:pop .12s ease-out}
+@keyframes pop{0%{transform:scale(.88)}100%{transform:scale(1)}}
+.tile.flip{animation:flip .5s ease forwards}
+@keyframes flip{0%{transform:rotateX(0)}50%{transform:rotateX(90deg)}100%{transform:rotateX(0)}}
+.tile.c{background:color-mix(in srgb,var(--mint) 82%,#063) ;border-color:transparent;color:#04251a;box-shadow:inset 0 0 14px color-mix(in srgb,var(--mint) 55%,transparent),0 0 10px color-mix(in srgb,var(--mint) 25%,transparent)}
+html[data-theme="light"] .tile.c{color:#fff}
+.tile.p{background:var(--amber);border-color:transparent;color:#2b1a00}
+.tile.a{background:var(--absent);border-color:transparent;color:color-mix(in srgb,var(--text) 72%,transparent)}
+/* ============ KEYBOARD ============ */
+.kb{max-width:500px;margin:18px auto 0;user-select:none}
+.kb-row{display:flex;gap:5px;justify-content:center;margin-bottom:6px}
+.key{flex:1;max-width:44px;height:52px;border-radius:9px;background:var(--key);font-family:var(--font-h);font-weight:600;
+  font-size:.92rem;text-transform:uppercase;display:flex;align-items:center;justify-content:center;color:var(--text);
+  transition:background .3s,color .3s,transform .1s cubic-bezier(.3,1.6,.4,1)}
+.key:active,.key.pressed{transform:scale(.88)}
+.key.wide{max-width:66px;flex:1.5;font-size:.72rem}
+.key.c{background:color-mix(in srgb,var(--mint) 80%,#063);color:#04251a}
+html[data-theme="light"] .key.c{color:#fff}
+.key.p{background:var(--amber);color:#2b1a00}
+.key.a{background:var(--absent);color:color-mix(in srgb,var(--text) 55%,transparent)}
+/* ============ NUMBER GAME ============ */
+.numgrid{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.numchip{min-width:58px;height:58px;padding:0 12px;border-radius:14px;background:var(--surface2);border:1px solid var(--line);
+  font-family:var(--font-h);font-weight:700;font-size:1.3rem;color:var(--text);transition:transform .12s,opacity .2s}
+.numchip:not([disabled]):hover{border-color:var(--violet)}
+.numchip:active{transform:scale(.93)}
+.numchip[disabled]{opacity:.28;text-decoration:line-through}
+.opsrow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.opbtn{width:48px;height:48px;border-radius:12px;background:var(--key);font-family:var(--font-h);font-weight:700;font-size:1.2rem;color:var(--violet);transition:transform .12s}
+.opbtn:active{transform:scale(.9)}
+.exprbox{min-height:64px;border-radius:14px;border:1px dashed var(--line);background:color-mix(in srgb,var(--surface2) 60%,transparent);
+  display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;padding:10px;font-family:var(--font-h);font-size:1.3rem;font-weight:600}
+.target-line{display:flex;align-items:baseline;justify-content:center;gap:12px;font-family:var(--font-h)}
+.target-line .tval{font-size:clamp(2.2rem,9vw,3rem);font-weight:700;color:var(--amber)}
+.livePrev{text-align:center;font-family:var(--font-h);font-size:1.1rem;min-height:1.6em}
+/* ============ TRIVIA ============ */
+.tq-opt{display:block;width:100%;text-align:left;padding:14px 16px;margin-bottom:10px;border-radius:14px;border:1px solid var(--line);
+  background:var(--surface2);font-weight:500;transition:transform .12s,border-color .2s,background .3s}
+.tq-opt:not([disabled]):hover{border-color:var(--violet);transform:translateX(3px)}
+.tq-opt.good{background:color-mix(in srgb,var(--mint) 24%,var(--surface2));border-color:var(--mint)}
+.tq-opt.bad{background:color-mix(in srgb,var(--coral) 22%,var(--surface2));border-color:var(--coral)}
+.timer-ring{transform:rotate(-90deg)}
+.timer-ring .tr-fg{transition:stroke-dashoffset 1s linear;stroke:var(--mint)}
+.timer-ring.hot .tr-fg{stroke:var(--coral)}
+.didyou{border-left:3px solid var(--amber);padding:10px 14px;background:color-mix(in srgb,var(--amber) 9%,transparent);border-radius:0 12px 12px 0;font-size:.92rem}
+/* ============ STATS ============ */
+.statrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:20px}
+.statbox{text-align:center;padding:16px 8px}
+.statbox .big{font-family:var(--font-h);font-size:1.9rem;font-weight:700;color:var(--violet)}
+.heat{display:grid;grid-template-rows:repeat(7,12px);grid-auto-flow:column;grid-auto-columns:12px;gap:4px;justify-content:center;padding:6px 0}
+.heat i{border-radius:3px;background:var(--surface2);border:1px solid var(--line)}
+.heat i[data-l="1"]{background:color-mix(in srgb,var(--violet) 35%,var(--surface2));border-color:transparent}
+.heat i[data-l="2"]{background:color-mix(in srgb,var(--violet) 68%,var(--surface2));border-color:transparent}
+.heat i[data-l="3"]{background:var(--mint);border-color:transparent}
+.distbar{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:.9rem}
+.distbar .bar{height:22px;border-radius:6px;background:linear-gradient(90deg,var(--violet),var(--violet-2));min-width:24px;
+  display:flex;align-items:center;justify-content:flex-end;padding:0 8px;color:#fff;font-weight:700;font-family:var(--font-h);
+  transform-origin:left;animation:grow .7s cubic-bezier(.2,.8,.3,1) backwards}
+@keyframes grow{from{transform:scaleX(0)}}
+/* ============ ADS ============ */
+.adslot{margin:28px auto;max-width:var(--maxg)}
+.adslot .adlabel{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:6px}
+.adslot .adbox{min-height:280px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);
+  display:flex;align-items:center;justify-content:center;overflow:hidden}
+.adslot .adbox .adhint{color:color-mix(in srgb,var(--muted) 55%,transparent);font-size:.8rem}
+/* ============ TOAST / MODAL / CONSENT ============ */
+#toasts{position:fixed;top:72px;left:50%;transform:translateX(-50%);z-index:120;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+.toast{background:var(--surface2);border:1px solid var(--line);color:var(--text);padding:10px 20px;border-radius:12px;
+  font-weight:600;box-shadow:var(--shadow);animation:toastIn .25s cubic-bezier(.2,1.4,.4,1)}
+@keyframes toastIn{from{opacity:0;transform:translateY(-10px) scale(.92)}}
+dialog{border:0;border-radius:var(--r);background:var(--surface);color:var(--text);padding:0;max-width:min(92vw,480px);width:100%;
+  box-shadow:var(--shadow);border:1px solid var(--line)}
+dialog::backdrop{background:rgba(5,8,22,.66);backdrop-filter:blur(4px)}
+dialog .dhead{display:flex;align-items:center;justify-content:space-between;padding:18px 22px 0}
+dialog .dbody{padding:14px 22px 22px}
+.setrow{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.setrow:last-child{border-bottom:0}
+.switch{position:relative;width:48px;height:28px;flex:none}
+.switch input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+.switch i{position:absolute;inset:0;border-radius:999px;background:var(--absent);transition:background .2s;pointer-events:none}
+.switch i::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .2s cubic-bezier(.3,1.5,.4,1)}
+.switch input:checked+i{background:var(--violet)}
+.switch input:checked+i::after{transform:translateX(20px)}
+.switch input:focus-visible+i{outline:3px solid var(--mint);outline-offset:2px}
+#consent{position:fixed;left:12px;right:12px;bottom:12px;z-index:150;max-width:560px;margin:0 auto;padding:18px 20px;display:none}
+#consent.show{display:block;animation:toastIn .3s}
+#consent .cbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+/* ============ SKELETON ============ */
+.skel{position:relative;overflow:hidden;background:var(--surface2);border-radius:12px}
+.skel::after{content:"";position:absolute;inset:0;transform:translateX(-100%);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.09),transparent);animation:shimmer 1.1s infinite}
+@keyframes shimmer{to{transform:translateX(100%)}}
+/* ============ COUNTDOWN RING ============ */
+.cring{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-h);font-weight:600;font-size:.88rem;color:var(--muted)}
+.cring svg{transform:rotate(-90deg)}
+.cring .cr-fg{stroke:var(--violet);transition:stroke-dashoffset 1s linear}
+/* ============ SECTIONS / FAQ / FOOTER ============ */
+.section{margin:46px 0}
+.feats{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.feat{padding:20px}
+.feat .ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:color-mix(in srgb,var(--violet) 16%,transparent);margin-bottom:10px}
+details.faq{border:1px solid var(--line);border-radius:14px;background:var(--surface);margin-bottom:10px;overflow:hidden}
+details.faq summary{cursor:pointer;padding:14px 18px;font-weight:600;font-family:var(--font-h);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:1.3rem;color:var(--violet);transition:transform .2s}
+details.faq[open] summary::after{transform:rotate(45deg)}
+details.faq .fa{padding:0 18px 14px;color:var(--muted)}
+.howsteps{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));counter-reset:step}
+.howsteps .step{padding:20px;counter-increment:step}
+.howsteps .step::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:34px;height:34px;
+  border-radius:10px;background:linear-gradient(135deg,var(--violet),var(--violet-2));color:#fff;font-family:var(--font-h);font-weight:700;margin-bottom:10px}
+footer.site{border-top:1px solid var(--line);padding:34px 0 46px;margin-top:30px;color:var(--muted);font-size:.9rem}
+footer .cols{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:0 16px}
+footer nav{display:flex;flex-direction:column;gap:7px}
+footer a{color:var(--muted)} footer a:hover{color:var(--text)}
+/* article prose */
+.prose{max-width:var(--maxg);margin:0 auto}
+.prose h2,.prose h3{margin-top:1.6em}
+.prose ul{padding-left:1.2em;color:var(--muted)}
+.prose li{margin-bottom:.4em}
+.prose p{color:var(--muted)}
+/* results */
+.result-panel{text-align:center;margin-top:18px;padding:22px}
+.result-panel .scorebig{font-family:var(--font-h);font-size:2.6rem;font-weight:700;color:var(--mint)}
+.sharebtns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+#shareCanvas{width:100%;max-width:270px;border-radius:14px;border:1px solid var(--line);display:block;margin:0 auto 14px}
+/* form */
+.field{margin-bottom:14px}
+.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:5px}
+.field input,.field textarea,.field select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);
+  background:var(--surface2);color:var(--text);font:inherit}
+.field input:focus,.field textarea:focus{outline:3px solid var(--mint);outline-offset:1px;border-color:transparent}
+/* confetti canvas */
+#confetti{position:fixed;inset:0;z-index:110;pointer-events:none}
+@media (max-width:640px){
+  nav.main a{padding:8px 9px;font-size:.84rem}
+  .hbar{gap:6px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .spark .core,.spark .ring,.spark .orbit,.spark .halo,.spark .syn-dot{animation:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="bgGlow" aria-hidden="true"></div>
+<svg id="grain" aria-hidden="true" width="100%" height="100%"><filter id="grainF"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer></filter><rect width="100%" height="100%" filter="url(#grainF)"/></svg>
+
+<header class="site">
+  <div class="hbar">
+    <a class="logo" href="#home" aria-label="DailyBrain home">
+      <span id="logoSpark" class="spark" data-stage="0" aria-hidden="true"></span>
+      <span>DailyBrain</span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#word" data-nav="word">Word</a>
+      <a href="#number" data-nav="number">Number</a>
+      <a href="#trivia" data-nav="trivia">Trivia</a>
+      <a href="#stats" data-nav="stats">Stats</a>
+    </nav>
+    <span id="streakBadge" title="Current streak" aria-label="Current streak">
+      <svg width="14" height="16" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 0C6.5 3 9.6 4.4 9.6 8A3.8 3.8 0 0 1 2.4 8C2.4 6.6 3 5.6 3.6 4.8 3.8 6 4.5 6.6 5.2 6.8 4.8 4.4 5.4 1.8 6 0Z" fill="var(--amber)"/></svg>
+      <span id="streakNum" class="tnum">0</span>
+    </span>
+    <button class="hbtn" id="btnSettings" aria-label="Settings" aria-haspopup="dialog">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<!-- ================= HOME ================= -->
+<section class="route" id="route-home" aria-labelledby="h-home">
+  <div class="wrap">
+    <div class="hero">
+      <span class="tag">Five minutes. One brain. Every day.</span>
+      <div id="heroSpark" class="spark" data-stage="0" style="margin:6px auto 10px" aria-hidden="true"></div>
+      <h1 id="h-home">Wake your brain up.</h1>
+      <p class="sub">Three bite-size puzzles — a word, a number and a trivia challenge — refreshed at midnight. Build a streak and watch your Spark evolve.</p>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="#word">Play today’s puzzle</a>
+        <span class="cring" id="homeCountdown"></span>
+      </div>
+    </div>
+
+    <div class="gamegrid">
+      <a class="card gcard" href="#word" id="card-word">
+        <div class="mini" aria-hidden="true">
+          <span class="mini-tile" style="background:var(--mint);color:#04251a">B</span>
+          <span class="mini-tile" style="background:var(--amber);color:#2b1a00">R</span>
+          <span class="mini-tile" style="background:var(--absent)">A</span>
+          <span class="mini-tile" style="background:var(--mint);color:#04251a">I</span>
+          <span class="mini-tile" style="background:var(--amber);color:#2b1a00">N</span>
+        </div>
+        <h3>Daily Word</h3>
+        <p class="muted" style="margin:0;font-size:.9rem">Guess the 5-letter word in six tries. Colors guide the way.</p>
+        <div class="meta"><span class="chip go" data-status="word">Play now</span><span class="tnum" data-mini-count></span></div>
+      </a>
+      <a class="card gcard" href="#number" id="card-number">
+        <div class="mini" aria-hidden="true" style="font-family:var(--font-h);font-weight:700;font-size:1.05rem;color:var(--violet)">
+          <span style="color:var(--amber)">25</span><span>×</span><span style="color:var(--amber)">4</span><span>−</span><span style="color:var(--amber)">7</span><span>=</span><span style="color:var(--mint)">93</span>
+        </div>
+        <h3>Daily Number</h3>
+        <p class="muted" style="margin:0;font-size:.9rem">Combine five numbers with + − × ÷ to hit the target.</p>
+        <div class="meta"><span class="chip go" data-status="number">Play now</span><span class="tnum" data-mini-count></span></div>
+      </a>
+      <a class="card gcard" href="#trivia" id="card-trivia">
+        <div class="mini" aria-hidden="true" style="flex-direction:column;gap:4px">
+          <span style="font-family:var(--font-h);font-weight:600;font-size:.8rem;color:var(--muted)">Which planet is the hottest?</span>
+          <span style="display:flex;gap:5px"><span class="chip">Mars</span><span class="chip ok">Venus ✓</span><span class="chip">Mercury</span></span>
+        </div>
+        <h3>Daily Trivia</h3>
+        <p class="muted" style="margin:0;font-size:.9rem">Five quick questions against a 15-second clock.</p>
+        <div class="meta"><span class="chip go" data-status="trivia">Play now</span><span class="tnum" data-mini-count></span></div>
+      </a>
+    </div>
+
+    <div class="adslot" aria-hidden="true"><div class="adlabel">Advertisement</div><div class="adbox"><ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins><span class="adhint">Advertisement</span></div></div>
+
+    <div class="card pad section" id="streakStrip" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+      <span id="stripSpark" class="spark" data-stage="0" aria-hidden="true"></span>
+      <div style="flex:1;min-width:220px">
+        <h3 style="margin-bottom:4px">Your streak</h3>
+        <p class="muted" style="margin:0" id="stripText">Play today to light your Spark.</p>
+      </div>
+      <a class="btn btn-g btn-sm" href="#stats">View stats</a>
+    </div>
+
+    <div class="section">
+      <h2 style="text-align:center">Why DailyBrain?</h2>
+      <div class="feats">
+        <div class="card feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <h3>Five focused minutes</h3>
+          <p class="muted" style="margin:0;font-size:.92rem">Each puzzle is designed to be finished with your morning coffee — a quick, satisfying mental warm-up, never a time sink.</p>
+        </div>
+        <div class="card feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 6.2L21 9l-5 4.3L17.5 20 12 16.4 6.5 20 8 13.3 3 9l6.6-.8Z"/></svg></div>
+          <h3>One puzzle for everyone</h3>
+          <p class="muted" style="margin:0;font-size:.92rem">Every player in the world gets the same puzzles each day, so you can compare results with friends — spoiler-free sharing built in.</p>
+        </div>
+        <div class="card feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4.5 13h6L10 22l8.5-11h-6L13 2Z"/></svg></div>
+          <h3>A streak with a soul</h3>
+          <p class="muted" style="margin:0;font-size:.92rem">Your Spark companion grows from a sleepy ember into a supernova as your streak climbs. All progress stays on your device.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 style="text-align:center">How it works</h2>
+      <div class="howsteps">
+        <div class="card step"><h3>Open today’s puzzles</h3><p class="muted" style="margin:0;font-size:.92rem">A new word, number and trivia challenge unlocks at midnight in your local timezone. No account, no install, no fuss.</p></div>
+        <div class="card step"><h3>Play and keep your streak</h3><p class="muted" style="margin:0;font-size:.92rem">Finish at least one puzzle a day to keep your streak alive. Complete all three for the Daily Trio badge.</p></div>
+        <div class="card step"><h3>Share your result</h3><p class="muted" style="margin:0;font-size:.92rem">Share a spoiler-free emoji grid or a beautiful score card with friends and see who really has the sharpest mind.</p></div>
+      </div>
+    </div>
+
+    <div class="adslot" aria-hidden="true"><div class="adlabel">Advertisement</div><div class="adbox"><ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins><span class="adhint">Advertisement</span></div></div>
+
+    <div class="section prose" id="home-faq">
+      <h2 style="text-align:center">Frequently asked questions</h2>
+      <details class="faq"><summary>Is DailyBrain free to play?</summary><div class="fa">Yes — every puzzle is completely free, every day. The site is supported by a small number of clearly-labelled ads that never cover or interrupt gameplay.</div></details>
+      <details class="faq"><summary>When do new puzzles arrive?</summary><div class="fa">New puzzles unlock at midnight in your local timezone. Everyone in the world receives the same word, the same numbers and the same trivia questions for a given date.</div></details>
+      <details class="faq"><summary>Do I need to create an account?</summary><div class="fa">No. Your streaks, statistics and preferences are stored privately in your browser on your own device. Nothing is uploaded to a server.</div></details>
+      <details class="faq"><summary>How do streaks and Spark evolution work?</summary><div class="fa">Finish at least one puzzle each calendar day to extend your streak. Your Spark companion evolves at 1, 3, 7, 14 and 30-day milestones — from a sleepy grey ember all the way to a rotating supernova.</div></details>
+      <details class="faq"><summary>What happens if I miss a day?</summary><div class="fa">Your current streak resets to zero, but your best streak, win rate and history are kept forever. Spark will patiently wait for you to start again.</div></details>
+      <details class="faq"><summary>Can I play past puzzles?</summary><div class="fa">DailyBrain is intentionally about the ritual of one shared daily challenge, so past puzzles are not replayable. Miss a day? There’s always tomorrow.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORD ================= -->
+<section class="route" id="route-word" aria-labelledby="h-word">
+  <div class="wrap wrap-g">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+      <h1 id="h-word" style="margin:0;font-size:var(--fs-h2)">Daily Word <span class="muted tnum" id="wordNo" style="font-size:.9rem"></span></h1>
+      <span class="cring" data-countdown></span>
+    </div>
+    <div id="wordSkel" hidden>
+      <div class="skel" style="height:330px;max-width:330px;margin:0 auto 18px"></div>
+      <div class="skel" style="height:160px;max-width:500px;margin:0 auto"></div>
+    </div>
+    <div id="wordGame">
+      <div style="display:flex;justify-content:center;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+        <button class="btn btn-g btn-sm" id="btnHint">💡 Hint (first letter)</button>
+        <span class="chip" id="hardChip" hidden>Hard mode</span>
+      </div>
+      <div class="board" id="board" role="grid" aria-label="Word guesses"></div>
+      <div class="kb" id="kb" aria-label="On-screen keyboard"></div>
+      <div class="card result-panel" id="wordResult" hidden></div>
+    </div>
+    <div class="adslot" aria-hidden="true"><div class="adlabel">Advertisement</div><div class="adbox"><ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins><span class="adhint">Advertisement</span></div></div>
+
+    <article class="prose section">
+      <h2>How to play Daily Word</h2>
+      <p>Daily Word gives you six attempts to find a secret five-letter word. Type any valid five-letter English word and press Enter. The tiles then flip over one by one and change color to tell you exactly how close you are. A <strong style="color:var(--mint)">mint tile</strong> means that letter is correct and sitting in exactly the right position. An <strong style="color:var(--amber)">amber tile</strong> means the letter appears somewhere in the answer, but not in the spot where you placed it. A dark slate tile means the letter does not appear in the answer at all — or, if you used the same letter twice, that the answer contains fewer copies than you guessed.</p>
+      <p>Duplicate letters follow one simple rule: feedback never shows more copies of a letter than the answer actually contains. If the answer is <em>SPARK</em> and you guess <em>PAPER</em>, only one P earns a color because the answer holds just one P. The on-screen keyboard remembers everything you have learned, recoloring keys as information arrives, so you always have a live map of which letters remain in play.</p>
+      <p>Everyone in the world receives the same word on the same date, and a fresh one unlocks at midnight local time. You get one attempt per day — that scarcity is what makes a solve feel earned. If you want an extra challenge, switch on Hard Mode in settings: every revealed hint must then be reused in all later guesses, which forbids lazy letter-elimination turns. If you are stuck, a single optional hint reveals the first letter, and the game honestly records that you used it.</p>
+      <h3>Tips &amp; strategy</h3>
+      <ul>
+        <li><strong>Open with vowel-rich, consonant-diverse words.</strong> Starters such as RAISE, ADIEU, SLATE or CRANE test five of the most frequent letters in one move.</li>
+        <li><strong>Use your second guess to scan new letters.</strong> Unless hard mode is on, a word like MOUNT or GLINT after RAISE covers ten unique letters in two turns.</li>
+        <li><strong>Think in positions, not just letters.</strong> An amber R tells you more than “R exists” — it eliminates R from that exact column. Track where letters <em>cannot</em> go.</li>
+        <li><strong>Beware of repeats.</strong> Words like LEVEL, SASSY and MAMMA are rare but legal answers. If four tiles lock in and nothing fits, try doubling a confirmed letter.</li>
+        <li><strong>Common endings win games.</strong> -ER, -LY, -ED and -ING patterns (minus the G) resolve many endgames; so do consonant blends like ST, CH, BR and PL at the start.</li>
+      </ul>
+      <h3>Daily Word FAQ</h3>
+      <details class="faq"><summary>Can the answer contain the same letter twice?</summary><div class="fa">Yes. Answers may contain repeated letters. The coloring never shows more copies of a letter than the answer actually contains, so one mint P and one slate P means exactly one P.</div></details>
+      <details class="faq"><summary>What counts as a valid guess?</summary><div class="fa">Any five-letter word in our dictionary of several thousand common English words. If a word is rejected, it simply is not in the list — try a more common spelling.</div></details>
+      <details class="faq"><summary>What does Hard Mode change?</summary><div class="fa">Hard Mode requires every revealed hint to be used in subsequent guesses: mint letters must stay in place and amber letters must appear somewhere. It is the purist’s way to play.</div></details>
+      <details class="faq"><summary>Does using a hint affect my stats?</summary><div class="fa">Using the first-letter hint still lets you win, but the hint is counted in your statistics, so you will always know which solves were fully unaided.</div></details>
+      <details class="faq"><summary>Is the word the same for everyone?</summary><div class="fa">Yes. The word is chosen deterministically from the date, so players everywhere face the same challenge and can fairly compare results.</div></details>
+    </article>
+  </div>
+</section>
+
+<!-- ================= NUMBER ================= -->
+<section class="route" id="route-number" aria-labelledby="h-number">
+  <div class="wrap wrap-g">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+      <h1 id="h-number" style="margin:0;font-size:var(--fs-h2)">Daily Number <span class="muted tnum" id="numberNo" style="font-size:.9rem"></span></h1>
+      <span class="cring" data-countdown></span>
+    </div>
+    <div id="numSkel" hidden>
+      <div class="skel" style="height:90px;margin-bottom:14px"></div>
+      <div class="skel" style="height:220px"></div>
+    </div>
+    <div id="numGame" class="card pad">
+      <div class="target-line"><span class="muted">Target</span> <span class="tval tnum" id="numTarget">—</span></div>
+      <p class="muted" style="text-align:center;margin:4px 0 10px;font-size:.9rem">Use the five numbers below, each at most once, to reach the target.</p>
+      <div class="numgrid" id="numChips"></div>
+      <div class="opsrow">
+        <button class="opbtn" data-op="+" aria-label="plus">+</button>
+        <button class="opbtn" data-op="-" aria-label="minus">−</button>
+        <button class="opbtn" data-op="*" aria-label="times">×</button>
+        <button class="opbtn" data-op="/" aria-label="divide">÷</button>
+        <button class="opbtn" data-op="(" aria-label="open parenthesis">(</button>
+        <button class="opbtn" data-op=")" aria-label="close parenthesis">)</button>
+      </div>
+      <div class="exprbox tnum" id="exprBox" aria-live="polite"><span class="muted" style="font-size:.95rem;font-weight:400">Tap numbers and operators…</span></div>
+      <p class="livePrev tnum" id="livePrev" aria-live="polite"></p>
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-g btn-sm" id="numUndo">↩ Undo</button>
+        <button class="btn btn-g btn-sm" id="numClear">Clear</button>
+        <button class="btn btn-p btn-sm" id="numSubmit">Submit</button>
+      </div>
+      <div class="card result-panel" id="numResult" hidden style="background:var(--surface2)"></div>
+    </div>
+    <div class="adslot" aria-hidden="true"><div class="adlabel">Advertisement</div><div class="adbox"><ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins><span class="adhint">Advertisement</span></div></div>
+
+    <article class="prose section">
+      <h2>How to play Daily Number</h2>
+      <p>Daily Number hands you five numbers and one target. Your job is to combine the numbers with addition, subtraction, multiplication, division and parentheses to land exactly on the target — or as close as you possibly can. Tap a number chip to add it to your expression, tap an operator to join numbers together, and watch the live preview update with every move. Each number may be used at most once, but you are never required to use all five; a tidy three-number solution is just as valid as an elaborate five-number one.</p>
+      <p>The puzzle is generated from the date itself, and the generator always builds the target out of the given numbers first — which means a perfect, exact solution is guaranteed to exist for every single daily puzzle. If you finish with an exact hit you score a full 100 points. Land nearby and your score falls gently with the distance, so a near-miss of one or two still earns respectable points. After you submit, the game reveals one valid optimal path to the target so you can compare approaches and pick up new tricks for tomorrow.</p>
+      <p>There is no timer and no guess limit before you submit — Daily Number rewards patient, playful arithmetic rather than speed. Use Undo to step back one token or Clear to start fresh as often as you like. The only thing that counts is the expression you finally submit, once per day.</p>
+      <h3>Tips &amp; strategy</h3>
+      <ul>
+        <li><strong>Anchor on the big number.</strong> Multiply or divide with the largest value first to get into the target’s neighborhood, then fine-tune with small numbers.</li>
+        <li><strong>Think in remainders.</strong> Compute target − (your big product) and ask whether the leftover numbers can build that difference.</li>
+        <li><strong>Division is a scalpel.</strong> Exact divisions like 75 ÷ 5 or 100 ÷ 4 unlock values the original set doesn’t contain.</li>
+        <li><strong>Parentheses change everything.</strong> (7 + 3) × 9 and 7 + 3 × 9 are 90 and 34 — group additions before multiplying to reach round numbers fast.</li>
+        <li><strong>Close is still points.</strong> If the exact target refuses to appear, submit your best near-miss instead of nothing; a distance of 3 still scores well.</li>
+      </ul>
+      <h3>Daily Number FAQ</h3>
+      <details class="faq"><summary>Do I have to use all five numbers?</summary><div class="fa">No. Use any subset — each number at most once. Many targets fall to a clever three-number combination.</div></details>
+      <details class="faq"><summary>Is every puzzle actually solvable?</summary><div class="fa">Yes. The generator constructs the target by applying random valid operations to the day’s numbers, so an exact solution always exists, and one is revealed after you finish.</div></details>
+      <details class="faq"><summary>Are fractions or negative numbers allowed mid-expression?</summary><div class="fa">Yes — intermediate values can be anything. Only your final result is compared with the target.</div></details>
+      <details class="faq"><summary>How is the score calculated?</summary><div class="fa">An exact hit scores 100. Otherwise the score decreases with your distance from the target, down to a minimum of zero.</div></details>
+      <details class="faq"><summary>Can I retry after submitting?</summary><div class="fa">No — one submission per day, which is what makes an exact hit worth celebrating. You can rebuild and preview as much as you like before submitting.</div></details>
+    </article>
+  </div>
+</section>
+
+<!-- ================= TRIVIA ================= -->
+<section class="route" id="route-trivia" aria-labelledby="h-trivia">
+  <div class="wrap wrap-g">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+      <h1 id="h-trivia" style="margin:0;font-size:var(--fs-h2)">Daily Trivia <span class="muted tnum" id="triviaNo" style="font-size:.9rem"></span></h1>
+      <span class="cring" data-countdown></span>
+    </div>
+    <div id="trivSkel" hidden>
+      <div class="skel" style="height:120px;margin-bottom:14px"></div>
+      <div class="skel" style="height:260px"></div>
+    </div>
+    <div id="trivGame" class="card pad"></div>
+    <div class="adslot" aria-hidden="true"><div class="adlabel">Advertisement</div><div class="adbox"><ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins><span class="adhint">Advertisement</span></div></div>
+
+    <article class="prose section">
+      <h2>How to play Daily Trivia</h2>
+      <p>Daily Trivia serves five multiple-choice questions drawn from a large original bank spanning science, geography, history, pop culture and the natural world. The five questions are selected deterministically from the date, so every player answers the same quiz on the same day — your score is directly comparable with anyone else’s.</p>
+      <p>Each question gives you four options and fifteen seconds, counted down by a slim ring around the timer. Tap an answer to lock it in: the correct option instantly glows mint, a wrong pick glows coral, and a short “Did you know?” fact appears so you leave every question — right or wrong — knowing a little more than before. If the ring empties before you choose, the question is marked incorrect and the quiz moves on, so stay decisive. There is no penalty for guessing; an educated guess beats a timeout every time.</p>
+      <p>After the fifth question you receive a score out of five and a rank title: Rookie for 0–1, Thinker for 2–3, Sharp Mind for 4, and the coveted Genius for a flawless 5. Finishing trivia counts toward your daily streak, and completing it alongside the word and number puzzles earns the Daily Trio badge on your stats page. Like the other games, trivia can be played once per day and resets at midnight local time.</p>
+      <h3>Tips &amp; strategy</h3>
+      <ul>
+        <li><strong>Read the question twice, fast.</strong> Most fifteen-second mistakes are misread questions, not missing knowledge — watch for “NOT”, “largest” and “first”.</li>
+        <li><strong>Eliminate before you choose.</strong> Striking out two obviously wrong options turns a 25% blind guess into a 50% coin flip.</li>
+        <li><strong>Trust your first instinct.</strong> Recognition memory is quick and usually right; last-second switches are wrong more often than not.</li>
+        <li><strong>Never let the clock expire.</strong> A timeout scores zero with certainty; any tap gives you at least a chance.</li>
+        <li><strong>Read the facts.</strong> The “Did you know?” lines are tomorrow’s answers in disguise — the question bank loves themes.</li>
+      </ul>
+      <h3>Daily Trivia FAQ</h3>
+      <details class="faq"><summary>Are the questions the same for everyone?</summary><div class="fa">Yes. The day’s date selects five questions from the bank, so everyone worldwide plays the identical quiz that day.</div></details>
+      <details class="faq"><summary>What happens when the timer runs out?</summary><div class="fa">The question is marked as unanswered and counts as incorrect. The correct answer is revealed before the next question begins.</div></details>
+      <details class="faq"><summary>Can I change my answer?</summary><div class="fa">No — the first option you tap locks in immediately and feedback is shown at once, which keeps the quiz brisk and honest.</div></details>
+      <details class="faq"><summary>What are the rank titles?</summary><div class="fa">Rookie (0–1 correct), Thinker (2–3), Sharp Mind (4) and Genius (a perfect 5).</div></details>
+      <details class="faq"><summary>Where do the questions come from?</summary><div class="fa">All questions are written originally for DailyBrain and fact-checked for accuracy. They are family-friendly and span five rotating categories.</div></details>
+    </article>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="route" id="route-stats" aria-labelledby="h-stats">
+  <div class="wrap wrap-g">
+    <h1 id="h-stats" style="font-size:var(--fs-h2)">Your stats</h1>
+    <div class="statrow">
+      <div class="card statbox"><div class="big tnum" id="stCurrent">0</div><div class="muted" style="font-size:.82rem">Current streak</div></div>
+      <div class="card statbox"><div class="big tnum" id="stBest">0</div><div class="muted" style="font-size:.82rem">Best streak</div></div>
+      <div class="card statbox"><div class="big tnum" id="stWin">—</div><div class="muted" style="font-size:.82rem">Word win rate</div></div>
+      <div class="card statbox"><div class="big tnum" id="stTotal">0</div><div class="muted" style="font-size:.82rem">Puzzles solved</div></div>
+    </div>
+    <div class="card pad" style="margin-bottom:20px">
+      <h3 style="display:flex;justify-content:space-between;align-items:center;gap:8px">Last 12 weeks <span class="chip" id="trioBadge" hidden>🏅 Daily Trio today</span></h3>
+      <div class="heat" id="heat" role="img" aria-label="Activity heat map of the last twelve weeks"></div>
+      <p class="muted" style="font-size:.78rem;text-align:center;margin:8px 0 0">Darker squares = more of the three games completed that day.</p>
+    </div>
+    <div class="card pad">
+      <h3>Word guess distribution</h3>
+      <div id="dist"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="route" id="route-about" aria-labelledby="h-about">
+  <div class="wrap prose section" style="margin-top:0">
+    <h1 id="h-about">About DailyBrain</h1>
+    <p>DailyBrain began with a simple observation: the best part of many people’s morning is a tiny ritual — one coffee, one puzzle, one small win before the day begins. We wanted to build that ritual properly: beautiful, fast, respectful of your time and your privacy, and genuinely fun to return to.</p>
+    <p>Every midnight, three new challenges appear: a five-letter word hunt, a numbers round inspired by classic arithmetic game shows, and a five-question trivia quiz written originally for this site. Each is deterministic — generated from the date itself — so a player in London, a player in Toronto and a player in Sydney all face exactly the same puzzle on the same calendar day.</p>
+    <p>Your companion through all of it is <strong>Spark</strong>, the little neuron that lives in our logo. Spark evolves with your streak — from a sleepy grey ember to a twinkling, ringed, orbiting supernova at thirty days. We built Spark because streaks should feel like nurturing something, not feeding a counter.</p>
+    <p>DailyBrain stores your progress in your own browser. We have no accounts, no profiles and no interest in your personal data. The site is supported by a small number of clearly-labelled advertisements that never interrupt play. If you have ideas, spot an error in a trivia question, or just want to share a 30-day Spark, we would love to hear from you on the <a href="#contact">contact page</a>.</p>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="route" id="route-contact" aria-labelledby="h-contact">
+  <div class="wrap wrap-g section" style="margin-top:0">
+    <h1 id="h-contact" style="font-size:var(--fs-h2)">Contact us</h1>
+    <p class="muted">Found a bug, want to challenge a trivia answer, or have a feature idea? Send us a note — we read everything.</p>
+    <form class="card pad" id="contactForm" novalidate>
+      <div class="field"><label for="cfName">Name</label><input id="cfName" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="cfEmail">Email</label><input id="cfEmail" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="cfMsg">Message</label><textarea id="cfMsg" name="message" rows="5" required></textarea></div>
+      <button class="btn btn-p" type="submit">Send message</button>
+      <p class="muted" style="font-size:.8rem;margin:12px 0 0">Or email us directly at <a href="mailto:hello@dailybrain.example">hello@dailybrain.example</a>. We aim to reply within two business days.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= PRIVACY ================= -->
+<section class="route" id="route-privacy" aria-labelledby="h-privacy">
+  <div class="wrap prose section" style="margin-top:0">
+    <h1 id="h-privacy">Privacy Policy</h1>
+    <p class="muted">Last updated: October 2, 2026</p>
+    <p>This Privacy Policy explains what information DailyBrain (“we”, “us”) handles when you use this website, and the choices you have.</p>
+    <h3>Data stored on your device</h3>
+    <p>DailyBrain does not require an account and does not operate its own user database. Your game progress, streaks, statistics and preferences (theme, sound, haptics, accessibility options) are stored only in your browser’s local storage on your own device. You can erase this at any time from Settings → “Reset all data”, or by clearing your browser’s site data.</p>
+    <h3>Cookies and advertising</h3>
+    <p>If — and only if — you accept the consent banner, we load Google AdSense to display advertising. Google and its partners may use cookies and similar technologies to serve and measure ads, and, where you have consented, to personalise them. Google’s use of advertising cookies is described at <a href="https://policies.google.com/technologies/ads" rel="noopener" target="_blank">policies.google.com/technologies/ads</a>. You may opt out of personalised advertising via <a href="https://adssettings.google.com" rel="noopener" target="_blank">Google Ads Settings</a> and <a href="https://www.aboutads.info/choices" rel="noopener" target="_blank">aboutads.info/choices</a>. If you reject consent, no advertising scripts are loaded at all.</p>
+    <h3>Third-party vendors</h3>
+    <p>Fonts are served by Google Fonts, which receives standard request data (such as your IP address) when fonts load. Advertising, when consented to, is provided by Google AdSense; third-party vendors, including Google, use cookies to serve ads based on prior visits to this and other websites.</p>
+    <h3>Your rights (GDPR / UK GDPR / CCPA)</h3>
+    <p>Depending on where you live, you may have rights to access, correct, delete or port personal data, to object to or restrict processing, and to withdraw consent at any time (Settings → “Privacy choices”). California residents have the right to opt out of the “sale” or “sharing” of personal information; rejecting consent on this site achieves that for our advertising. We do not knowingly collect personal information from children under 13. To exercise any right, contact us at <a href="mailto:privacy@dailybrain.example">privacy@dailybrain.example</a>.</p>
+    <h3>Changes</h3>
+    <p>We will update this page when our practices change, and revise the date above. Significant changes will be announced on the home page.</p>
+  </div>
+</section>
+
+<!-- ================= TERMS ================= -->
+<section class="route" id="route-terms" aria-labelledby="h-terms">
+  <div class="wrap prose section" style="margin-top:0">
+    <h1 id="h-terms">Terms of Use</h1>
+    <p class="muted">Last updated: October 2, 2026</p>
+    <p>By accessing DailyBrain you agree to these terms. If you do not agree, please do not use the site.</p>
+    <h3>Use of the service</h3>
+    <p>DailyBrain provides free daily puzzle games for personal, non-commercial entertainment. You agree not to misuse the service, including attempting to disrupt it, scrape it at abusive rates, or republish its puzzles or question bank without permission.</p>
+    <h3>Intellectual property</h3>
+    <p>The DailyBrain name, the Spark character, the site design, original trivia questions and all accompanying text are our intellectual property. Sharing your own results — including the generated share cards and emoji grids — is encouraged and licensed to you freely.</p>
+    <h3>No warranty</h3>
+    <p>The service is provided “as is” without warranties of any kind. We do not guarantee uninterrupted availability, nor that puzzles will be free of errors, although we correct mistakes quickly when reported.</p>
+    <h3>Limitation of liability</h3>
+    <p>To the fullest extent permitted by law, we shall not be liable for any indirect, incidental or consequential damages arising from your use of the site. Our total liability shall not exceed the amount you paid to use DailyBrain — which is zero.</p>
+    <h3>Changes to these terms</h3>
+    <p>We may revise these terms from time to time. Continued use of the site after changes take effect constitutes acceptance of the revised terms.</p>
+  </div>
+</section>
+
+<!-- ================= COOKIES ================= -->
+<section class="route" id="route-cookies" aria-labelledby="h-cookies">
+  <div class="wrap prose section" style="margin-top:0">
+    <h1 id="h-cookies">Cookie Policy</h1>
+    <p class="muted">Last updated: October 2, 2026</p>
+    <h3>What are cookies?</h3>
+    <p>Cookies are small text files stored by your browser. Related technologies include local storage, which stores data on your device without sending it anywhere.</p>
+    <h3>What DailyBrain itself uses</h3>
+    <p>We use <strong>local storage only</strong> for strictly functional purposes: saving your puzzle progress, streaks, statistics, theme and settings, and remembering your consent choice. This data never leaves your device and contains no personal identifiers.</p>
+    <h3>Advertising cookies (optional)</h3>
+    <p>If you choose “Accept” on our consent banner, Google AdSense loads and may set advertising cookies (for example to measure ad performance and, with consent, personalise ads). If you choose “Reject”, no advertising scripts load and no advertising cookies are set by this site. You can change your choice at any time via Settings → “Privacy choices”.</p>
+    <h3>Managing cookies</h3>
+    <p>You can clear or block cookies and site data in your browser settings at any time. Blocking local storage will still let you play, but your streaks and progress will not be remembered between visits.</p>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="cols">
+    <div style="max-width:300px">
+      <div class="logo" style="margin-bottom:8px"><span id="footSpark" class="spark" data-stage="1" aria-hidden="true"></span> DailyBrain</div>
+      <p style="font-size:.85rem;margin:0">Five minutes. One brain. Every day. Free daily word, number and trivia puzzles.</p>
+    </div>
+    <nav aria-label="Games"><strong style="color:var(--text)">Games</strong><a href="#word">Daily Word</a><a href="#number">Daily Number</a><a href="#trivia">Daily Trivia</a><a href="#stats">Your stats</a></nav>
+    <nav aria-label="Company"><strong style="color:var(--text)">DailyBrain</strong><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    <nav aria-label="Legal"><strong style="color:var(--text)">Legal</strong><a href="#privacy">Privacy Policy</a><a href="#terms">Terms of Use</a><a href="#cookies">Cookie Policy</a><a href="#home" id="footConsent">Privacy choices</a></nav>
+  </div>
+  <p style="text-align:center;margin:26px 0 0;font-size:.8rem">© <span id="year">2026</span> DailyBrain. All rights reserved.</p>
+</footer>
+
+<!-- ================= OVERLAYS ================= -->
+<div id="toasts" aria-live="polite" aria-atomic="false"></div>
+<div class="visually-hidden" id="announcer" aria-live="assertive"></div>
+<canvas id="confetti" hidden></canvas>
+
+<div class="card" id="consent" role="dialog" aria-modal="false" aria-label="Cookie consent">
+  <strong style="font-family:var(--font-h)">Your privacy</strong>
+  <p class="muted" style="font-size:.88rem;margin:6px 0 0">We’d like to show a few ads to keep DailyBrain free. Choosing “Accept” loads Google AdSense, which uses cookies. “Reject” keeps the site completely ad-script-free. Read our <a href="#cookies">Cookie Policy</a>.</p>
+  <div class="cbtns">
+    <button class="btn btn-p btn-sm" id="consentAccept">Accept</button>
+    <button class="btn btn-g btn-sm" id="consentReject">Reject</button>
+    <button class="btn btn-g btn-sm" id="consentManage">Manage</button>
+  </div>
+</div>
+
+<dialog id="dlgManage" aria-labelledby="dlgManageTitle">
+  <div class="dhead"><h3 id="dlgManageTitle" style="margin:0">Privacy choices</h3><button class="hbtn" data-close aria-label="Close">✕</button></div>
+  <div class="dbody">
+    <div class="setrow"><div><strong>Strictly necessary storage</strong><div class="muted" style="font-size:.82rem">Progress, streaks and settings on your device. Always on.</div></div><label class="switch"><input type="checkbox" checked disabled><i></i></label></div>
+    <div class="setrow"><div><strong>Advertising (Google AdSense)</strong><div class="muted" style="font-size:.82rem">Loads Google ads and advertising cookies.</div></div><label class="switch"><input type="checkbox" id="mgAds"><i></i></label></div>
+    <div style="display:flex;gap:8px;margin-top:16px;justify-content:flex-end">
+      <button class="btn btn-g btn-sm" data-close>Cancel</button>
+      <button class="btn btn-p btn-sm" id="mgSave">Save choices</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="dlgSettings" aria-labelledby="dlgSettingsTitle">
+  <div class="dhead"><h3 id="dlgSettingsTitle" style="margin:0">Settings</h3><button class="hbtn" data-close aria-label="Close">✕</button></div>
+  <div class="dbody">
+    <div class="setrow"><div><strong>Theme</strong><div class="muted" style="font-size:.82rem">Follows your system by default.</div></div>
+      <select id="setTheme" style="background:var(--surface2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font:inherit">
+        <option value="auto">System</option><option value="dark">Dark</option><option value="light">Light</option>
+      </select></div>
+    <div class="setrow"><div><strong>Hard mode (Word)</strong><div class="muted" style="font-size:.82rem">Revealed hints must be used in later guesses.</div></div><label class="switch"><input type="checkbox" id="setHard"><i></i></label></div>
+    <div class="setrow"><div><strong>Colorblind palette</strong><div class="muted" style="font-size:.82rem">High-contrast blue / orange tiles.</div></div><label class="switch"><input type="checkbox" id="setCB"><i></i></label></div>
+    <div class="setrow"><div><strong>Haptics</strong><div class="muted" style="font-size:.82rem">Gentle vibration on keys and wins (supported devices).</div></div><label class="switch"><input type="checkbox" id="setHaptics"><i></i></label></div>
+    <div class="setrow"><div><strong>Sound</strong><div class="muted" style="font-size:.82rem">Tiny synthesized blips. Off by default.</div></div><label class="switch"><input type="checkbox" id="setSound"><i></i></label></div>
+    <div class="setrow"><div><strong>Privacy choices</strong><div class="muted" style="font-size:.82rem">Review your ad consent.</div></div><button class="btn btn-g btn-sm" id="setConsent">Open</button></div>
+    <div class="setrow"><div><strong style="color:var(--coral)">Reset all data</strong><div class="muted" style="font-size:.82rem">Erases streaks, stats and progress on this device.</div></div><button class="btn btn-g btn-sm" id="setReset">Reset</button></div>
+  </div>
+</dialog>
+
+<dialog id="dlgShare" aria-labelledby="dlgShareTitle">
+  <div class="dhead"><h3 id="dlgShareTitle" style="margin:0">Share your result</h3><button class="hbtn" data-close aria-label="Close">✕</button></div>
+  <div class="dbody">
+    <canvas id="shareCanvas" width="1080" height="1350"></canvas>
+    <div class="sharebtns">
+      <button class="btn btn-p btn-sm" id="shareNative">Share</button>
+      <button class="btn btn-g btn-sm" id="shareCopy">Copy text</button>
+      <button class="btn btn-g btn-sm" id="shareDownload">Download image</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+const ANSWERS="whichtheretheiraboutwouldtheseothercouldwritefirstwaterafterwhererightthinkthreeplacesoundgreatagainstilleverysmallfoundthoseneverundermightwhilehouseworldbelowaskedgoinglargeuntilalongbeingoftenearthbegansincestudynightlightabovepaperyoungstorypointheardwholewhitegivenmusicthingtodaylaterusingmoneyordergroupamonglearnknownspacetableearlyshortstateblackshownstoodfrontvoiceclosepowerlivedvoweltakenbuiltheartreadyquiteclassbringroundhorsepiecegreenstandstartrivertriedleastfieldwhoseleaveaddedcolorthirdmovedplantdoingheavycriedcheckfloorbeginwomanaloneplanespellwatchcarrywroteclearnamedchildglasshumanpartybuildbloodsevenmouthsolvenorthvaluedeathmaybehappyshapesensespeakforceoceanspeedwomenmetalsouthgrassscalelowersleepwrongeightmajorleveltotalaheadreachstoresightcatchboardcoverequalstoneguessdancespokebreakcauseradiobasiclikedtradefreshfinalfightmeantdrivespentlocaltrainbreadteethcoastthickbrowncleanquietsugarsteelforthpeacemonthsharpvisitchiefcrossgrownfruitstickstagesheepplaindrinkaparttouchanglebasedrangetiredolderspendchairtwiceemptyalikestylebrokecountenjoyscoreshorepaintshookserveangrycrowdwheelquickdresssharealivenoisesolidclothdrawnworthtruckpianoupperlovedusualdrovecabinproudcourtmodelprimefiftyprovepricesheetsmellraisematchtruththrewenemylunchchartscenegraphdoubtguideblockgrainsmokemixedwagonsweettopicextraplatetitleknifefencecloudwheatenterbroadsteampresslyingclocktastethankstormagreebraintracksmilefunnybeachstockhurrysavedsorrygianttrailofferoughtroughdailyavoidthrowallowcreamlaughteachframedreammagicoccurendedchordfalseskilldozenbraveappleclimbouterpitchrulerfixedblankstafflaboreatenyouthhonorglobelooseapplyexactbrushchestlayerwhaleminorfaithjudgeworrywastehopedstripbegunasidebounddepthcandyeventworseawareshellranchimagesnakealouddriedmotorpoundreferfullychainshirtflourspiteorbitshootcurvetribetightblindsleptshadeclaimthemequeenfifthunionhencestrawentryissuebirthangerbriefrhymegloryguardfleshownedtricknotedwidthburstrouteuncleroyalfortytrialbrassoperachose";
+const DICTX="abaciabackabaseabateabbeyabbotabetsabhorabideablerabodeabortabuseabutsabyssachedachesachooacidsacingacnesacornacresacridactedactoracuteadageadaptadderadeptadieuadiosadmitadobeadoptadoreadornadultadzesaegisaerieafireafootaforeafoulagateagaveagentagileagingaglowagonyaidedaidesailedaimedairedaislealackalarmalbumalderaleckalephalertalgaealiasalibialienalignallayalleyallotalloyaloesaloftalohaaloofalphaaltaralteralthoaltosalumsamassamazeamberambleamebaamendamigoaminoamissamityampleamplyamuckamuseangelanionaniseankleannasannexannoyannulannumanodeanoleanticanvilaortaapaceaphidapingapronapsesaptlyarborarcedardorareasarenaargonargotargueariasarisearmedarmoraromaarosearrayarrowarsonashenashesaskewaspenaspicassayassetasterastiratlasatollatomsatoneatticaudioauditaugeraughtaugurauntsauralautosavailavantavastaversavertawaitawakeawardawashawaysawfulawokeaxialaxiomaxlesaxonsazurebabelbabesbacksbaconbadgebadlybagelbaggybailsbaitsbaizebakedbakerbakesbaledbalerbalesbalksbalkyballsbalmybalsabanalbandsbandybanesbangsbanjobanksbannsbarbsbardsbaredbarerbaresbargebarksbarnsbaronbasalbaserbasesbasilbasinbasisbasksbassobastebatchbatedbathebathsbatonbawlsbayedbayoubeadsbeadybeaksbeamsbeansbeardbearsbeastbeatsbeausbeautbebopbeechbeefsbeefybeepsbeersbeetsbefitbegetbegotbeigebelchbeliebellebellsbellybeltsbenchbendsberetberryberthberylbesetbestsbetelbevelbiblebidedbidesbidetbiersbigotbikedbikesbilgebillsbillybindsbingebingobirchbirdsbisonbitesbittybladeblameblandblareblastblazebleakbleatbleedblendblessblestblimpblinkblipsblissblitzbloatblobsblocsblokeblondbloomblotsblownblowsbluedbluerbluesbluffbluntblurbblursblurtblushboarsboastboatsbobbybodedbodesbogeybogiebogusboilsbollsboltsbombsbondsbonedbonesbongobongsbonnybonusboobybooedbooksboomsboostboothbootsboozeboraxboredborerboresboricborneboronbosombossyboughboutsbowedbowelbowerbowiebowlsboxedboxerboxesbracebradsbragsbraidbrakebrandbransbrashbratsbravobrawlbrawnbraysbrazebreambreedbrevebrewsbriarbribebrickbridebrierbrimsbrinebrinkbrinybriskbroilbroncbroodbrookbroombrothbrowsbrungbruntbrutebucksbuddybudgebuffsbuggybuglebulbsbulgebulgybulksbulkybullsbullybumpsbumpybunchbunksbunnybuntsbuoysburlyburnsburntburroburrsbusedbusesbushybustsbutchbuttebuttsbuxombuyerbylawbytescablecacaocachecacticaddycadetcadrecafescagedcagescageycakedcakescallscalmscalvecalyxcamelcameocampscanalcanedcanescannycanoecanoncanstcantocapedcapercapescaratcardscaredcarescaretcargocarnecarobcarolcarpscartscarvecasedcasescaskscastecastscatercavedcavescawedceasecedarcededcedescellocellscentschafechaffchalkchampchantchaoschapscharmcharychasechasmchatscheapcheatcheekcheepcheerchefschesschewschewychickchidechilichillchimechimpchinachinechinkchinschipschirpchivechoirchokechompchopschorechowschuckchugschumpchumschunkchurnchutecidercigarciliacinchcircacitedcitescivetciviccivilclackclampclamsclangclankclansclapsclashclaspclaveclawsclayscleatclefscleftclerkclickcliffclimeclingclinkclipscloakclodsclogsclompclotscloutcloveclownclubscluckcluedcluesclumpclungclunkcoachcoalscoaticoatscobracoccicockscockycocoacocoscodedcodescodexcoedscohoscoilscoinscokescoldscoliccoloncoltscomascombocombscomercomescometcomfycomiccommaconchconescongaconiccooedcookscookycoolscoonscoopscootscopedcopescopracopsecoralcordscoredcorescorkscornscornycorpscostscottacouchcoughcoupecoupscovescovetcoveycowedcowercowlscoylycoypucrabscrackcraftcragscrampcramscranecrankcrashcrasscratecravecrawlcrazecrazycreakcredocreedcreekcreepcrepecreptcresscrestcrewscribscrickcriercriescrimecrimpcrispcroakcrockcroftcronecronycrookcrooncropscroupcrowncrowscrudecruelcruetcrumbcrusecrushcrustcryptcubbycubedcubescubiccubitcuffscullscultscumincupidcurbscurdscuredcurescuriocurlscurlycurrycursecurvycuspscutercutiecyclecyniccystsczarsdachadaddydairydaisydalesdallydamesdampsdandydareddaresdarksdarnsdartsdateddatesdatumdaubsdauntdawnsdazeddazesdeadsdealsdealtdeansdearsdearydebtsdebutdecaldecaydecksdecordecoydecrydeedsdeemsdeepsdeferdeigndeitydelaydellsdeltadelvedemondemurdenimdensedentsdepotderbydesksdeterdevildeweydialsdiarydiceddicesdictadidstdietsdigitdikeddikesdillsdillydimesdimlydineddinerdinesdingodingsdingydinkydintsdiodedirgedirksdirtsdirtydiscsdisksditchdittodittydivandiveddiverdivesdivotdizzydocksdodgedodosdoersdoffsdogiedogmadoilydoleddolesdollsdollydoltsdomeddomesdonordoomsdoorsdopeddopesdoseddosesdoteddotesdottydoughdousedovesdowdydoweldownsdownydowrydozeddozesdraftdragsdraindrakedramadrankdrapedrawldrawsdreaddreardregsdrierdriesdriftdrilldripsdrolldronedrooldroopdropsdrossdrowndrugsdrumsdrunkdryerdrylyducalducatducksduckyductsdudesduelsduetsdukesdullsdullydummydumpsdumpyduncedunesdunksdunnodupeddupesdupledusksduskydustsdustydwarfdwelldweltdyersdyingdykeseagereagleearlsearnseasedeaseleaseseatereavesebbedebonyechosedgededgeredgesedicteditseerieeggedegreteiderejectekingelbowelderelectelegyelfineliteelopeeludeelvesembedemberemceeemendemeryemirsemitsenactendowenemaennuienrolensueenvoyephodepicsepochepoxyequiperaseerecterodeerrederroreruptessayesteretherethicethosethyletudeevadeevensevictevilsevokeexaltexamsexcelexertexileexistexitsexpelextolexulteyingeyriefablefacedfacesfacetfactofactsfadedfadesfailsfaintfairefairsfairyfakedfakerfakesfakirfallsfamedfancyfangsfaradfarcefaredfaresfarmsfastsfatalfatedfatesfattyfaultfaunafavorfawnsfearsfeastfeatsfeedsfeelsfeignfeintfellafellsfelonfeltsfemurfernsfernyferryfetchfetedfetesfetidfetusfeudsfeverfewerfiberfibrefichufiefsfiendfieryfifesfilchfiledfilesfiletfillsfillyfilmsfilmyfilthfinchfindsfinedfinerfinesfiordfiredfiresfirmsfirthfishyfistsfitlyfivesfixesfjordflagsflailflairflakeflakyflameflankflapsflareflashflaskflatsflawsflaysfleasfleckfleesfleetflickfliedflierfliesflingflintflipsflirtflitsfloatflockfloesflogsfloodflopsfloraflossfloutflownflowsfluesflufffluidflukeflungflunkflushfluteflybyflyerfoalsfoamsfoamyfocalfocusfogeyfoggyfoilsfoldsfoliofolksfollyfontsfoodsfoolsforayfordsforgeforgoforksformsfortefortsforumfoulsfountfoursfowlsfoxedfoxesfoyerfrailfrancfrankfraudfraysfreakfreedfreerfreesfretsfriarfriedfriesfrillfriskfrizzfrockfrogsfrondfrostfrothfrownfrozefryerfudgefudgyfuelsfuguefumedfumesfundsfungifunkyfurlsfurorfurryfusedfusesfussyfuzzygablegagesgailygainsgaitsgalasgalesgallsgambagamesgammagamutgangsgapedgapesgarbsgardegasesgaspsgatesgaudygaugegauntgaussgauzegauzygavelgawksgawkygayergaylygazedgazergazesgearsgeckogeesegenesgeniegeniigenregentsgenusgeodegermsgetupghostghoulgibesgiddygiftsgigasgildsgillsgiltsgimmegirdsgirlsgirthgistsgivergivesgladeglandglareglazegleamgleanglensglideglintgloatglobsgloomglossgloveglowsgluedgluesglutsglyphgnashgnatsgnawsgnomegoadsgoalsgoatsgodlygoethgoldsgolfsgollygonergongsgonnagoodsgoodygooeygoofygoonsgoosegoredgoresgorgegottagougegourdgownsgrabsgracegradegradsgraftgramsgrandgrantgrapegraspgrategravegravygraysgrazegreedgreekgreetgreysgridsgriefgrillgrimegrimygrindgrinsgripegripsgristgritsgroangroingroomgropegrossgrovegrowlgrowsgrubsgruelgruffgrumpgruntguavaguestguildguileguiltguisegulchgulfsgullsgullygulpsgumbogummygunnyguppygushygustogustsgustygypsygyroshabithackshadsthaikuhailshairshairyhallohallshaloshaltshalvehandshandyhangshankyhardyharemharesharmsharpsharryharshhartshaspshastehastyhatchhatedhateshaulshaunthavenhaveshavochawkshazelhazesheadsheadyhealsheapshearsheathheatsheavehedgeheedsheelsheerdheftsheftyheirshelixhellohelmshelpshempshennahenryherbsherdsheresheronheroshertzhewedhexedhexeshideshighshikedhikerhikeshillshillyhiltshindshingehintshippohippyhiredhireshitchhiveshoagyhoardhoaryhobbyhoboshockshoganhoistholdsholedholeshollyhomerhomeshomeyhonedhoneyhonkshoochhoodshooeyhoofshookshookyhoopshootshopeshordehornshosedhoseshostshotelhotlyhoundhourshovelhoverhowdyhowlshubbahubbyhuffshuffyhugerhulashulkshullohullshumidhumorhumphhumpshumpyhumushunchhunkshuntshurlshurtshuskshuskyhutchhydrahyenahymenhymnsiciericilyicingiconsidealideasidiomidiotidledidleridlesidolsidylliglooimamsimbueimpelimplyinaneincurindexineptinertinferingotinkedinlayinletinnerinputinsetinterinureionicirateirkedironsironyislesisletitchyitemsiviesivoryjacksjadedjailsjambsjauntjawedjazzyjeansjeepsjeersjellojellsjellyjerksjerkyjestsjettyjeweljibedjibesjiffyjihadjingojoinsjointjoistjokedjokerjokesjollyjoltsjoulejoustjowlsjudosjuicejuicyjulepjumbojumpsjumpyjunksjunkyjuntajurorjuteskaleskaputkaratkayakkazookeelskeepskelpskernsketchkeyedkhakikhanskickskiddokillskilnskiltskindakindskingskinkskinkykioskkiteskittykiwisknackknavekneadkneedkneelkneesknellkneltknitsknobsknockknollknotsknowsknurlkoalakookskookykrautkrillkudoslabellacedlaceslaceylacksladenladlelagerlairslaitylakeslambslamedlamerlameslampslancelandslaneslankylapellapislapselarchlardslarkslarvalaserlassolastslatchlatexlathelathslatinlaudslavaslaverlawnslaxerlaxlyleachleadsleafsleafyleaksleakyleansleantleapsleaptleaseleashledgeleechleeksleersleftslegalleggylemmalemmelemonlemurlendsleperletupleveeleverlevisliarslibellibralicksliegeliensliferliftslikenlikeslilacliltslimbolimbslimeslimitlimpslinedlinenlinerlineslingolinkslintslionslispslistsliterlithelivenliverliveslividllamaloadsloafsloamsloamyloansloathlobbylobedlobeslockslocuslodeslodgeloessloftsloftylogiclogosloinslollslollylonerlongslookslookyloomsloonsloopslootslopedlopeslordsloreslorryloserloseslotuslouislouselousyloutsloverloveslowedlowlyloyallucidlucksluckylullslumenlumpslumpylunarlungelungslurchluredluresluridlurksluteslymphlynchlyreslyricmacromadammadlymagmamaidsmailsmaimsmainsmaizemakermakesmalesmallsmaltsmamasmammamammymanedmanesmangomangymaniamanicmanlymannamanormaplemarchmaresmarksmarrymarshmartsmasermasksmasonmastsmatedmatermatesmateymathsmatzomaulsmauvemaximmayormazesmealsmealymeansmeanymeatsmeatymebbemeccamedalmediamedicmeetsmelbameleemelonmeltsmemosmendsmenusmeowsmercymergemeritmerrymesasmessymetedmetermetesmetremetromewedmicasmiddymidstmikesmilermilesmilksmilkymillsmimicmincemindsminedminerminesminimminksmintsminusmiredmiresmirthmisermistsmistymitermitesmittsmixermixesmoansmoatsmochamocksmodalmodesmoiremoistmolarmoldsmoldymolesmoltsmommymonicmonksmoodsmoodymooedmoonsmoorsmoosemopedmopesmoralmoraymoresmornsmossymotelmotesmotetmothsmotifmottomouldmoultmoundmountmournmousemousymovermovesmoviemowedmowermucksmucusmuddymuggymulchmulesmullsmummymumpsmunchmuralmurksmurkymusedmusesmushymusksmuskymustsmustymutedmutesmuttsmyrrhmythsnadirnailsnaivenakednamesnannynapesnappynasalnastynatalnatchnattynavalnavelnearsnecksneedsneedyneighneonsnervenestsnewelnewernewlynewsynewtsnicernichenicksnieceniftyninesninnyninthnoblenoblynodalnodesnoisynomadnoncenooksnoonsnoosenormsnosednosesnoseynotchnotesnounsnovaenovasnovelnudesnudgenukesnursenuttynylonnymphoakenoasesoasisoathsobeseobeysoboesochreoctalodderoddlyodiumodorsogledogresoiledokapiokaysoldenoliveomegaomensomitsoniononsetoomphoozedoozesopalsopensopiumoptedopticorganorlonotterounceoustsoutdooutenoutgoovalsovaryovensovertovuleowingowneroxideozonepacedpacerpacespackspactspaddypadrepaeanpaganpagedpagespailspainspairspaledpalerpalespallspalmspalsypandapanelpanespangspanicpansypantspapalpapaspapawparchparedparesparkaparksparrypartspastapastepastypatchpathspatiopatsypattypausepavedpavespawedpawnspayeepayerpeachpeakspeakypealspearlpearspeatypecanpeckspedalpeekspeelspeepspeerspeltspenalpencepennypeonspeonypeppyperchperilperksperkypeskypesospestspetalpeterpetitpettypeweephasephloxphonephonyphotophylapicaspickspickypierspietypiggypigmypikespiledpilespillspilotpimpspinchpinedpinespineypinkspinkypintopintspiouspipedpiperpipespiquepithspithypivotpixelpixiepizzaplaidplaitplankplansplaysplazapleadpleaspleatpliedpliesplodsplopsplotsplowspluckplugsplumbplumeplumpplumsplushpoachpoemspoetspoisepokedpokerpokespokeypolarpoledpolespoliopolkapollspolyppondspoochpoolspopespoppyporchporedporesportsposedposerposespossepostspouchpourspoutspramsprankprayspreenpreysprickpridepriedpriesprigsprimaprintpriorprismprivyprizeprobeprodsproneprongproofpropsproseprowlprowsproxyprudeprunepsalmpuckspudgypuffspuffypullspulpspulpypulsepumaspumpspunchpunkspuntspupaepupaspupilpuppypureepurerpurgepurrspursepurtyputtsputtypygmypylonpyresquackquadsquaffquailquakequalmquartquasiquaysqueerquellqueryquestqueuequillquiltquintquipsquipuquirequirkquirtquitsquotaquotequothrabbirabidracedracerracesracksradarradiiradixradonraftsragedragesraidsrailsrainsrainyrajahrakedrakesrallyrampsrangyranksrapidrarerraspsraspyratedratesratiorattyravedravelravenravesrayonrazedrazesrazorreactreadsrealmrealsreamsreapsrearmrearsrebelrebusrebutrecurreedsreedyreefsreelsrefitregalreignreinsrelaxrelayrelicremitrendsrenewrentsrepayrepelreplyresetresinrestsretchrevelrevuerhinoriderridesridgerifleriftsrigidrigorriledrilesrillsrindsringsrinksrinseriotsripenriperrisenriserrisesrisksriskyritesrivalrivenrivetroachroadsroamsroarsroastrobedrobesrobinrobotrocksrockyrodeorogerroguerolesrollsromanrompsrondoroofsrooksroomsroomyroostrootsropedroperropesrosesrosinrotorrougerouseroutsrovedroverrovesrowdyrowedruddyruderruffsrugbyruinsruledrulesrumenrummyrumorrumpsrunesrungsrunicrunnyruntsruntyrupeeruralrusesrusksrustsrustysabersablesabresackssadlysafersafessagassagessailssaintsaithsakessaladsalessallysalonsaltssaltysalvesalvosambasandssandysanersappysarissassysatedsatinsatyrsaucesaucysautesaversavessavorsavvysawedscabsscadsscaldscalpscalyscampscansscantscarescarfscarpscarsscaryscentschwascionscoffscoldscoopscootscopescornscourscoutscowlscowsscramscrapscrimscripscrubscubascuffscullscumssealsseamsseamysearsseatssectssedansedersedgeseedsseedyseeksseemsseepsseerssegueseineseizesellssendssepiaseptaserfssergeserifserumservosetupseversewedsewersexesshackshadyshaftshakeshakyshaleshallshaltshameshamsshanksharkshaveshawlsheafshearshedssheensheersheikshelfshiedshiesshiftshillshimsshineshinsshinyshipsshirkshishshoalshockshoesshoneshoosshopsshornshotsshoutshoveshowsshowyshredshrewshrubshrugshuckshunsshuntshushshutsshyershylysidedsidessidlesiegesievesiftssighssigmasignssilkssilkysillssillysilossiltssinessinewsingesingssinkssinussiredsireesirensiressirupsisalsissysitarsitedsitessixessixthsixtysizedsizesskateskeetskeinskewsskidsskiedskierskiesskiffskimpskimsskinsskipsskirtskitsskoalskulkskullskunkslabsslackslagsslainslakeslamsslangslantslapsslashslateslatsslaveslayssledssleeksleetslewssliceslickslideslimeslimyslingslinkslipsslitsslobssloopslopeslopssloshslothslotsslowssluesslugsslumpslumsslungslunkslurpslursslushslyerslylysmacksmartsmashsmearsmeltsmirksmitesmithsmocksmokysmotesnacksnagssnailsnakysnapssnaresnarlsneaksneersniffsnipesnipssnobssnoopsnootsnoresnortsnoutsnowssnowysnubssnuffsoakssoapssoapysoarssobersockssodassofassoggysoilssolarsoledsolessolossonarsongssonicsonnysootssootysorersoressortasortssoulssoupssoupysourssowedsowerspadespakespankspanssparesparksparsspasmspatespatsspawnspearspeckspecsspeltspermspewsspicespicyspiedspielspiesspikespikyspillspiltspinespinsspinyspirespitssplatsplitspoilspoofspookspoolspoonsporesportspotsspoutsprayspreesprigspritspudsspunkspurnspursspurtsquabsquadsquatsquibsquidstabsstackstagsstaidstainstairstakestalestalkstallstampstankstarestarkstarsstavestayssteadsteakstealsteedsteepsteersteinstemsstepssternstewsstiesstiffstilestiltstingstinkstintstirsstoicstokestolestompstonystoolstoopstopsstorkstoutstovestowsstrapstraystrepstrewstrumstrutstubsstuckstudsstuffstumpstungstunkstunsstuntsuavesuckssuedesuetssuingsuitesuitssulfasulkssulkysumacsumpssunnysunupsupersurersurfssurgesurlysushiswabsswainswamiswampswankswansswapsswardswarmswashswathswatsswaysswearsweatsweepswellsweptswiftswillswimsswineswingswipeswirlswishswissswoonswoopswordsworeswornswungsynodsyruptabbytabootabortacittackstackytacostaffytailstainttakertakestalcstalestalkstallytalontamedtamertamestangotangytankstansytapedtapertapestapirtardytarestarrytartstaskstastytaunttawnytaxedtaxestaxistealsteamstearsteasetechsteddyteemsteensteenytellstellytempitempotempstempttendstenettenontenortensetenthtentstepeetepidtermsternsterraterseteststestytextsthawstheftthetathiefthighthinethinsthongthornthrobthudsthugsthumbthumpthymetiaratibiatickstidaltidestierstigertildetiledtilestillstiltstimedtimertimestimidtinestingetinnytintstippytipsytirestitantitertithetoadstoasttogastoilstokentollstombstomestommytonaltonedtonertonestongstonictoolstoothtootstopaztorchtorsototedtotemtotestoughtourstovestowedtoweltowertownstoxictoxintoyedtracetracttraittramptramstranstrapstrashtrawltraystreadtreattreedtreestrekstrendtresstriadtricetriestriketrilltrimstriostripetripstritetrolltrooptrothtrotstrouttrucetruertrulytrumptrunktrusstrusttsarstubastubbytubertubestuckstuftstuftytuliptulletummytumortunastunedtunertunestunicturboturfsturnstuskstutortwaintwangtweedtwigstwilltwinetwinstwirltwisttyingtypedtypesudderulcerultraumberumbraumpedunaryunbaruncutundidundueunfedunfitunifyuniteunitsunityunpinunsetuntieunwedunzipuppedupseturbanurgedurgesurineusageusersusherusurputtervaguevalesvaletvalidvalorvalvevanesvaporvasesvaultvauntvealsveersveilsveinsveldtvendsvenomventsvenueverbsvergeversaverseversovervevestsvetchvexedvexesvialsvicarvicesvideoviewsvigilvigorvilervillavinesvinylviolaviolsviperviralvireovirusvisasvisesvisorvistavitaevitalvitrovividvixenvizorvocalvodkavoguevoidsvoilavoilevoltsvomitvotedvotervotesvouchvowedvyingwackywadedwadeswadiswaferwaftswagedwagerwageswaifswailswaistwaitswaivewakedwakenwakeswaleswalkswallswaltzwandswanedwaneswanlywannawantawantswardswareswarmswarnswarpswartswartywaspswattswavedwaverwaveswaxedwaxenwaxerwaxesweanswearswearyweavewedgeweedsweedyweeksweepsweighweirdwelchweldswellsweltswenchwendswhackwharfwhelkwhelpwhetswheyswhiffwhimswhinewhinywhipswhirlwhirrwhirswhiskwhistwhitswhizzwhompwhoopwickswidenwiderwidowwieldwildswileswillswiltswincewinchwindswindywineswingswinkswinoswipedwiperwipeswiredwireswiserwispswispywitchwittywiveswokenwombswoodswoodywooedwoofswoolswoolywooshwoozywordswordyworkswormswormyworstwoundwovenwowedwrackwrapswrathwreakwreckwrenswrestwringwristwritswrungwrylyxenonxylemyachtyanksyardsyarnsyawnsyearnyearsyeastyellayellsyelpsyesesyieldyipesyodelyogasyokedyokelyokesyolksyoursyowlsyuccayulesyummyzealszebrazebuszeroszestszonalzonedzoneszoomszowie";
+
+/* ============================================================
+   TRIVIA BANK — 150 original questions [question, options (correct first), correctIndex, fact]
+   Options are deterministically shuffled at runtime, so the correct
+   answer position varies per day even though it is stored first.
+   ============================================================ */
+const TRIVIA=[
+// ---------- SCIENCE ----------
+["Which planet is the hottest in our solar system?",["Venus","Mercury","Mars","Jupiter"],0,"Venus’s thick carbon-dioxide atmosphere traps heat, keeping its surface around 465°C — hot enough to melt lead."],
+["What gas do plants primarily absorb for photosynthesis?",["Carbon dioxide","Oxygen","Nitrogen","Hydrogen"],0,"A single large tree can absorb roughly 22 kilograms of carbon dioxide per year."],
+["What is the chemical symbol for gold?",["Au","Gd","Go","Ag"],0,"Au comes from “aurum”, the Latin word for gold — linked to Aurora, goddess of dawn."],
+["How many bones does an adult human body typically have?",["206","186","226","256"],0,"Babies are born with about 300 bones; many fuse together as they grow."],
+["What force keeps planets in orbit around the Sun?",["Gravity","Magnetism","Friction","Inertia"],0,"Isaac Newton published his law of universal gravitation in 1687."],
+["What is the speed of light in a vacuum, approximately?",["300,000 km per second","150,000 km per second","1 million km per second","30,000 km per second"],0,"Sunlight takes about 8 minutes and 20 seconds to reach Earth."],
+["Which part of the cell contains genetic material?",["Nucleus","Ribosome","Cell wall","Mitochondrion"],0,"If stretched out, the DNA in one human cell would be about 2 meters long."],
+["What does H2O stand for?",["Water","Hydrogen peroxide","Table salt","Ozone"],0,"About 60% of the adult human body is water."],
+["Which metal is liquid at room temperature?",["Mercury","Lead","Aluminium","Tin"],0,"Mercury is so dense that iron, stone and even cannonballs can float on it."],
+["What type of energy does a stretched rubber band store?",["Elastic potential energy","Kinetic energy","Thermal energy","Sound energy"],0,"When released, that stored energy converts almost instantly into motion."],
+["Which planet has the most moons confirmed so far?",["Saturn","Jupiter","Uranus","Neptune"],0,"Saturn overtook Jupiter after dozens of new small moons were confirmed, passing 140 in total."],
+["What is the smallest unit of an element that keeps its properties?",["An atom","A molecule","A proton","A cell"],0,"Atoms are mostly empty space — if an atom were a stadium, its nucleus would be a marble at the center."],
+["What vitamin does human skin produce when exposed to sunlight?",["Vitamin D","Vitamin C","Vitamin A","Vitamin B12"],0,"Vitamin D helps the body absorb calcium, keeping bones strong."],
+["Sound travels fastest through which medium?",["Solids","Gases","A vacuum","Liquids"],0,"Sound cannot travel through a vacuum at all — space is silent."],
+["What is the center of an atom called?",["The nucleus","The electron","The shell","The core ring"],0,"The nucleus holds over 99.9% of an atom’s mass."],
+["Which blood cells help your body fight infection?",["White blood cells","Red blood cells","Platelets","Plasma cells"],0,"A single drop of blood contains thousands of white blood cells on patrol."],
+["What natural phenomenon is measured by the Richter and moment magnitude scales?",["Earthquakes","Hurricanes","Tornadoes","Floods"],0,"Each whole number increase means roughly 32 times more energy released."],
+["Which gas makes up about 78% of Earth's atmosphere?",["Nitrogen","Oxygen","Carbon dioxide","Argon"],0,"Oxygen is only about 21% of the air we breathe."],
+["What simple machine is a see-saw an example of?",["A lever","A pulley","A wedge","A screw"],0,"Archimedes said of levers: “Give me a place to stand and I will move the Earth.”"],
+["How long does Earth take to complete one orbit of the Sun?",["About 365.25 days","Exactly 360 days","About 350 days","About 400 days"],0,"That extra quarter-day is why we add a leap day nearly every four years."],
+["What is the boiling point of water at sea level?",["100°C (212°F)","90°C (194°F)","110°C (230°F)","120°C (248°F)"],0,"On Mount Everest, water boils at only about 70°C because of low air pressure."],
+["Which organ pumps blood around the human body?",["The heart","The liver","The lungs","The kidneys"],0,"Your heart beats about 100,000 times every single day."],
+["What is the name for animals that maintain a constant body temperature?",["Warm-blooded","Cold-blooded","Amphibious","Nocturnal"],0,"The scientific term is “endothermic” — birds and mammals are the classic examples."],
+["Which scientist proposed the theory of general relativity?",["Albert Einstein","Isaac Newton","Galileo Galilei","Niels Bohr"],0,"Einstein won his Nobel Prize not for relativity, but for the photoelectric effect."],
+["What is the hardest natural substance on Earth?",["Diamond","Quartz","Steel","Granite"],0,"Diamonds are just carbon atoms arranged in a very rigid crystal pattern."],
+["What do we call a material that does not conduct electricity?",["An insulator","A conductor","A semiconductor","A resistor magnet"],0,"Rubber, glass and dry wood are all excellent insulators."],
+["Which planet is known as the Red Planet?",["Mars","Venus","Mercury","Saturn"],0,"Mars looks red because its surface is rich in iron oxide — essentially rust."],
+["What is the main gas found in the Sun?",["Hydrogen","Oxygen","Helium","Carbon"],0,"The Sun fuses about 600 million tonnes of hydrogen into helium every second."],
+["How many teeth does a typical adult human have?",["32","28","36","30"],0,"The four rearmost molars are the famous “wisdom teeth”."],
+["What instrument measures atmospheric pressure?",["A barometer","A thermometer","An anemometer","A hygrometer"],0,"Falling pressure on a barometer often signals that stormy weather is coming."],
+// ---------- GEOGRAPHY ----------
+["What is the longest river in the world by most measurements?",["The Nile","The Amazon","The Yangtze","The Mississippi"],0,"The Nile flows about 6,650 km through eleven countries in Africa."],
+["Which country has the largest population in the world?",["India","China","The United States","Indonesia"],0,"India passed China in 2023, with over 1.4 billion people."],
+["What is the capital city of Australia?",["Canberra","Sydney","Melbourne","Perth"],0,"Canberra was purpose-built as a compromise after Sydney and Melbourne both wanted the title."],
+["Which is the largest ocean on Earth?",["The Pacific","The Atlantic","The Indian","The Arctic"],0,"The Pacific covers more area than all of Earth’s land combined."],
+["Which desert is the largest hot desert in the world?",["The Sahara","The Gobi","The Mojave","The Kalahari"],0,"The Sahara is almost as large as the entire United States."],
+["Mount Everest sits on the border of Nepal and which other region?",["Tibet (China)","India","Bhutan","Pakistan"],0,"Everest grows about 4 millimeters taller every year as tectonic plates collide."],
+["Which country is both in Europe and Asia?",["Turkey","Spain","Egypt","Sweden"],0,"Istanbul is the only major city that spans two continents."],
+["What is the smallest country in the world?",["Vatican City","Monaco","San Marino","Liechtenstein"],0,"Vatican City covers just 0.49 square kilometers — smaller than many city parks."],
+["Which U.S. state is the largest by area?",["Alaska","Texas","California","Montana"],0,"Alaska is bigger than Texas, California and Montana combined."],
+["The Great Barrier Reef lies off the coast of which country?",["Australia","Brazil","The Philippines","Mexico"],0,"It is the largest living structure on Earth and is visible from space."],
+["What is the capital of Canada?",["Ottawa","Toronto","Vancouver","Montreal"],0,"Ottawa’s Rideau Canal becomes the world’s largest skating rink each winter."],
+["Which river flows through London?",["The Thames","The Seine","The Mersey","The Severn"],0,"More than 200 bridges cross the Thames along its 346 km course."],
+["Which continent has the most countries?",["Africa","Europe","Asia","South America"],0,"Africa has 54 recognized countries — more than any other continent."],
+["What imaginary line divides Earth into Northern and Southern Hemispheres?",["The Equator","The Prime Meridian","The Tropic of Cancer","The International Date Line"],0,"Countries on the Equator have almost exactly 12 hours of daylight all year round."],
+["Which country is famous for its fjords?",["Norway","Portugal","Poland","Ireland"],0,"Norway’s Sognefjord plunges more than 1,300 meters below sea level."],
+["What is the largest island in the world?",["Greenland","Madagascar","Borneo","Great Britain"],0,"Despite its name, about 80% of Greenland is covered by ice."],
+["Which two countries share the longest international border?",["Canada and the USA","Russia and China","Argentina and Chile","India and China"],0,"The Canada–US border stretches 8,891 km, including the Alaska section."],
+["In which country would you find Machu Picchu?",["Peru","Mexico","Chile","Bolivia"],0,"The Inca built Machu Picchu around 1450 without using mortar — the stones fit perfectly."],
+["Which European capital is built on 14 islands?",["Stockholm","Amsterdam","Copenhagen","Helsinki"],0,"Stockholm’s metro is nicknamed the world’s longest art gallery for its decorated stations."],
+["What is the driest non-polar desert on Earth?",["The Atacama","The Sahara","The Gobi","The Outback"],0,"Some Atacama weather stations have never recorded rain at all."],
+["Which African country was never colonized by a European power?",["Ethiopia","Nigeria","Kenya","Ghana"],0,"Ethiopia defeated an invading Italian army at the Battle of Adwa in 1896."],
+["The Amazon rainforest is mostly located in which country?",["Brazil","Colombia","Venezuela","Ecuador"],0,"The Amazon produces roughly 20% of the oxygen generated on land."],
+["Which city is known as the Big Apple?",["New York City","Los Angeles","Chicago","Boston"],0,"The nickname was popularized by a 1920s horse-racing columnist."],
+["What is the only continent with land in all four hemispheres?",["Africa","Asia","South America","Oceania"],0,"The Equator and Prime Meridian both cross Africa, near the Gulf of Guinea."],
+["Which country has the most natural lakes?",["Canada","Finland","Russia","Sweden"],0,"Canada holds over 60% of the world’s lakes — nearly 900,000 of them."],
+["What mountain range separates Europe from Asia?",["The Urals","The Alps","The Carpathians","The Caucasus only"],0,"The Ural Mountains run about 2,500 km from the Arctic Ocean to Kazakhstan."],
+["Which U.S. city is famous for its Golden Gate Bridge?",["San Francisco","Seattle","San Diego","Portland"],0,"The bridge’s color is officially called “International Orange”."],
+["What is the capital of New Zealand?",["Wellington","Auckland","Christchurch","Queenstown"],0,"Wellington is the world’s southernmost capital of a sovereign state."],
+["Which sea is the saltiest natural body of water?",["The Dead Sea","The Red Sea","The Mediterranean","The Baltic Sea"],0,"The Dead Sea is nearly ten times saltier than the ocean — swimmers float effortlessly."],
+["Which country gifted the Statue of Liberty to the United States?",["France","The United Kingdom","Spain","Italy"],0,"The statue arrived in 1885 packed in 214 crates, split into 350 pieces."],
+// ---------- HISTORY ----------
+["Who was the first President of the United States?",["George Washington","Thomas Jefferson","John Adams","Abraham Lincoln"],0,"Washington is the only U.S. president ever elected unanimously."],
+["In which year did World War II end?",["1945","1944","1946","1943"],0,"The war ended in Europe in May 1945 and in the Pacific that September."],
+["Which ancient civilization built the pyramids of Giza?",["The Egyptians","The Romans","The Greeks","The Aztecs"],0,"The Great Pyramid was the tallest human-made structure for over 3,800 years."],
+["Who wrote the Declaration of Independence's first draft?",["Thomas Jefferson","Benjamin Franklin","George Washington","James Madison"],0,"Jefferson wrote the draft in about two weeks in a rented room in Philadelphia."],
+["The Titanic sank in which year?",["1912","1905","1920","1915"],0,"The wreck wasn’t found until 1985, resting 3,800 meters below the Atlantic."],
+["Which empire was ruled by Julius Caesar's successors?",["The Roman Empire","The Ottoman Empire","The Persian Empire","The Mongol Empire"],0,"At its peak, Rome ruled about one in four people alive on Earth."],
+["Who was the first person to walk on the Moon?",["Neil Armstrong","Buzz Aldrin","Yuri Gagarin","John Glenn"],0,"Armstrong’s boot prints are likely still there — the Moon has no wind to erase them."],
+["The Berlin Wall fell in which year?",["1989","1991","1985","1979"],0,"Pieces of the wall now stand in museums and plazas on every continent."],
+["Which queen ruled the United Kingdom for over 70 years?",["Elizabeth II","Victoria","Elizabeth I","Mary II"],0,"Elizabeth II’s 1952–2022 reign is the longest of any British monarch."],
+["The Renaissance began in which country?",["Italy","France","England","Greece"],0,"Florence’s wealthy Medici family bankrolled artists like Michelangelo and Botticelli."],
+["Who invented the printing press with movable type in Europe?",["Johannes Gutenberg","Leonardo da Vinci","Isaac Newton","Galileo Galilei"],0,"Gutenberg’s press helped literacy spread faster than at any earlier point in history."],
+["Which ship carried the Pilgrims to America in 1620?",["The Mayflower","The Santa Maria","The Endeavour","The Beagle"],0,"The 102 passengers endured a stormy 66-day Atlantic crossing."],
+["Cleopatra was the ruler of which ancient kingdom?",["Egypt","Greece","Persia","Babylon"],0,"Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid."],
+["In which city was the Magna Carta sealed nearby, in 1215?",["London (at Runnymede)","Paris","Rome","Dublin"],0,"Magna Carta first put in writing that the king was not above the law."],
+["Who was the famous nurse of the Crimean War known as 'The Lady with the Lamp'?",["Florence Nightingale","Marie Curie","Clara Barton","Edith Cavell"],0,"Her hospital reforms helped found modern professional nursing."],
+["Which country was the first to give women the right to vote in 1893?",["New Zealand","The United States","The United Kingdom","France"],0,"Suffragist Kate Sheppard, who led the campaign, now appears on New Zealand’s $10 note."],
+["The Great Fire of London happened in which year?",["1666","1606","1766","1566"],0,"Amazingly, only six deaths were officially recorded despite 13,000 homes burning."],
+["Who painted the ceiling of the Sistine Chapel?",["Michelangelo","Leonardo da Vinci","Raphael","Donatello"],0,"It took him four years, mostly painting while standing with his head tilted back."],
+["Which civilization created the first known written laws, the Code of Hammurabi?",["The Babylonians","The Egyptians","The Romans","The Vikings"],0,"The code was carved into a two-meter stone pillar around 1754 BC."],
+["What was the name of the first artificial satellite launched into space?",["Sputnik 1","Explorer 1","Apollo 1","Voyager 1"],0,"Launched in 1957, Sputnik was only 58 cm wide — about the size of a beach ball."],
+["Who was the British Prime Minister for most of World War II?",["Winston Churchill","Neville Chamberlain","Clement Attlee","Anthony Eden"],0,"Churchill also won the Nobel Prize in Literature in 1953 for his writing."],
+["The ancient Olympic Games were held in honor of which god?",["Zeus","Apollo","Poseidon","Ares"],0,"Winners received a wreath of olive leaves rather than medals."],
+["Which explorer completed the first circumnavigation expedition of the globe?",["Ferdinand Magellan's expedition","Christopher Columbus","James Cook","Vasco da Gama"],0,"Magellan himself died en route; only 18 of about 270 crew finished the voyage in 1522."],
+["The Statue of Liberty was dedicated in which decade?",["1880s","1900s","1860s","1920s"],0,"Her full name is “Liberty Enlightening the World”."],
+["Which U.S. president delivered the Gettysburg Address?",["Abraham Lincoln","Ulysses S. Grant","Andrew Johnson","James Buchanan"],0,"The entire speech was just 272 words and took about two minutes."],
+["What wonder of the ancient world stood in Alexandria, Egypt?",["A great lighthouse","Hanging gardens","A giant bronze statue","A marble temple"],0,"The Lighthouse of Alexandria guided sailors for over 1,500 years before earthquakes toppled it."],
+["The Vikings originally came from which region?",["Scandinavia","The British Isles","Germany","Russia"],0,"Viking explorer Leif Erikson reached North America about 500 years before Columbus."],
+["Which war ended with the Treaty of Versailles in 1919?",["World War I","World War II","The Crimean War","The Franco-Prussian War"],0,"The treaty was signed in the palace’s famous Hall of Mirrors."],
+["Who developed the first successful polio vaccine?",["Jonas Salk","Alexander Fleming","Louis Pasteur","Edward Jenner"],0,"Asked who owned the patent, Salk replied: “Could you patent the sun?”"],
+["Which ancient city was buried by the eruption of Mount Vesuvius in AD 79?",["Pompeii","Athens","Carthage","Troy"],0,"Preserved loaves of bread, still in their ovens, have been excavated from Pompeii."],
+// ---------- POP CULTURE ----------
+["Which film franchise features a wizard named Harry attending Hogwarts?",["Harry Potter","The Lord of the Rings","Percy Jackson","Narnia"],0,"The first book was rejected by 12 publishers before Bloomsbury said yes."],
+["Which band recorded the album 'Abbey Road'?",["The Beatles","The Rolling Stones","Queen","Pink Floyd"],0,"The famous cover photo took just ten minutes to shoot on a London crosswalk."],
+["In the movie world, what does the acronym 'MCU' stand for?",["Marvel Cinematic Universe","Movie Central Universe","Marvel Character Union","Media Cinema United"],0,"The MCU began in 2008 with Robert Downey Jr.'s Iron Man."],
+["Which singer is known as the 'Queen of Pop'?",["Madonna","Beyoncé","Adele","Lady Gaga"],0,"Madonna has sold more than 300 million records worldwide."],
+["What is the best-selling video game of all time?",["Minecraft","Tetris","Grand Theft Auto V","Fortnite"],0,"Minecraft has sold over 300 million copies since 2011."],
+["Which streaming series features the Upside Down and a girl named Eleven?",["Stranger Things","Dark","The OA","Wednesday"],0,"The Demogorgon is named after a monster from Dungeons & Dragons."],
+["Who directed 'Jaws', 'E.T.' and 'Jurassic Park'?",["Steven Spielberg","George Lucas","James Cameron","Ridley Scott"],0,"The mechanical shark in Jaws kept breaking, which forced Spielberg to imply, not show — and it worked."],
+["Which superhero is known as the 'Caped Crusader'?",["Batman","Superman","Spider-Man","The Flash"],0,"Batman first appeared in Detective Comics #27 in 1939."],
+["What board game involves buying streets like Boardwalk or Mayfair?",["Monopoly","Scrabble","Risk","Clue"],0,"The longest recorded Monopoly game lasted 70 straight days."],
+["Which animated film features a snowman named Olaf?",["Frozen","Moana","Tangled","Coco"],0,"“Let It Go” has been translated into more than 40 languages."],
+["Who wrote the fantasy series 'A Song of Ice and Fire', adapted as Game of Thrones?",["George R. R. Martin","J. R. R. Tolkien","Brandon Sanderson","Patrick Rothfuss"],0,"Martin still writes his drafts on a 1980s word processor called WordStar."],
+["Which pop star released the album era-tour film 'The Eras Tour'?",["Taylor Swift","Ariana Grande","Billie Eilish","Dua Lipa"],0,"The Eras Tour became the first concert tour ever to gross over $1 billion."],
+["In 'Star Wars', what is the name of Han Solo's ship?",["The Millennium Falcon","The X-Wing","The Enterprise","The Serenity"],0,"The Falcon’s shape was reportedly inspired by a hamburger with an olive beside it."],
+["Which TV show is set in the fictional Dunder Mifflin paper company?",["The Office","Parks and Recreation","Brooklyn Nine-Nine","30 Rock"],0,"The U.S. version ran for nine seasons and 201 episodes."],
+["What is the name of Mario's brother in Nintendo games?",["Luigi","Wario","Toad","Yoshi"],0,"Luigi was originally just a green palette-swap of Mario in 1983’s Mario Bros."],
+["Which artist painted himself with a bandaged ear?",["Vincent van Gogh","Pablo Picasso","Claude Monet","Salvador Dalí"],0,"Van Gogh sold only one confirmed painting during his lifetime."],
+["Which movie features the quote 'Life is like a box of chocolates'?",["Forrest Gump","The Shawshank Redemption","Titanic","Rain Man"],0,"Tom Hanks’s bench scenes were filmed in Savannah, Georgia — the bench is now in a museum."],
+["What instrument does a classic rock 'bassist' play?",["Bass guitar","Drums","Keyboard","Saxophone"],0,"A standard bass guitar has four strings, tuned an octave below a guitar’s lowest four."],
+["Which fictional detective lives at 221B Baker Street?",["Sherlock Holmes","Hercule Poirot","Philip Marlowe","Nancy Drew"],0,"The address now hosts a Sherlock Holmes museum in London."],
+["Which country hosts the Eurovision Song Contest's biggest fan base and started it in 1956?",["Switzerland hosted the first one","Sweden","The UK","France"],0,"ABBA won Eurovision 1974 with “Waterloo”, launching their global career."],
+["In which sport did Serena Williams win 23 Grand Slam singles titles?",["Tennis","Golf","Badminton","Squash"],0,"She won the 2017 Australian Open while pregnant."],
+["Which movie trilogy features hobbits, elves and a ring of power?",["The Lord of the Rings","The Hobbit","Eragon","The Witcher"],0,"The trilogy’s final film won all 11 Oscars it was nominated for."],
+["Which social platform is famous for 280-character posts?",["X (formerly Twitter)","Instagram","TikTok","LinkedIn"],0,"The original limit was 140 characters, based on SMS message length."],
+["Who composed the music for 'The Lion King' songs with Tim Rice?",["Elton John","Hans Zimmer alone","Paul McCartney","Billy Joel"],0,"“Can You Feel the Love Tonight” won the 1995 Oscar for Best Original Song."],
+["What is the highest-grossing film of all time (unadjusted)?",["Avatar","Avengers: Endgame","Titanic","Star Wars: The Force Awakens"],0,"Avatar reclaimed the top spot after a 2021 re-release in China."],
+["Which video game character is a yellow circle that eats dots in a maze?",["Pac-Man","Kirby","Sonic","Dig Dug"],0,"Pac-Man’s design was inspired by a pizza with one slice missing."],
+["Which author created the detective Hercule Poirot?",["Agatha Christie","Arthur Conan Doyle","Raymond Chandler","Dorothy L. Sayers"],0,"Christie is the best-selling novelist in history, with over two billion copies sold."],
+["What dance style is associated with Michael Jackson's signature move?",["The moonwalk","The twist","Breakdancing","The charleston"],0,"Jackson first performed the moonwalk on TV in 1983 during “Billie Jean”."],
+["Which fast-food chain is famous for its golden arches?",["McDonald's","Burger King","KFC","Wendy's"],0,"The golden arches are said to be recognized by more people than the Christian cross."],
+["Which superhero comes from the planet Krypton?",["Superman","Thor","Green Lantern","Captain Marvel"],0,"Superman’s first comic from 1938 sold at auction for over $3 million."],
+// ---------- NATURE ----------
+["What is the largest animal ever known to have lived?",["The blue whale","The African elephant","The woolly mammoth","Argentinosaurus"],0,"A blue whale’s heart alone weighs about as much as a small car."],
+["How many legs does a spider have?",["Eight","Six","Ten","Twelve"],0,"Spiders aren’t insects — insects have six legs and three body parts."],
+["What do bees collect from flowers to make honey?",["Nectar","Pollen only","Dew","Sap"],0,"A single bee produces only about 1/12 of a teaspoon of honey in its lifetime."],
+["Which big cat is the fastest land animal?",["The cheetah","The lion","The leopard","The jaguar"],0,"Cheetahs can accelerate from 0 to 100 km/h faster than most sports cars."],
+["What is a group of lions called?",["A pride","A pack","A herd","A colony"],0,"Lionesses do most of the hunting, usually working together at dusk."],
+["Which bird is famous for being unable to fly but swimming expertly?",["The penguin","The ostrich","The kiwi","The emu"],0,"Emperor penguins can dive deeper than 500 meters while hunting."],
+["What do caterpillars transform into?",["Butterflies or moths","Beetles","Dragonflies","Grasshoppers"],0,"Inside the chrysalis, a caterpillar almost entirely liquefies before rebuilding."],
+["Which tree is the tallest species on Earth?",["The coast redwood","The oak","The baobab","The giant sequoia"],0,"The tallest known redwood, “Hyperion”, stands over 115 meters tall."],
+["What is the only mammal capable of true sustained flight?",["The bat","The flying squirrel","The sugar glider","The colugo"],0,"Some bats can eat over 1,000 mosquito-sized insects in a single hour."],
+["Which ocean creature has three hearts and blue blood?",["The octopus","The dolphin","The shark","The jellyfish"],0,"Octopuses can also change both the color and texture of their skin in a blink."],
+["What do pandas almost exclusively eat?",["Bamboo","Fish","Eucalyptus","Berries"],0,"A giant panda can spend 12 hours a day eating up to 38 kg of bamboo."],
+["Which animal is known for its black and white stripes, unique to each individual?",["The zebra","The skunk","The badger","The orca"],0,"Zebra stripes may confuse biting flies, which struggle to land on them."],
+["What is the process by which water vapor becomes liquid called?",["Condensation","Evaporation","Precipitation","Sublimation"],0,"Morning dew is condensation forming on cool surfaces overnight."],
+["Which reptile can change its skin color to communicate and regulate heat?",["The chameleon","The gecko","The iguana","The crocodile"],0,"Chameleon color change is mostly about mood and temperature, not camouflage."],
+["How do dolphins primarily find food in dark water?",["Echolocation","Smell","Sharp night vision","Electric fields"],0,"Dolphins ‘see’ with sound so precisely they can detect a golf ball 70 meters away."],
+["What is the largest living bird in the world?",["The ostrich","The emperor penguin","The condor","The albatross"],0,"An ostrich can sprint at 70 km/h and its eye is bigger than its brain."],
+["Which season do deciduous trees drop their leaves in temperate zones?",["Autumn","Spring","Summer","Winter"],0,"Trees shed leaves to save water and energy before winter’s freeze."],
+["What natural structure do beavers build across streams?",["Dams","Bridges","Tunnels","Towers"],0,"The largest known beaver dam, in Canada, is about 850 meters long — visible from satellites."],
+["Which insect is the primary pollinator of most food crops?",["The bee","The ant","The housefly","The wasp"],0,"Roughly one in three bites of food depends on pollinators like bees."],
+["What is the fastest bird in a dive?",["The peregrine falcon","The golden eagle","The swift","The hawk owl"],0,"Peregrines exceed 320 km/h in a hunting stoop — the fastest animal on Earth."],
+["Which large mammal sleeps standing up most of the time?",["The horse","The gorilla","The hippo","The polar bear"],0,"Horses lock their leg joints so they can doze upright without falling."],
+["What gas do humans exhale that plants then use?",["Carbon dioxide","Oxygen","Nitrogen","Methane"],0,"This exchange makes forests and oceans the planet’s great recyclers of air."],
+["Which animal has the longest neck of any living creature?",["The giraffe","The ostrich","The swan","The llama"],0,"Despite the length, a giraffe’s neck has just seven vertebrae — same as humans."],
+["What is a baby kangaroo called?",["A joey","A cub","A calf","A kit"],0,"Newborn joeys are only about the size of a jellybean."],
+["Which natural event is measured in categories 1 through 5 in the Atlantic?",["Hurricanes","Earthquakes","Tsunamis","Blizzards"],0,"A category 5 hurricane has sustained winds above 252 km/h."],
+["What is the brightly colored ring of coral surrounding a lagoon called?",["An atoll","A reef shelf","A sandbar","An archipelago"],0,"Atolls form on the rims of sunken volcanic islands over millions of years."],
+["Which fruit grows on vines and is used to make raisins when dried?",["Grapes","Plums","Figs","Dates"],0,"It takes about four pounds of fresh grapes to make one pound of raisins."],
+["What is the term for animals active mainly at night?",["Nocturnal","Diurnal","Crepuscular","Migratory"],0,"Owls’ eyes are so large they cannot move — owls turn their heads up to 270° instead."],
+["Which land animal has the most powerful bite force measured?",["The saltwater crocodile","The lion","The hyena","The grizzly bear"],0,"A saltwater crocodile’s bite is about 25 times stronger than a human’s."],
+["What color is a polar bear's skin beneath its fur?",["Black","Pink","White","Grey"],0,"The hollow, transparent fur scatters light, making polar bears appear white."]
+];
+
+/* ============================================================
+   DailyBrain — application script (vanilla JS, no dependencies)
+   ============================================================ */
+'use strict';
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+
+/* ---------- safe storage (works when localStorage is unavailable) ---------- */
+const _mem={};
+const store={
+  get(k,d){try{const v=localStorage.getItem(k);return v==null?(k in _mem?_mem[k]:d):JSON.parse(v)}catch(e){return k in _mem?_mem[k]:d}},
+  set(k,v){_mem[k]=v;try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},
+  del(k){delete _mem[k];try{localStorage.removeItem(k)}catch(e){}}
+};
+
+/* ---------- date & RNG ---------- */
+const pad2=n=>String(n).padStart(2,'0');
+function todayStr(d){d=d||new Date();return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate());}
+function dayNumber(){ // puzzle number: local days since 2025-01-01
+  const now=new Date(), a=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  return Math.round((a-new Date(2025,0,1))/864e5)+1;
+}
+function hashStr(s){let h=1779033703^s.length;for(let i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19;}return(h>>>0);}
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}}
+function rngFor(salt){return mulberry32(hashStr(todayStr()+'|'+salt));}
+const REDUCED=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- settings ---------- */
+const DEF_SET={theme:'auto',hard:false,cb:false,haptics:true,sound:false};
+let SET=Object.assign({},DEF_SET,store.get('db:settings',{}));
+function saveSet(){store.set('db:settings',SET);}
+function applyTheme(){
+  const sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const dark=SET.theme==='dark'||(SET.theme==='auto'&&sysDark)||(SET.theme==='auto'&&!window.matchMedia('(prefers-color-scheme: light)').matches&&!sysDark);
+  document.documentElement.setAttribute('data-theme',dark?'dark':'light');
+  document.documentElement.setAttribute('data-cb',SET.cb?'1':'0');
+  const tc=$('meta[name="theme-color"]'); if(tc)tc.setAttribute('content',dark?'#0B1020':'#F6F7FF');
+}
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(SET.theme==='auto')applyTheme();});
+
+/* ---------- toast & announcer ---------- */
+function toast(msg,ms){const t=document.createElement('div');t.className='toast';t.textContent=msg;$('#toasts').appendChild(t);
+  setTimeout(()=>{t.style.opacity='0';t.style.transition='opacity .3s';setTimeout(()=>t.remove(),320);},ms||2200);}
+function announce(msg){const a=$('#announcer');a.textContent='';setTimeout(()=>{a.textContent=msg;},40);}
+
+/* ---------- haptics & sound ---------- */
+function vibe(p){if(SET.haptics&&navigator.vibrate){try{navigator.vibrate(p)}catch(e){}}}
+let _ac=null;
+function blip(freq,dur,type,vol,when){
+  if(!SET.sound)return;
+  try{
+    _ac=_ac||new (window.AudioContext||window.webkitAudioContext)();
+    if(_ac.state==='suspended')_ac.resume();
+    const t=_ac.currentTime+(when||0), o=_ac.createOscillator(), g=_ac.createGain();
+    o.type=type||'sine';o.frequency.value=freq;
+    g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(vol||0.12,t+0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+(dur||0.09));
+    o.connect(g).connect(_ac.destination);o.start(t);o.stop(t+(dur||0.09)+0.05);
+  }catch(e){}
+}
+const sfx={
+  key(){blip(620,0.05,'square',0.05);},
+  flip(){blip(360,0.07,'triangle',0.07);},
+  good(){blip(660,0.1,'sine',0.1);blip(880,0.12,'sine',0.1,0.08);},
+  win(){[523,659,784,1047].forEach((f,i)=>blip(f,0.14,'triangle',0.12,i*0.1));},
+  lose(){blip(220,0.25,'sawtooth',0.07);blip(165,0.3,'sawtooth',0.07,0.18);}
+};
+
+/* ============================================================
+   SPARK — the living neuron-orb mascot
+   ============================================================ */
+let _sparkUid=0;
+function sparkStage(streak){return streak>=30?5:streak>=14?4:streak>=7?3:streak>=3?2:streak>=1?1:0;}
+function renderSpark(el,size,stage){
+  if(!el)return;
+  const uid='sg'+(_sparkUid++);
+  el.dataset.stage=stage;
+  const c=size/2, coreR=size*0.17;
+  const dim=stage===0;
+  const coreCols=dim?['#8d87b8','#5e5a86','#3c3963']:['#C9BAFF','#7C5CFF','#4B2FD6'];
+  const synCol=dim?'rgba(140,135,180,.45)':'rgba(124,92,255,.75)';
+  const dotCol=stage>=2?'var(--mint)':(dim?'#777399':'#A48FFF');
+  let s='<svg width="'+size+'" height="'+size+'" viewBox="0 0 '+size+' '+size+'" aria-hidden="true"><defs>'+
+    '<radialGradient id="'+uid+'c" cx="42%" cy="38%" r="65%"><stop offset="0%" stop-color="'+coreCols[0]+'"/><stop offset="55%" stop-color="'+coreCols[1]+'"/><stop offset="100%" stop-color="'+coreCols[2]+'"/></radialGradient>'+
+    '<radialGradient id="'+uid+'h" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(124,92,255,.55)"/><stop offset="70%" stop-color="rgba(46,230,166,.18)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs>';
+  // bloom
+  const bloomR=stage>=4?size*0.48:size*0.4;
+  if(!dim)s+='<circle cx="'+c+'" cy="'+c+'" r="'+bloomR+'" fill="url(#'+uid+'h)" opacity="'+(stage>=4?0.9:0.55)+'"/>';
+  // supernova halo
+  if(stage>=5){
+    s+='<g class="halo">';
+    for(let i=0;i<24;i++){const a=i/24*Math.PI*2,r1=size*0.42,r2=size*0.47;
+      s+='<line x1="'+(c+Math.cos(a)*r1)+'" y1="'+(c+Math.sin(a)*r1)+'" x2="'+(c+Math.cos(a)*r2)+'" y2="'+(c+Math.sin(a)*r2)+'" stroke="'+(i%3===0?'var(--amber)':'var(--violet)')+'" stroke-width="'+Math.max(1,size*0.012)+'" opacity=".8" stroke-linecap="round"/>';}
+    for(let i=0;i<8;i++){const a=i/8*Math.PI*2+0.3,r=size*0.445;
+      s+='<circle cx="'+(c+Math.cos(a)*r)+'" cy="'+(c+Math.sin(a)*r)+'" r="'+Math.max(1,size*0.013)+'" fill="#fff" opacity=".9"/>';}
+    s+='</g>';
+  }
+  // rings by stage: 1-2 → 2 rings, 3+ → 3 rings
+  const ringCount=stage===0?0:(stage===1?2:3);
+  const ringCols=['var(--violet)','color-mix(in srgb,var(--violet) 60%,transparent)','color-mix(in srgb,var(--mint) 55%,transparent)'];
+  for(let i=0;i<ringCount;i++){
+    const r=coreR+size*(0.09+i*0.075);
+    const dash=(Math.PI*2*r/ (10+i*4));
+    s+='<circle class="ring r'+(i+1)+'" cx="'+c+'" cy="'+c+'" r="'+r+'" fill="none" stroke="'+(stage>=2&&i===ringCount-1?ringCols[2]:ringCols[Math.min(i,1)])+'" stroke-width="'+Math.max(0.8,size*0.008)+'" stroke-dasharray="'+dash.toFixed(1)+' '+(dash*0.6).toFixed(1)+'" opacity="'+(0.75-i*0.15)+'"/>';
+  }
+  // synapses (7 lines + end dots)
+  s+='<g class="syn">';
+  const synLen=size*0.46;
+  for(let i=0;i<7;i++){
+    const a=i/7*Math.PI*2-Math.PI/2+0.22;
+    const x1=c+Math.cos(a)*coreR*1.1,y1=c+Math.sin(a)*coreR*1.1;
+    const x2=c+Math.cos(a)*synLen,y2=c+Math.sin(a)*synLen;
+    s+='<line x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="'+synCol+'" stroke-width="'+Math.max(0.8,size*0.009)+'" stroke-linecap="round"/>';
+  }
+  for(let i=0;i<7;i++){
+    const a=i/7*Math.PI*2-Math.PI/2+0.22;
+    const x2=c+Math.cos(a)*synLen,y2=c+Math.sin(a)*synLen;
+    s+='<circle class="syn-dot" cx="'+x2.toFixed(1)+'" cy="'+y2.toFixed(1)+'" r="'+Math.max(1.2,size*0.022)+'" fill="'+dotCol+'" opacity=".8"/>';
+  }
+  s+='</g>';
+  // amber orbit sparks (stage 3+), double orbit (stage 4+)
+  if(stage>=3){
+    s+='<g class="orbit">';
+    for(let i=0;i<3;i++){const a=i/3*Math.PI*2,r=coreR+size*0.13;
+      s+='<circle cx="'+(c+Math.cos(a)*r)+'" cy="'+(c+Math.sin(a)*r)+'" r="'+Math.max(1.3,size*0.02)+'" fill="var(--amber)"/>';}
+    s+='</g>';
+  }
+  if(stage>=4){
+    s+='<g class="orbit o2">';
+    for(let i=0;i<4;i++){const a=i/4*Math.PI*2+0.6,r=coreR+size*0.24;
+      s+='<circle cx="'+(c+Math.cos(a)*r)+'" cy="'+(c+Math.sin(a)*r)+'" r="'+Math.max(1.1,size*0.016)+'" fill="var(--amber)" opacity=".9"/>';}
+    s+='</g>';
+  }
+  // core
+  s+='<circle class="core" cx="'+c+'" cy="'+c+'" r="'+coreR+'" fill="url(#'+uid+'c)"'+(dim?' opacity=".8"':'')+'/>';
+  if(!dim)s+='<circle class="core" cx="'+(c-coreR*0.3)+'" cy="'+(c-coreR*0.35)+'" r="'+coreR*0.3+'" fill="rgba(255,255,255,.35)"/>';
+  s+='</svg>';
+  el.innerHTML=s;
+}
+function updateSparks(){
+  const st=sparkStage(getStreak().current);
+  renderSpark($('#logoSpark'),26,st);
+  renderSpark($('#heroSpark'),160,st);
+  renderSpark($('#stripSpark'),72,st);
+  renderSpark($('#footSpark'),22,st);
+}
+function sparkReact(kind){
+  $$('.spark').forEach(el=>{
+    el.classList.remove('react-win','react-lose');void el.offsetWidth;
+    el.classList.add(kind==='win'?'react-win':'react-lose');
+    setTimeout(()=>el.classList.remove('react-win','react-lose'),1200);
+  });
+}
+
+/* ============================================================
+   STREAK & DAY LOG
+   ============================================================ */
+function getDays(){return store.get('db:days',{});}
+function setDays(d){store.set('db:days',d);}
+function completedCount(rec){return rec?['word','number','trivia'].filter(k=>rec[k]&&rec[k].done).length:0;}
+function getStreak(){
+  const days=getDays();let cur=0,best=0;
+  // current streak: count back from today (or yesterday if today not yet played)
+  let d=new Date();
+  if(completedCount(days[todayStr(d)])===0)d.setDate(d.getDate()-1);
+  while(completedCount(days[todayStr(d)])>0){cur++;d.setDate(d.getDate()-1);}
+  // best streak across map
+  const keys=Object.keys(days).filter(k=>completedCount(days[k])>0).sort();
+  let run=0,prev=null;
+  keys.forEach(k=>{
+    if(prev){const p=new Date(prev+'T12:00:00'),n=new Date(k+'T12:00:00');
+      run=(Math.round((n-p)/864e5)===1)?run+1:1;}
+    else run=1;
+    best=Math.max(best,run);prev=k;
+  });
+  best=Math.max(best,cur);
+  return {current:cur,best:best};
+}
+function recordCompletion(game,data){
+  const days=getDays(),t=todayStr();
+  const before=getStreak().current;
+  days[t]=days[t]||{};days[t][game]=Object.assign({done:true},data);
+  // prune entries older than ~400 days
+  const cutoff=new Date();cutoff.setDate(cutoff.getDate()-400);
+  Object.keys(days).forEach(k=>{if(k<todayStr(cutoff))delete days[k];});
+  setDays(days);
+  const after=getStreak().current;
+  updateStreakBadge(after>before);
+  updateSparks();updateHomeStatus();
+  if(completedCount(days[t])===3){toast('🏅 Daily Trio complete!');}
+}
+function updateStreakBadge(bounced){
+  const s=getStreak();$('#streakNum').textContent=s.current;
+  if(bounced){const b=$('#streakBadge');b.classList.remove('bounce');void b.offsetWidth;b.classList.add('bounce');}
+}
+
+/* ============================================================
+   ROUTER + SEO
+   ============================================================ */
+const ROUTES={
+  home:{title:'DailyBrain — Daily Word, Number & Trivia Puzzles',desc:'Free daily brain-training puzzles. A 5-letter word challenge, a numbers game and a trivia quiz — new every midnight. Five minutes. One brain. Every day.'},
+  word:{title:'Daily Word — DailyBrain',desc:'Guess today’s 5-letter word in six tries. One shared puzzle for the whole world, new at midnight. Play free on DailyBrain.'},
+  number:{title:'Daily Number — DailyBrain',desc:'Combine five numbers with + − × ÷ to hit today’s target. A guaranteed-solvable arithmetic puzzle, new every day on DailyBrain.'},
+  trivia:{title:'Daily Trivia — DailyBrain',desc:'Five original multiple-choice questions against a 15-second clock. Science, geography, history, pop culture and nature. New daily.'},
+  stats:{title:'Your Stats & Streak — DailyBrain',desc:'Your DailyBrain streak calendar, win rate, guess distribution and Daily Trio badges — stored privately on your device.'},
+  about:{title:'About — DailyBrain',desc:'The story behind DailyBrain: three bite-size daily puzzles, one evolving Spark, and a morning ritual designed with care.'},
+  contact:{title:'Contact — DailyBrain',desc:'Questions, bug reports or trivia corrections? Get in touch with the DailyBrain team.'},
+  privacy:{title:'Privacy Policy — DailyBrain',desc:'How DailyBrain handles data: local-only progress storage, optional consent-based advertising, and your privacy rights.'},
+  terms:{title:'Terms of Use — DailyBrain',desc:'The terms that govern your use of DailyBrain’s free daily puzzle games.'},
+  cookies:{title:'Cookie Policy — DailyBrain',desc:'What cookies and local storage DailyBrain uses, what is optional, and how to manage your choices.'}
+};
+let _seenRoutes={};
+function currentRoute(){const h=(location.hash||'#home').slice(1).split('?')[0];return ROUTES[h]?h:'home';}
+function setMeta(route){
+  const m=ROUTES[route];document.title=m.title;
+  const base=location.origin+location.pathname;
+  const url=base+(route==='home'?'':'#'+route);
+  const set=(sel,attr,val)=>{const e=$(sel);if(e)e.setAttribute(attr,val);};
+  set('meta[name="description"]','content',m.desc);
+  set('link[rel="canonical"]','href',url);
+  set('meta[property="og:title"]','content',m.title);
+  set('meta[property="og:description"]','content',m.desc);
+  set('meta[property="og:url"]','content',url);
+  set('meta[name="twitter:title"]','content',m.title);
+  set('meta[name="twitter:description"]','content',m.desc);
+}
+function navigate(){
+  const r=currentRoute();
+  if(r!=='trivia'&&typeof stopTrivTimer==='function')stopTrivTimer();
+  $$('.route').forEach(s=>s.classList.remove('active'));
+  const sec=$('#route-'+r);if(sec){sec.classList.add('active');}
+  $$('nav.main a').forEach(a=>{if(a.dataset.nav===r)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  setMeta(r);
+  window.scrollTo({top:0,behavior:'instant' in window?'instant':'auto'});
+  const first=_seenRoutes[r]?false:true;_seenRoutes[r]=true;
+  if(r==='word')enterGame('word',first,initWord);
+  else if(r==='number')enterGame('number',first,initNumber);
+  else if(r==='trivia')enterGame('trivia',first,initTrivia);
+  else if(r==='stats')renderStats();
+  else if(r==='home')updateHomeStatus();
+}
+const SKELS={word:['#wordSkel','#wordGame'],number:['#numSkel','#numGame'],trivia:['#trivSkel','#trivGame']};
+function enterGame(name,first,initFn){
+  const [sk,gm]=SKELS[name];
+  if(first&&!REDUCED){
+    $(sk).hidden=false;$(gm).style.visibility='hidden';
+    setTimeout(()=>{$(sk).hidden=true;$(gm).style.visibility='';initFn();},250);
+  }else initFn();
+}
+window.addEventListener('hashchange',navigate);
+
+/* ---------- scroll glow ---------- */
+let _glowT=null;
+window.addEventListener('scroll',()=>{
+  if(_glowT)return;
+  _glowT=setTimeout(()=>{_glowT=null;
+    const p=window.scrollY/Math.max(1,document.body.scrollHeight-innerHeight);
+    $('#bgGlow').style.setProperty('--glow-y',(-20+p*60)+'%');
+  },80);
+},{passive:true});
+
+/* ============================================================
+   COUNTDOWN TO MIDNIGHT (+ rollover)
+   ============================================================ */
+function msToMidnight(){const n=new Date(),m=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1);return m-n;}
+function fmtHMS(ms){const s=Math.max(0,Math.floor(ms/1000));return pad2(Math.floor(s/3600))+':'+pad2(Math.floor(s%3600/60))+':'+pad2(s%60);}
+function ringHTML(frac,label){
+  const r=9,cir=2*Math.PI*r;
+  return '<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="'+r+'" fill="none" stroke="var(--line)" stroke-width="2.5"/><circle class="cr-fg" cx="12" cy="12" r="'+r+'" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="'+cir.toFixed(1)+'" stroke-dashoffset="'+(cir*(1-frac)).toFixed(1)+'"/></svg><span class="tnum">'+label+'</span>';
+}
+let _lastDay=todayStr();
+function tickCountdown(){
+  const ms=msToMidnight(),frac=1-ms/864e5,label='Next puzzle in '+fmtHMS(ms);
+  const html=ringHTML(frac,fmtHMS(ms));
+  $$('[data-countdown]').forEach(e=>{e.innerHTML=html;e.setAttribute('aria-label',label);});
+  const hc=$('#homeCountdown');if(hc){hc.innerHTML=html;hc.setAttribute('aria-label',label);}
+  if(todayStr()!==_lastDay){ // midnight rollover or timezone change while open
+    _lastDay=todayStr();_seenRoutes={};
+    toast('🌙 Midnight! New puzzles are ready.');
+    announce('New daily puzzles are available.');
+    initWord();initNumber();initTrivia();updateHomeStatus();updateSparks();updateStreakBadge(false);
+  }
+}
+setInterval(tickCountdown,1000);
+
+/* ============================================================
+   CONSENT + ADS
+   ============================================================ */
+let _adsLoaded=false;
+function loadAds(){
+  if(_adsLoaded)return;_adsLoaded=true;
+  const s=document.createElement('script');s.async=true;
+  s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+  s.crossOrigin='anonymous';document.head.appendChild(s);
+  s.onload=()=>{$$('ins.adsbygoogle').forEach(()=>{try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}});};
+}
+function initConsent(){
+  const c=store.get('db:consent',null);
+  if(c==='accepted')loadAds();
+  else if(c===null)$('#consent').classList.add('show');
+  $('#consentAccept').addEventListener('click',()=>{store.set('db:consent','accepted');$('#consent').classList.remove('show');loadAds();toast('Thanks for supporting DailyBrain 💜');});
+  $('#consentReject').addEventListener('click',()=>{store.set('db:consent','rejected');$('#consent').classList.remove('show');});
+  $('#consentManage').addEventListener('click',openManage);
+  $('#footConsent').addEventListener('click',e=>{e.preventDefault();openManage();});
+  $('#setConsent').addEventListener('click',()=>{$('#dlgSettings').close();openManage();});
+  $('#mgSave').addEventListener('click',()=>{
+    const on=$('#mgAds').checked;
+    store.set('db:consent',on?'accepted':'rejected');
+    $('#dlgManage').close();$('#consent').classList.remove('show');
+    if(on)loadAds();else toast('Saved. Reload to fully remove ad scripts.');
+  });
+}
+function openManage(){$('#mgAds').checked=store.get('db:consent',null)==='accepted';$('#dlgManage').showModal();}
+
+/* ============================================================
+   DAILY WORD
+   ============================================================ */
+let DICTSET=null;
+function dictHas(w){
+  if(!DICTSET){DICTSET=new Set();
+    for(let i=0;i<ANSWERS.length;i+=5)DICTSET.add(ANSWERS.slice(i,i+5));
+    for(let i=0;i<DICTX.length;i+=5)DICTSET.add(DICTX.slice(i,i+5));
+  }
+  return DICTSET.has(w);
+}
+function todaysAnswer(){
+  const count=ANSWERS.length/5;
+  const idx=((dayNumber()%count)+count)%count;
+  return ANSWERS.slice(idx*5,idx*5+5);
+}
+const W={cur:'',busy:false,state:null,key:null};
+function wordKey(){return 'db:word:'+todayStr();}
+function wordState(){
+  let s=store.get(wordKey(),null);
+  if(!s){s={g:[],done:false,win:false,hint:false};store.set(wordKey(),s);}
+  return s;
+}
+function colorize(guess,answer){
+  // two-pass duplicate-correct coloring: 'c' correct, 'p' present, 'a' absent
+  const res=Array(5).fill('a'),cnt={};
+  for(let i=0;i<5;i++){const ch=answer[i];
+    if(guess[i]===ch)res[i]='c';else cnt[ch]=(cnt[ch]||0)+1;}
+  for(let i=0;i<5;i++){if(res[i]!=='c'&&cnt[guess[i]]>0){res[i]='p';cnt[guess[i]]--;}}
+  return res;
+}
+function initWord(){
+  W.state=wordState();W.cur='';W.busy=false;
+  $('#wordNo').textContent='#'+dayNumber();
+  $('#hardChip').hidden=!SET.hard;
+  buildBoard();buildKeyboard();paintBoard();paintKeys();
+  $('#btnHint').disabled=W.state.hint||W.state.done;
+  if(W.state.hint)$('#btnHint').textContent='💡 Starts with “'+todaysAnswer()[0].toUpperCase()+'”';
+  else $('#btnHint').textContent='💡 Hint (first letter)';
+  if(W.state.done)showWordResult(false);else $('#wordResult').hidden=true;
+}
+function buildBoard(){
+  const b=$('#board');b.innerHTML='';
+  for(let r=0;r<6;r++){const row=document.createElement('div');row.className='brow';row.setAttribute('role','row');
+    for(let c=0;c<5;c++){const t=document.createElement('div');t.className='tile';t.setAttribute('role','gridcell');row.appendChild(t);}
+    b.appendChild(row);}
+}
+const KB_ROWS=['qwertyuiop','asdfghjkl','↵zxcvbnm⌫'];
+function buildKeyboard(){
+  const kb=$('#kb');kb.innerHTML='';
+  KB_ROWS.forEach(r=>{
+    const row=document.createElement('div');row.className='kb-row';
+    for(const ch of r){
+      const k=document.createElement('button');k.className='key';
+      if(ch==='↵'){k.classList.add('wide');k.textContent='Enter';k.dataset.k='Enter';k.setAttribute('aria-label','Enter');}
+      else if(ch==='⌫'){k.classList.add('wide');k.textContent='⌫';k.dataset.k='Backspace';k.setAttribute('aria-label','Backspace');}
+      else{k.textContent=ch;k.dataset.k=ch;}
+      k.addEventListener('click',()=>{pressKey(k.dataset.k);k.classList.add('pressed');setTimeout(()=>k.classList.remove('pressed'),120);});
+      row.appendChild(k);
+    }
+    kb.appendChild(row);
+  });
+}
+function paintBoard(){
+  const answer=todaysAnswer(),rows=$$('#board .brow');
+  W.state.g.forEach((g,r)=>{
+    const cols=colorize(g,answer);
+    rows[r].querySelectorAll('.tile').forEach((t,c)=>{t.textContent=g[c];t.classList.add('filled',cols[c]);});
+  });
+  paintCur();
+}
+function paintCur(){
+  if(W.state.done)return;
+  const r=W.state.g.length;if(r>5)return;
+  const tiles=$$('#board .brow')[r].querySelectorAll('.tile');
+  tiles.forEach((t,c)=>{t.textContent=W.cur[c]||'';t.classList.toggle('filled',!!W.cur[c]);});
+}
+function keyClassMap(){
+  const answer=todaysAnswer(),rank={a:1,p:2,c:3},m={};
+  W.state.g.forEach(g=>{const cols=colorize(g,answer);
+    for(let i=0;i<5;i++){const ch=g[i];if(!m[ch]||rank[cols[i]]>rank[m[ch]])m[ch]=cols[i];}});
+  return m;
+}
+function paintKeys(){
+  const m=keyClassMap();
+  $$('#kb .key').forEach(k=>{
+    k.classList.remove('c','p','a');
+    const ch=k.dataset.k;if(ch&&ch.length===1&&m[ch])k.classList.add(m[ch]);
+  });
+}
+function hardModeViolation(guess){
+  if(!SET.hard||!W.state.g.length)return null;
+  const answer=todaysAnswer(),last=W.state.g[W.state.g.length-1],cols=colorize(last,answer);
+  for(let i=0;i<5;i++){
+    if(cols[i]==='c'&&guess[i]!==last[i])return 'Letter '+(i+1)+' must be “'+last[i].toUpperCase()+'”';
+    if(cols[i]==='p'&&!guess.includes(last[i]))return 'Guess must contain “'+last[i].toUpperCase()+'”';
+  }
+  return null;
+}
+function pressKey(k){
+  if(W.busy||W.state.done||currentRoute()!=='word')return;
+  if(k==='Enter'){submitWord();return;}
+  if(k==='Backspace'){if(W.cur){W.cur=W.cur.slice(0,-1);paintCur();}return;}
+  if(/^[a-z]$/.test(k)&&W.cur.length<5){W.cur+=k;paintCur();sfx.key();vibe(8);}
+}
+function shakeRow(msg){
+  const r=$$('#board .brow')[W.state.g.length];
+  r.classList.remove('shake');void r.offsetWidth;r.classList.add('shake');
+  toast(msg);vibe([40,40,40]);announce(msg);
+}
+function submitWord(){
+  if(W.cur.length<5){shakeRow('Not enough letters');return;}
+  if(!dictHas(W.cur)){shakeRow('Not in word list');return;}
+  const hv=hardModeViolation(W.cur);if(hv){shakeRow(hv);return;}
+  const answer=todaysAnswer(),guess=W.cur,cols=colorize(guess,answer);
+  W.busy=true;W.cur='';
+  const rowEl=$$('#board .brow')[W.state.g.length];
+  const tiles=rowEl.querySelectorAll('.tile');
+  tiles.forEach((t,i)=>{
+    setTimeout(()=>{
+      t.classList.add('flip');sfx.flip();
+      setTimeout(()=>{t.classList.add(cols[i]);},250);
+    },i*80);
+  });
+  setTimeout(()=>{
+    W.state.g.push(guess);store.set(wordKey(),W.state);
+    paintKeys();
+    const win=guess===answer,outOf=W.state.g.length>=6;
+    const nC=cols.filter(x=>x==='c').length,nP=cols.filter(x=>x==='p').length;
+    announce('Guess '+W.state.g.length+': '+guess.split('').join(' ')+'. '+nC+' correct, '+nP+' present.');
+    if(win||outOf){
+      W.state.done=true;W.state.win=win;store.set(wordKey(),W.state);
+      finishWord(win);
+    }else{W.busy=false;}
+  },5*80+420);
+}
+function finishWord(win){
+  W.busy=false;
+  recordCompletion('word',{win:win,tries:W.state.g.length,hint:W.state.hint});
+  if(win){
+    sparkReact('win');sfx.win();vibe([30,60,30,60,80]);confettiBurst();
+    toast(['Genius!','Magnificent!','Impressive!','Splendid!','Great!','Phew!'][W.state.g.length-1]);
+    announce('You solved today’s word in '+W.state.g.length+(W.state.g.length===1?' try.':' tries.'));
+  }else{
+    sparkReact('lose');sfx.lose();
+    toast('The word was “'+todaysAnswer().toUpperCase()+'”');
+    announce('Out of tries. The word was '+todaysAnswer().toUpperCase()+'.');
+  }
+  setTimeout(()=>showWordResult(true),700);
+}
+function showWordResult(fresh){
+  const p=$('#wordResult'),s=W.state,answer=todaysAnswer().toUpperCase();
+  const streak=getStreak().current;
+  p.innerHTML='<div class="spark" id="resSparkW" aria-hidden="true"></div>'+
+    '<h3 style="margin:10px 0 2px">'+(s.win?'Solved in '+s.g.length+'/6':'So close!')+'</h3>'+
+    '<p class="muted" style="margin:0 0 4px">'+(s.win?(s.hint?'(with one hint)':'No hints needed.'):'The word was <strong style="color:var(--text)">'+answer+'</strong>.')+'</p>'+
+    '<p class="muted" style="margin:0">🔥 Streak: <strong class="tnum" style="color:var(--amber)">'+streak+'</strong></p>'+
+    '<div class="sharebtns"><button class="btn btn-p btn-sm" id="shareWord">Share result</button><a class="btn btn-g btn-sm" href="#number">Next: Daily Number →</a></div>'+
+    '<p class="cring" style="margin:14px 0 0" data-countdown></p>';
+  p.hidden=false;
+  renderSpark($('#resSparkW'),84,sparkStage(streak));
+  $('#shareWord').addEventListener('click',()=>openShare('word'));
+  if(fresh)p.scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'center'});
+}
+/* physical keyboard */
+document.addEventListener('keydown',e=>{
+  if(currentRoute()!=='word')return;
+  if(e.target.matches('input,textarea,select'))return;
+  if(e.metaKey||e.ctrlKey||e.altKey)return;
+  const k=e.key.length===1?e.key.toLowerCase():e.key;
+  if(k==='Enter'||k==='Backspace'||/^[a-z]$/.test(k)){
+    if(k==='Enter'&&e.target.matches('button,a,summary'))return;
+    pressKey(k);
+    const el=$('#kb .key[data-k="'+k+'"]');
+    if(el){el.classList.add('pressed');setTimeout(()=>el.classList.remove('pressed'),120);}
+  }
+});
+$('#btnHint').addEventListener('click',()=>{
+  if(W.state.done||W.state.hint)return;
+  W.state.hint=true;store.set(wordKey(),W.state);
+  const st=store.get('db:hints',0);store.set('db:hints',st+1);
+  $('#btnHint').disabled=true;
+  $('#btnHint').textContent='💡 Starts with “'+todaysAnswer()[0].toUpperCase()+'”';
+  toast('Today’s word starts with “'+todaysAnswer()[0].toUpperCase()+'”');
+  announce('Hint: today’s word starts with '+todaysAnswer()[0].toUpperCase());
+});
+
+/* ============================================================
+   DAILY NUMBER
+   ============================================================ */
+function shuf(arr,rng){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+let _numPuzzle=null,_numPuzzleDay=null;
+function numberPuzzle(){
+  if(_numPuzzle&&_numPuzzleDay===todayStr())return _numPuzzle;
+  const rng=rngFor('number');
+  let best=null;
+  for(let attempt=0;attempt<80&&!best;attempt++){
+    const larges=shuf([15,20,25,50,75,100],rng),smalls=shuf([1,2,3,4,5,6,7,8,9,10,2,3,4,5,6,7,8,9],rng);
+    const nL=1+Math.floor(rng()*2);
+    const nums=larges.slice(0,nL).concat(smalls.slice(0,5-nL));
+    const order=shuf(nums.map((v,i)=>i),rng);
+    let acc=nums[order[0]],expr=String(nums[order[0]]),needsParen=false,used=1;
+    for(let k=1;k<5;k++){
+      const n=nums[order[k]];
+      if(used>=3&&rng()<0.4)continue;
+      const cand=[];
+      if(acc+n<=999)cand.push('+','+');
+      if(acc-n>=1)cand.push('-');
+      if(n>1&&acc>1&&acc*n<=999)cand.push('*','*','*');
+      if(n>1&&acc%n===0&&acc/n>=1)cand.push('/');
+      if(!cand.length)continue;
+      const op=cand[Math.floor(rng()*cand.length)];
+      if((op==='*'||op==='/')&&needsParen){expr='('+expr+')';needsParen=false;}
+      expr+=(op==='*'?'×':op==='/'?'÷':op==='-'?'−':'+')+n;
+      acc=op==='+'?acc+n:op==='-'?acc-n:op==='*'?acc*n:acc/n;
+      if(op==='+'||op==='-')needsParen=true;
+      used++;
+    }
+    if(used>=3&&acc>=25&&acc<=999&&Number.isInteger(acc)&&!nums.includes(acc))best={nums:nums,target:acc,solution:expr+' = '+acc};
+  }
+  if(!best){ // mathematically unreachable fallback, still guaranteed solvable
+    const rng2=rngFor('numberfb');
+    const nums=[25,Math.floor(rng2()*9)+2,Math.floor(rng2()*9)+2,Math.floor(rng2()*9)+1,Math.floor(rng2()*9)+1];
+    const target=nums[0]+nums[1]+nums[2]+nums[3]+nums[4];
+    best={nums:nums,target:target,solution:nums.join('+')+' = '+target};
+  }
+  _numPuzzle=best;_numPuzzleDay=todayStr();
+  return best;
+}
+const N={toks:[]};
+function numKey(){return 'db:number:'+todayStr();}
+function numState(){let s=store.get(numKey(),null);if(!s){s={toks:[],done:false,score:0,result:null};store.set(numKey(),s);}return s;}
+function evalTokens(T){
+  const out=[],ops=[],prec={'+':1,'-':1,'*':2,'/':2};
+  for(const tk of T){
+    if(tk.t==='n')out.push(tk.v);
+    else if(tk.v==='(')ops.push('(');
+    else if(tk.v===')'){let f=false;while(ops.length){const o=ops.pop();if(o==='('){f=true;break;}out.push(o);}if(!f)return null;}
+    else{while(ops.length&&prec[ops[ops.length-1]]>=prec[tk.v])out.push(ops.pop());ops.push(tk.v);}
+  }
+  while(ops.length){const o=ops.pop();if(o==='(')return null;out.push(o);}
+  const st=[];
+  for(const x of out){
+    if(typeof x==='number')st.push(x);
+    else{const b=st.pop(),a=st.pop();if(a==null||b==null)return null;
+      st.push(x==='+'?a+b:x==='-'?a-b:x==='*'?a*b:(b===0?NaN:a/b));}
+  }
+  return(st.length===1&&isFinite(st[0]))?st[0]:null;
+}
+function tokStr(T){return T.map(t=>t.t==='n'?t.v:({'*':'×','/':'÷','-':'−'}[t.v]||t.v)).join(' ');}
+function canAppend(tok){
+  const last=N.toks[N.toks.length-1];
+  if(tok.t==='n'||tok.v==='(')return !last||last.t==='o'&&last.v!==')'||last.v==='(';
+  if(tok.v===')'){
+    const opens=N.toks.filter(t=>t.v==='(').length,closes=N.toks.filter(t=>t.v===')').length;
+    return last&&(last.t==='n'||last.v===')')&&opens>closes;
+  }
+  return last&&(last.t==='n'||last.v===')'); // + - * /
+}
+function initNumber(){
+  const p=numberPuzzle(),s=numState();
+  N.toks=s.toks||[];
+  $('#numberNo').textContent='#'+dayNumber();
+  $('#numTarget').textContent=p.target;
+  renderNumUI();
+  if(s.done)showNumResult(s,false);else $('#numResult').hidden=true;
+}
+function renderNumUI(){
+  const p=numberPuzzle(),s=numState();
+  const usedIdx=new Set(N.toks.filter(t=>t.t==='n').map(t=>t.i));
+  const grid=$('#numChips');grid.innerHTML='';
+  p.nums.forEach((n,i)=>{
+    const b=document.createElement('button');b.className='numchip tnum';b.textContent=n;
+    b.disabled=s.done||usedIdx.has(i);
+    b.setAttribute('aria-label','number '+n+(b.disabled?' (used)':''));
+    b.addEventListener('click',()=>{addTok({t:'n',v:n,i:i});});
+    grid.appendChild(b);
+  });
+  const box=$('#exprBox');
+  box.innerHTML=N.toks.length?('<span>'+tokStr(N.toks)+'</span>'):'<span class="muted" style="font-size:.95rem;font-weight:400">Tap numbers and operators…</span>';
+  const v=evalTokens(N.toks);
+  const lp=$('#livePrev');
+  if(!N.toks.length)lp.textContent='';
+  else if(v===null)lp.innerHTML='<span class="muted">= …</span>';
+  else{
+    const d=Math.abs(p.target-v);
+    const show=Number.isInteger(v)?v:(Math.round(v*100)/100);
+    lp.innerHTML='= <strong style="color:'+(d<1e-9?'var(--mint)':'var(--text)')+'">'+show+'</strong>'+(d<1e-9?' 🎯':' <span class="muted">('+(Number.isInteger(d)?d:d.toFixed(2))+' away)</span>');
+  }
+  $('#numSubmit').disabled=s.done||v===null;
+  $('#numUndo').disabled=s.done||!N.toks.length;
+  $('#numClear').disabled=s.done||!N.toks.length;
+  $$('#numGame .opbtn').forEach(b=>{b.disabled=s.done;});
+}
+function addTok(tok){
+  const s=numState();if(s.done)return;
+  if(!canAppend(tok)){toast(tok.t==='n'?'Add an operator first':'That doesn’t fit here');vibe(30);return;}
+  N.toks.push(tok);s.toks=N.toks;store.set(numKey(),s);
+  sfx.key();vibe(8);renderNumUI();
+}
+function showNumResult(s,fresh){
+  const p=numberPuzzle(),panel=$('#numResult');
+  const exact=s.score===100,streak=getStreak().current;
+  panel.innerHTML='<div class="spark" id="resSparkN" aria-hidden="true"></div>'+
+    '<div class="scorebig tnum" id="numScoreBig" style="color:'+(exact?'var(--mint)':'var(--amber)')+'">0</div>'+
+    '<p class="muted" style="margin:0 0 4px">'+(exact?'Perfect! You hit '+p.target+' exactly.':'You reached <strong class="tnum" style="color:var(--text)">'+s.result+'</strong> — '+s.dist+' away from '+p.target+'.')+'</p>'+
+    '<p class="muted" style="margin:0 0 4px;font-size:.9rem">One optimal path: <strong class="tnum" style="color:var(--text)">'+p.solution+'</strong></p>'+
+    '<p class="muted" style="margin:0">🔥 Streak: <strong class="tnum" style="color:var(--amber)">'+streak+'</strong></p>'+
+    '<div class="sharebtns"><button class="btn btn-p btn-sm" id="shareNum">Share result</button><a class="btn btn-g btn-sm" href="#trivia">Next: Daily Trivia →</a></div>';
+  panel.hidden=false;
+  renderSpark($('#resSparkN'),84,sparkStage(streak));
+  $('#shareNum').addEventListener('click',()=>openShare('number'));
+  countUp($('#numScoreBig'),s.score,'/100');
+  if(fresh)panel.scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'center'});
+}
+function countUp(el,to,suffix){
+  if(REDUCED){el.textContent=to+(suffix||'');return;}
+  const t0=performance.now(),dur=900;
+  (function step(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);
+    el.textContent=Math.round(to*e)+(suffix||'');
+    if(p<1)requestAnimationFrame(step);})(t0);
+}
+function wireNumber(){
+  $$('#numGame .opbtn').forEach(b=>b.addEventListener('click',()=>addTok({t:'o',v:b.dataset.op})));
+  $('#numUndo').addEventListener('click',()=>{const s=numState();if(s.done)return;N.toks.pop();s.toks=N.toks;store.set(numKey(),s);renderNumUI();});
+  $('#numClear').addEventListener('click',()=>{const s=numState();if(s.done)return;N.toks=[];s.toks=[];store.set(numKey(),s);renderNumUI();});
+  $('#numSubmit').addEventListener('click',()=>{
+    const s=numState();if(s.done)return;
+    const v=evalTokens(N.toks);if(v===null){toast('Finish your expression first');return;}
+    const p=numberPuzzle(),dist=Math.abs(p.target-v);
+    const exact=dist<1e-9;
+    s.done=true;s.result=Number.isInteger(v)?v:Math.round(v*100)/100;
+    s.dist=Number.isInteger(dist)?dist:Math.round(dist*100)/100;
+    s.score=exact?100:Math.max(0,Math.round(100-dist*5));
+    store.set(numKey(),s);
+    recordCompletion('number',{score:s.score,exact:exact});
+    if(exact){sparkReact('win');sfx.win();vibe([30,60,30,60,80]);confettiBurst();announce('Perfect score! You hit the target exactly.');}
+    else if(s.score>=70){sparkReact('win');sfx.good();announce('Good job. Score '+s.score+' out of 100.');}
+    else{sparkReact('lose');sfx.lose();announce('Score '+s.score+' out of 100.');}
+    renderNumUI();showNumResult(s,true);
+  });
+}
+
+/* ============================================================
+   DAILY TRIVIA
+   ============================================================ */
+const T={timer:null,qset:null,qsetDay:null};
+function trivKey(){return 'db:trivia:'+todayStr();}
+function trivState(){let s=store.get(trivKey(),null);if(!s){s={i:0,ans:[],done:false,score:0};store.set(trivKey(),s);}return s;}
+function trivQuestions(){
+  if(T.qset&&T.qsetDay===todayStr())return T.qset;
+  const rng=rngFor('trivia');
+  const idx=shuf(TRIVIA.map((q,i)=>i),rng).slice(0,5);
+  T.qset=idx.map(i=>{
+    const[q,opts,c,f]=TRIVIA[i];
+    const order=shuf([0,1,2,3],rng);
+    return{q:q,opts:order.map(o=>opts[o]),c:order.indexOf(c),f:f};
+  });
+  T.qsetDay=todayStr();
+  return T.qset;
+}
+function trivRank(sc){return sc<=1?'Rookie':sc<=3?'Thinker':sc===4?'Sharp Mind':'Genius';}
+function stopTrivTimer(){if(T.timer){clearInterval(T.timer);T.timer=null;}}
+function initTrivia(){
+  stopTrivTimer();
+  $('#triviaNo').textContent='#'+dayNumber();
+  const s=trivState();
+  if(s.done)renderTrivResult(s,false);else renderTrivQuestion();
+}
+function renderTrivQuestion(){
+  const s=trivState(),qs=trivQuestions(),q=qs[s.i],g=$('#trivGame');
+  const r=26,cir=(2*Math.PI*r).toFixed(1);
+  g.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px">'+
+    '<span class="chip">Question '+(s.i+1)+' of 5</span>'+
+    '<span style="position:relative;width:60px;height:60px;flex:none">'+
+      '<svg class="timer-ring" id="trivRing" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="'+r+'" fill="none" stroke="var(--line)" stroke-width="4"/><circle class="tr-fg" cx="30" cy="30" r="'+r+'" fill="none" stroke-width="4" stroke-linecap="round" stroke-dasharray="'+cir+'" stroke-dashoffset="0"/></svg>'+
+      '<strong id="trivSecs" class="tnum" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-h)">15</strong></span></div>'+
+    '<h3 style="min-height:2.4em" id="trivQ">'+q.q+'</h3>'+
+    '<div id="trivOpts"></div><div id="trivFb"></div>';
+  const opts=$('#trivOpts');
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');b.className='tq-opt';b.textContent=o;
+    b.addEventListener('click',()=>answerTriv(i));
+    opts.appendChild(b);
+  });
+  announce('Question '+(s.i+1)+' of 5: '+q.q);
+  let left=15;
+  const ring=$('#trivRing .tr-fg');
+  T.timer=setInterval(()=>{
+    left--;
+    $('#trivSecs').textContent=Math.max(0,left);
+    ring.style.strokeDashoffset=((1-left/15)*parseFloat(cir)).toFixed(1);
+    if(left<=5)$('#trivRing').classList.add('hot');
+    if(left<=0)answerTriv(-1);
+  },1000);
+}
+function answerTriv(pick){
+  stopTrivTimer();
+  const s=trivState(),qs=trivQuestions(),q=qs[s.i];
+  const good=pick===q.c;
+  s.ans.push(pick);if(good)s.score++;
+  store.set(trivKey(),s);
+  $$('#trivOpts .tq-opt').forEach((b,i)=>{
+    b.disabled=true;
+    if(i===q.c)b.classList.add('good');
+    else if(i===pick)b.classList.add('bad');
+  });
+  if(good){sfx.good();vibe(20);}else{sfx.lose();vibe([50,40,50]);}
+  announce(good?'Correct!':(pick===-1?'Time is up. ':'Incorrect. ')+'The answer is '+q.opts[q.c]+'.');
+  const last=s.i>=4;
+  $('#trivFb').innerHTML='<p style="margin:12px 0 8px;font-weight:700;color:'+(good?'var(--mint)':'var(--coral)')+'">'+
+    (good?'✓ Correct!':(pick===-1?'⏱ Time’s up — it was “'+q.opts[q.c]+'”':'✗ It was “'+q.opts[q.c]+'”'))+'</p>'+
+    '<div class="didyou"><strong>Did you know?</strong> '+q.f+'</div>'+
+    '<div style="text-align:center;margin-top:14px"><button class="btn btn-p btn-sm" id="trivNext">'+(last?'See results':'Next question →')+'</button></div>';
+  $('#trivNext').addEventListener('click',()=>{
+    if(last){s.done=true;store.set(trivKey(),s);finishTrivia(s);}
+    else{s.i++;store.set(trivKey(),s);renderTrivQuestion();}
+  });
+  $('#trivNext').focus();
+}
+function finishTrivia(s){
+  recordCompletion('trivia',{score:s.score});
+  if(s.score>=4){sparkReact('win');sfx.win();vibe([30,60,30,60,80]);confettiBurst();}
+  else if(s.score>=2){sfx.good();}
+  else{sparkReact('lose');sfx.lose();}
+  announce('Quiz complete. You scored '+s.score+' out of 5. Rank: '+trivRank(s.score)+'.');
+  renderTrivResult(s,true);
+}
+function renderTrivResult(s,fresh){
+  stopTrivTimer();
+  const g=$('#trivGame'),streak=getStreak().current;
+  g.innerHTML='<div class="result-panel" style="padding:6px">'+
+    '<div class="spark" id="resSparkT" aria-hidden="true"></div>'+
+    '<div class="scorebig tnum" id="trivScoreBig">0</div>'+
+    '<h3 style="margin:2px 0 2px">'+trivRank(s.score)+'</h3>'+
+    '<p class="muted" style="margin:0">🔥 Streak: <strong class="tnum" style="color:var(--amber)">'+streak+'</strong></p>'+
+    '<div class="sharebtns"><button class="btn btn-p btn-sm" id="shareTriv">Share result</button><a class="btn btn-g btn-sm" href="#stats">View stats</a></div>'+
+    '<p class="cring" style="margin:14px 0 0" data-countdown></p></div>';
+  renderSpark($('#resSparkT'),84,sparkStage(streak));
+  countUp($('#trivScoreBig'),s.score,'/5');
+  $('#shareTriv').addEventListener('click',()=>openShare('trivia'));
+  if(fresh)g.scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'center'});
+}
+
+/* ============================================================
+   STATS PAGE
+   ============================================================ */
+function renderStats(){
+  const days=getDays(),s=getStreak();
+  $('#stCurrent').textContent=s.current;
+  $('#stBest').textContent=s.best;
+  let wPlayed=0,wWon=0,total=0;const dist=[0,0,0,0,0,0];
+  Object.keys(days).forEach(k=>{
+    const d=days[k];
+    ['word','number','trivia'].forEach(g=>{if(d[g]&&d[g].done)total++;});
+    if(d.word&&d.word.done){wPlayed++;if(d.word.win){wWon++;if(d.word.tries>=1&&d.word.tries<=6)dist[d.word.tries-1]++;}}
+  });
+  $('#stWin').textContent=wPlayed?Math.round(wWon/wPlayed*100)+'%':'—';
+  $('#stTotal').textContent=total;
+  // heat map: last 84 days (12 weeks), column-per-week, aligned to weekday
+  const heat=$('#heat');heat.innerHTML='';
+  const today=new Date();
+  const start=new Date(today);start.setDate(start.getDate()-83);
+  start.setDate(start.getDate()-start.getDay()); // back to Sunday
+  const cells=[];
+  const d=new Date(start);
+  while(d<=today){
+    const k=todayStr(d),lvl=completedCount(days[k]);
+    cells.push({k:k,l:lvl});
+    d.setDate(d.getDate()+1);
+  }
+  cells.forEach(c=>{
+    const i=document.createElement('i');i.dataset.l=c.l;i.title=c.k+(c.l?' — '+c.l+' game'+(c.l>1?'s':''):'');
+    heat.appendChild(i);
+  });
+  // trio badge
+  $('#trioBadge').hidden=completedCount(days[todayStr()])<3;
+  // guess distribution
+  const max=Math.max(1,...dist),dEl=$('#dist');dEl.innerHTML='';
+  dist.forEach((n,i)=>{
+    const row=document.createElement('div');row.className='distbar';
+    row.innerHTML='<span class="tnum" style="width:14px;color:var(--muted)">'+(i+1)+'</span>'+
+      '<div class="bar" style="width:'+Math.max(8,n/max*100)+'%;animation-delay:'+(i*70)+'ms">'+(n||'')+'</div>';
+    dEl.appendChild(row);
+  });
+  const hints=store.get('db:hints',0);
+  if(hints>0&&!$('#hintStat')){
+    const p=document.createElement('p');p.id='hintStat';p.className='muted';p.style.cssText='font-size:.82rem;margin-top:10px';
+    dEl.parentElement.appendChild(p);
+  }
+  if($('#hintStat'))$('#hintStat').textContent='Hints used all-time: '+hints;
+}
+
+/* ============================================================
+   HOME STATUS CHIPS
+   ============================================================ */
+function updateHomeStatus(){
+  const days=getDays(),t=days[todayStr()]||{};
+  const set=(game,el)=>{
+    const chip=document.querySelector('[data-status="'+game+'"]');if(!chip)return;
+    const rec=t[game];
+    if(rec&&rec.done){
+      chip.classList.remove('go');chip.classList.add('ok');
+      if(game==='word')chip.textContent=rec.win?('Done ✓ '+rec.tries+'/6'):'Done ✗';
+      else if(game==='number')chip.textContent='Done ✓ '+rec.score+' pts';
+      else chip.textContent='Done ✓ '+rec.score+'/5';
+    }else{chip.classList.add('go');chip.classList.remove('ok');chip.textContent='Play now';}
+  };
+  set('word');set('number');set('trivia');
+  const s=getStreak().current,st=sparkStage(s);
+  const NEXT=[[1,'Play today to light your Spark.'],[3,'violet rings'],[7,'amber orbit sparks'],[14,'a double orbit'],[30,'the Supernova']];
+  let txt;
+  if(s===0)txt='Spark is sleeping. Play today to wake it up.';
+  else if(s>=30)txt='🔥 '+s+'-day streak — Spark has gone Supernova. Legendary.';
+  else{
+    const nxt=s<3?[3,'mint glow & a third ring']:s<7?[7,'amber orbit sparks']:s<14?[14,'a double orbit']:[30,'the Supernova'];
+    txt='🔥 '+s+'-day streak. '+(nxt[0]-s)+' more day'+(nxt[0]-s>1?'s':'')+' to unlock '+nxt[1]+'.';
+  }
+  $('#stripText').textContent=txt;
+}
+
+/* ============================================================
+   CONFETTI — neuron dots & synapse lines on canvas
+   ============================================================ */
+function confettiBurst(){
+  if(REDUCED)return;
+  const cv=$('#confetti');cv.hidden=false;
+  const dpr=Math.min(2,window.devicePixelRatio||1);
+  cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;
+  cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';
+  const ctx=cv.getContext('2d');ctx.scale(dpr,dpr);
+  const cols=['#7C5CFF','#2EE6A6','#FFB547','#C9BAFF','#FF5C7A'];
+  const P=[];
+  for(let i=0;i<60;i++){
+    P.push({x:innerWidth/2+(Math.random()-0.5)*160,y:innerHeight*0.38,
+      vx:(Math.random()-0.5)*9,vy:-4-Math.random()*7,
+      r:2+Math.random()*3,line:Math.random()<0.35,a:Math.random()*Math.PI*2,
+      va:(Math.random()-0.5)*0.3,c:cols[i%cols.length],life:1});
+  }
+  const t0=performance.now();
+  function frame(t){
+    const el=(t-t0)/1000;
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    let alive=false;
+    P.forEach(p=>{
+      p.vy+=0.22;p.x+=p.vx;p.y+=p.vy;p.a+=p.va;
+      p.life=Math.max(0,1-el/1.8);
+      if(p.life<=0||p.y>innerHeight+20)return;
+      alive=true;ctx.globalAlpha=p.life;
+      if(p.line){
+        ctx.strokeStyle=p.c;ctx.lineWidth=1.6;ctx.beginPath();
+        ctx.moveTo(p.x-Math.cos(p.a)*7,p.y-Math.sin(p.a)*7);
+        ctx.lineTo(p.x+Math.cos(p.a)*7,p.y+Math.sin(p.a)*7);ctx.stroke();
+        ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(p.x+Math.cos(p.a)*7,p.y+Math.sin(p.a)*7,2,0,7);ctx.fill();
+      }else{
+        ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();
+      }
+    });
+    ctx.globalAlpha=1;
+    if(alive&&el<2)requestAnimationFrame(frame);
+    else{ctx.clearRect(0,0,innerWidth,innerHeight);cv.hidden=true;}
+  }
+  requestAnimationFrame(frame);
+}
+
+/* ============================================================
+   SHARE — text + 1080×1350 canvas card
+   ============================================================ */
+function emojiGrid(){
+  const answer=todaysAnswer(),s=wordState();
+  const sq=SET.cb?{c:'🟦',p:'🟧',a:'⬛'}:{c:'🟩',p:'🟨',a:'⬛'};
+  return s.g.map(g=>colorize(g,answer).map(x=>sq[x]).join('')).join('\n');
+}
+function shareText(game){
+  const n=dayNumber(),streak=getStreak().current,fire=streak>0?' 🔥'+streak:'';
+  if(game==='word'){const s=wordState();
+    return 'DailyBrain Word #'+n+' '+(s.win?s.g.length:'X')+'/6'+fire+'\n'+emojiGrid()+'\nhttps://dailybrain.example';}
+  if(game==='number'){const s=numState();
+    return 'DailyBrain Number #'+n+' '+s.score+'/100'+(s.score===100?' 🎯':'')+fire+'\nhttps://dailybrain.example';}
+  const s=trivState();
+  return 'DailyBrain Trivia #'+n+' '+s.score+'/5 🧠 '+trivRank(s.score)+fire+'\nhttps://dailybrain.example';
+}
+function drawSparkOnCanvas(ctx,cx,cy,R,stage){
+  const dim=stage===0;
+  // synapses
+  ctx.save();
+  for(let i=0;i<7;i++){
+    const a=i/7*Math.PI*2-Math.PI/2+0.22;
+    ctx.strokeStyle=dim?'rgba(140,135,180,.4)':'rgba(124,92,255,.8)';ctx.lineWidth=R*0.045;ctx.lineCap='round';
+    ctx.beginPath();ctx.moveTo(cx+Math.cos(a)*R*0.42,cy+Math.sin(a)*R*0.42);
+    ctx.lineTo(cx+Math.cos(a)*R,cy+Math.sin(a)*R);ctx.stroke();
+    ctx.fillStyle=stage>=2?'#2EE6A6':(dim?'#777399':'#A48FFF');
+    ctx.beginPath();ctx.arc(cx+Math.cos(a)*R,cy+Math.sin(a)*R,R*0.07,0,7);ctx.fill();
+  }
+  // rings
+  const rc=stage===0?0:(stage===1?2:3);
+  for(let i=0;i<rc;i++){
+    ctx.strokeStyle=i===rc-1&&stage>=2?'rgba(46,230,166,.6)':'rgba(124,92,255,'+(0.65-i*0.15)+')';
+    ctx.lineWidth=R*0.02;ctx.setLineDash([R*0.18,R*0.1]);
+    ctx.beginPath();ctx.arc(cx,cy,R*(0.55+i*0.16),0,7);ctx.stroke();
+  }
+  ctx.setLineDash([]);
+  // orbits
+  if(stage>=3)for(let i=0;i<3;i++){const a=i/3*Math.PI*2;ctx.fillStyle='#FFB547';ctx.beginPath();ctx.arc(cx+Math.cos(a)*R*0.62,cy+Math.sin(a)*R*0.62,R*0.05,0,7);ctx.fill();}
+  if(stage>=4)for(let i=0;i<4;i++){const a=i/4*Math.PI*2+0.6;ctx.fillStyle='#FFB547';ctx.beginPath();ctx.arc(cx+Math.cos(a)*R*0.82,cy+Math.sin(a)*R*0.82,R*0.04,0,7);ctx.fill();}
+  if(stage>=5){
+    for(let i=0;i<24;i++){const a=i/24*Math.PI*2;
+      ctx.strokeStyle=i%3===0?'#FFB547':'#7C5CFF';ctx.lineWidth=R*0.03;
+      ctx.beginPath();ctx.moveTo(cx+Math.cos(a)*R*1.08,cy+Math.sin(a)*R*1.08);
+      ctx.lineTo(cx+Math.cos(a)*R*1.2,cy+Math.sin(a)*R*1.2);ctx.stroke();}
+  }
+  // glow + core
+  const grd=ctx.createRadialGradient(cx,cy,0,cx,cy,R*0.55);
+  grd.addColorStop(0,dim?'rgba(141,135,184,.5)':'rgba(124,92,255,.5)');grd.addColorStop(1,'transparent');
+  ctx.fillStyle=grd;ctx.beginPath();ctx.arc(cx,cy,R*0.55,0,7);ctx.fill();
+  const core=ctx.createRadialGradient(cx-R*0.1,cy-R*0.12,R*0.04,cx,cy,R*0.34);
+  core.addColorStop(0,dim?'#8d87b8':'#C9BAFF');core.addColorStop(0.55,dim?'#5e5a86':'#7C5CFF');core.addColorStop(1,dim?'#3c3963':'#4B2FD6');
+  ctx.fillStyle=core;ctx.beginPath();ctx.arc(cx,cy,R*0.34,0,7);ctx.fill();
+  ctx.restore();
+}
+let _shareGame='word';
+function drawShareCard(game){
+  const cv=$('#shareCanvas'),ctx=cv.getContext('2d');
+  const W=1080,H=1350;
+  const bg=ctx.createLinearGradient(0,0,0,H);
+  bg.addColorStop(0,'#0B1020');bg.addColorStop(0.6,'#141038');bg.addColorStop(1,'#1E0F46');
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='rgba(154,166,204,.12)';
+  for(let x=40;x<W;x+=52)for(let y=40;y<H;y+=52){ctx.beginPath();ctx.arc(x,y,2,0,7);ctx.fill();}
+  const streak=getStreak().current;
+  drawSparkOnCanvas(ctx,W/2,330,190,sparkStage(streak));
+  ctx.textAlign='center';
+  ctx.fillStyle='#EAF0FF';ctx.font='700 86px "Space Grotesk",sans-serif';
+  const names={word:'Daily Word',number:'Daily Number',trivia:'Daily Trivia'};
+  ctx.fillText(names[game],W/2,660);
+  ctx.fillStyle='#9AA6CC';ctx.font='500 42px "Inter",sans-serif';
+  const dt=new Date();
+  ctx.fillText('#'+dayNumber()+' · '+dt.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}),W/2,726);
+  ctx.fillStyle='#2EE6A6';ctx.font='700 120px "Space Grotesk",sans-serif';
+  let scoreLine='';
+  if(game==='word'){const s=wordState();scoreLine=(s.win?s.g.length:'X')+'/6';}
+  else if(game==='number'){const s=numState();scoreLine=s.score+'/100';}
+  else{const s=trivState();scoreLine=s.score+'/5';}
+  ctx.fillText(scoreLine,W/2,880);
+  if(game==='word'){
+    const s=wordState(),answer=todaysAnswer();
+    const cell=46,gap=10,rows=s.g.length;
+    const gw=5*cell+4*gap,x0=(W-gw)/2,y0=940;
+    const colr={c:'#2EE6A6',p:'#FFB547',a:'#3A4262'};
+    s.g.forEach((g,r)=>{
+      colorize(g,answer).forEach((cst,c)=>{
+        ctx.fillStyle=colr[cst];
+        const x=x0+c*(cell+gap),y=y0+r*(cell+gap);
+        ctx.beginPath();
+        if(ctx.roundRect)ctx.roundRect(x,y,cell,cell,10);else ctx.rect(x,y,cell,cell);
+        ctx.fill();
+      });
+    });
+  }else if(game==='trivia'){
+    const s=trivState();
+    ctx.fillStyle='#EAF0FF';ctx.font='600 56px "Space Grotesk",sans-serif';
+    ctx.fillText(trivRank(s.score),W/2,980);
+  }else{
+    const s=numState();
+    ctx.fillStyle='#EAF0FF';ctx.font='600 56px "Space Grotesk",sans-serif';
+    ctx.fillText(s.score===100?'Bullseye 🎯':'Reached '+s.result,W/2,980);
+  }
+  if(streak>0){
+    ctx.fillStyle='#FFB547';ctx.font='700 54px "Space Grotesk",sans-serif';
+    ctx.fillText('🔥 '+streak+'-day streak',W/2,1230);
+  }
+  ctx.fillStyle='#9AA6CC';ctx.font='600 40px "Space Grotesk",sans-serif';
+  ctx.fillText('dailybrain · five minutes · one brain · every day',W/2,1300);
+}
+function openShare(game){
+  _shareGame=game;drawShareCard(game);$('#dlgShare').showModal();
+}
+function wireShare(){
+  $('#shareNative').addEventListener('click',async()=>{
+    const text=shareText(_shareGame);
+    try{
+      const blob=await new Promise(res=>$('#shareCanvas').toBlob(res,'image/png'));
+      const file=blob?new File([blob],'dailybrain.png',{type:'image/png'}):null;
+      if(file&&navigator.canShare&&navigator.canShare({files:[file]})){
+        await navigator.share({text:text,files:[file]});return;
+      }
+      if(navigator.share){await navigator.share({text:text});return;}
+      throw new Error('no share');
+    }catch(e){
+      if(e&&e.name==='AbortError')return;
+      try{await navigator.clipboard.writeText(text);toast('Copied to clipboard!');}catch(e2){toast('Sharing not supported here');}
+    }
+  });
+  $('#shareCopy').addEventListener('click',async()=>{
+    try{await navigator.clipboard.writeText(shareText(_shareGame));toast('Result copied!');}
+    catch(e){
+      const ta=document.createElement('textarea');ta.value=shareText(_shareGame);document.body.appendChild(ta);
+      ta.select();try{document.execCommand('copy');toast('Result copied!');}catch(e2){toast('Copy failed');}ta.remove();
+    }
+  });
+  $('#shareDownload').addEventListener('click',()=>{
+    const a=document.createElement('a');a.download='dailybrain-'+_shareGame+'-'+todayStr()+'.png';
+    a.href=$('#shareCanvas').toDataURL('image/png');a.click();toast('Image downloaded');
+  });
+}
+
+/* ============================================================
+   SETTINGS / DIALOGS / CONTACT
+   ============================================================ */
+function wireSettings(){
+  $('#btnSettings').addEventListener('click',()=>{
+    $('#setTheme').value=SET.theme;$('#setHard').checked=SET.hard;$('#setCB').checked=SET.cb;
+    $('#setHaptics').checked=SET.haptics;$('#setSound').checked=SET.sound;
+    $('#dlgSettings').showModal();
+  });
+  $('#setTheme').addEventListener('change',e=>{SET.theme=e.target.value;saveSet();applyTheme();});
+  $('#setHard').addEventListener('change',e=>{
+    if(e.target.checked&&wordState().g.length>0&&!wordState().done){toast('Hard mode starts with tomorrow’s word');}
+    SET.hard=e.target.checked;saveSet();$('#hardChip').hidden=!SET.hard;
+  });
+  $('#setCB').addEventListener('change',e=>{SET.cb=e.target.checked;saveSet();applyTheme();});
+  $('#setHaptics').addEventListener('change',e=>{SET.haptics=e.target.checked;saveSet();if(SET.haptics)vibe(15);});
+  $('#setSound').addEventListener('change',e=>{SET.sound=e.target.checked;saveSet();if(SET.sound)sfx.good();});
+  $('#setReset').addEventListener('click',()=>{
+    if(confirm('Really erase all DailyBrain data on this device? This cannot be undone.')){
+      try{Object.keys(localStorage).filter(k=>k.startsWith('db:')).forEach(k=>localStorage.removeItem(k));}catch(e){}
+      Object.keys(_mem).forEach(k=>delete _mem[k]);
+      location.reload();
+    }
+  });
+  $$('dialog [data-close]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
+  $$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close();}));
+  const cf=$('#contactForm');
+  cf.addEventListener('submit',e=>{
+    e.preventDefault();
+    const n=$('#cfName').value.trim(),em=$('#cfEmail').value.trim(),m=$('#cfMsg').value.trim();
+    if(!n||!em||!m||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){toast('Please fill in all fields with a valid email');return;}
+    location.href='mailto:hello@dailybrain.example?subject='+encodeURIComponent('DailyBrain message from '+n)+'&body='+encodeURIComponent(m+'\n\n— '+n+' ('+em+')');
+    toast('Opening your email app…');
+  });
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+function init(){
+  applyTheme();
+  $('#year').textContent=new Date().getFullYear();
+  updateStreakBadge(false);
+  updateSparks();
+  updateHomeStatus();
+  wireNumber();wireShare();wireSettings();initConsent();
+  tickCountdown();
+  navigate();
+}
+document.addEventListener('DOMContentLoaded',init);
+
+</script>
+</body>
+</html>
