@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://vectorforge.dev/sitemap-index.xml
