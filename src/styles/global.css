@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forge-bg: #0a0d12;
+  --color-forge-surface: #11161f;
+  --color-forge-surfaceHover: #171e2b;
+  --color-forge-border: #1f2937;
+  --color-forge-borderLight: #374151;
+  --color-forge-text: #f3f4f6;
+  --color-forge-textMuted: #9ca3af;
+  --color-forge-accent: #10b981;
+  --color-forge-accentHover: #059669;
+  
+  --color-brand-50: #f0fdf4;
+  --color-brand-100: #dcfce7;
+  --color-brand-200: #bbf7d0;
+  --color-brand-300: #86efac;
+  --color-brand-400: #4ade80;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+  --color-brand-800: #065f46;
+  --color-brand-900: #064e3b;
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, 'Courier New', monospace;
+}
+
+@layer base {
+  :root {
+    --bg-main: #0a0d12;
+    --bg-surface: #11161f;
+    --bg-surface-hover: #171e2b;
+    --border-color: #1f2937;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --brand-accent: #10b981;
+  }
+
+  html.light {
+    --bg-main: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #f1f5f9;
+    --border-color: #e2e8f0;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --brand-accent: #059669;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #10b98133;
+    color: #34d399;
+  }
+
+  /* Custom Scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+  }
+}
+
+/* Checkerboard pattern for transparency preview */
+.bg-transparency-grid {
+  background-image: 
+    linear-gradient(45deg, rgba(128, 128, 128, 0.15) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(128, 128, 128, 0.15) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(128, 128, 128, 0.15) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(128, 128, 128, 0.15) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+}

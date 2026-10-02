@@ -1,0 +1,46 @@
+{
+  "name": "vectorforge",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "SVG Engineering Tools for Developers & Designers",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "preview": "astro preview --host 0.0.0.0",
+    "test": "vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaidkingqt/kon-empire..git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaidkingqt/kon-empire./issues"
+  },
+  "homepage": "https://github.com/zaidkingqt/kon-empire.#readme",
+  "dependencies": {
+    "@astrojs/react": "^7.0.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@types/dompurify": "^3.0.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "astro": "^7.3.5",
+    "dompurify": "^3.4.16",
+    "lucide-react": "^1.50.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "svgo": "^4.1.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "jsdom": "^30.1.1",
+    "vitest": "^5.0.3"
+  }
+}

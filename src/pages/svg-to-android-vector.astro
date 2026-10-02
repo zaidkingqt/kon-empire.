@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Workspace } from '../components/Workspace';
+import { AdContainer } from '../components/AdContainer';
+import FaqSection from '../components/FaqSection.astro';
+
+const faqs = [
+  {
+    question: 'Where do I put the generated XML file in my Android Studio project?',
+    answer: 'Save the generated XML file into your Android project res/drawable/ directory (e.g. res/drawable/ic_custom_icon.xml). You can then reference it in XML layouts via android:src="@drawable/ic_custom_icon" or in Jetpack Compose via painterResource(R.drawable.ic_custom_icon).',
+  },
+  {
+    question: 'Which Android API levels support VectorDrawable?',
+    answer: 'Android VectorDrawable is supported natively on API 21+ (Android 5.0 Lollipop) and backward compatible down to API 7 using the AndroidX AppCompat library with AppCompatDelegate.setCompatVectorFromResourcesEnabled(true).',
+  },
+  {
+    question: 'How are color opacities handled in Android VectorDrawables?',
+    answer: 'VectorForge converts standard SVG hex and rgba colors to 8-character ARGB hex formats (e.g. #FF10B981) and maps fill-opacity/stroke-opacity attributes to android:fillAlpha and android:strokeAlpha.',
+  },
+];
+---
+
+<BaseLayout
+  title="SVG to Android Vector Drawable (XML) Converter | VectorForge"
+  description="Convert SVG files into valid Android VectorDrawable XML files. Compatible with Android API 21+ and Jetpack Compose."
+  canonicalPath="/svg-to-android-vector"
+  keywords={['svg to android xml', 'svg to vectordrawable', 'android vector converter', 'android studio svg import', 'jetpack compose vector']}
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-4">
+      <span class="flex h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      Android API 21+ • VectorDrawable XML • Jetpack Compose
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-forge-text">
+      SVG to Android Vector Drawable (XML) Converter
+    </h1>
+    <p class="mt-3 text-sm sm:text-base text-forge-textMuted max-w-2xl mx-auto leading-relaxed">
+      Convert SVG vector graphics into clean, valid Android VectorDrawable XML files ready for Android Studio and Jetpack Compose.
+    </p>
+  </div>
+
+  <AdContainer slot="top-leaderboard" client:load />
+
+  <section class="w-full">
+    <Workspace client:load initialTool="android" />
+  </section>
+
+  <AdContainer slot="in-content" client:load />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 my-16 prose prose-invert">
+    <div class="p-8 rounded-2xl bg-forge-surface border border-forge-border">
+      <h2 class="text-xl sm:text-2xl font-bold text-forge-text mb-4">
+        Understanding Android Vector Drawable Format
+      </h2>
+      <p class="text-xs sm:text-sm text-forge-textMuted leading-relaxed mb-4">
+        Android uses an XML-based vector format defined by the <code>&lt;vector&gt;</code> root tag rather than standard SVG. VectorForge maps SVG coordinates into <code>android:viewportWidth</code> and <code>android:viewportHeight</code> and transforms path geometry directly to <code>android:pathData</code>.
+      </p>
+    </div>
+  </article>
+
+  <FaqSection faqs={faqs} />
+</BaseLayout>

@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Workspace } from '../components/Workspace';
+import { AdContainer } from '../components/AdContainer';
+import FaqSection from '../components/FaqSection.astro';
+
+const faqs = [
+  {
+    question: 'What is the recommended way to render SVGs in Flutter apps?',
+    answer: 'The industry-standard approach is using the official flutter_svg package with SvgPicture.string or SvgPicture.asset. VectorForge generates a clean, self-contained StatelessWidget with built-in color filters and responsive width/height sizing.',
+  },
+  {
+    question: 'What is the difference between SvgPicture and CustomPainter?',
+    answer: 'SvgPicture parses vector markup at runtime, supporting gradients, masks, and complex styling. CustomPainter paints vector paths directly to the native Flutter Skia/Impeller Canvas without third-party dependencies, which is ideal for performance-critical lightweight icons.',
+  },
+  {
+    question: 'Is the generated Dart code null-safe?',
+    answer: 'Yes. All generated Flutter code is 100% compliant with Dart 3.x sound null-safety conventions, with proper super.key constructors and typed parameters.',
+  },
+];
+---
+
+<BaseLayout
+  title="SVG to Flutter Dart Widget Converter Online | VectorForge"
+  description="Convert SVG files into clean Flutter widgets and CustomPainter code. Supports flutter_svg and native vector graphics for iOS & Android."
+  canonicalPath="/svg-to-flutter"
+  keywords={['svg to flutter', 'flutter svg converter', 'flutter_svg widget', 'svg to dart', 'svg to custompainter']}
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium mb-4">
+      <span class="flex h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+      Flutter 3.x & Dart 3 • SvgPicture & CustomPainter
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-forge-text">
+      SVG to Flutter & Dart Widget Converter
+    </h1>
+    <p class="mt-3 text-sm sm:text-base text-forge-textMuted max-w-2xl mx-auto leading-relaxed">
+      Transform SVG vector graphics into ready-to-use Flutter widgets supporting dynamic theme colors, custom sizing, and null safety.
+    </p>
+  </div>
+
+  <AdContainer slot="top-leaderboard" client:load />
+
+  <section class="w-full">
+    <Workspace client:load initialTool="flutter" />
+  </section>
+
+  <AdContainer slot="in-content" client:load />
+
+  <!-- Educational Guide -->
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 my-16 prose prose-invert">
+    <div class="p-8 rounded-2xl bg-forge-surface border border-forge-border">
+      <h2 class="text-xl sm:text-2xl font-bold text-forge-text mb-4">
+        Implementing Vector Graphics in Flutter: SvgPicture vs CustomPainter
+      </h2>
+      <p class="text-xs sm:text-sm text-forge-textMuted leading-relaxed mb-6">
+        Flutter does not natively bundle an SVG parser inside its core rendering framework. To display vector assets on iOS and Android devices, developers typically choose between the <code>flutter_svg</code> package or rendering paths directly via <code>CustomPainter</code>.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-xs">
+        <div class="p-4 rounded-xl bg-black/40 border border-forge-border">
+          <div class="font-bold text-blue-400 mb-2">📦 flutter_svg Approach (Recommended)</div>
+          <p class="text-forge-textMuted leading-relaxed">
+            Uses <code>SvgPicture.string()</code> with embedded raw SVG markup. Supports multi-stop gradients, nested groups, and blend mode color filters.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/40 border border-forge-border">
+          <div class="font-bold text-emerald-400 mb-2">⚡ CustomPainter (Zero Dependencies)</div>
+          <p class="text-forge-textMuted leading-relaxed">
+            Directly executes <code>canvas.drawPath()</code> on Impeller. Great for simple monolithic UI icons with zero package overhead.
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <FaqSection faqs={faqs} />
+</BaseLayout>
