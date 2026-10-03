@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSON Formatter &amp; Validator — Pretty Print | Kitbox</title>
+  <meta name="description" content="Validate, pretty-print and minify JSON with precise line and column errors and a collapsible tree view. Large payloads stay responsive and nothing is uploaded.">
+  <link rel="canonical" href="https://www.example.com/json-formatter/">
+  <link rel="alternate" hreflang="en" href="https://www.example.com/json-formatter/">
+  <link rel="alternate" hreflang="ar" href="https://www.example.com/ar/json-formatter/">
+  <link rel="alternate" hreflang="x-default" href="https://www.example.com/json-formatter/">
+  <meta name="theme-color" content="#0C1222">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kitbox">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="JSON Formatter &amp; Validator — Pretty Print | Kitbox">
+  <meta property="og:description" content="Validate, pretty-print and minify JSON with precise line and column errors and a collapsible tree view. Large payloads stay responsive and nothing is uploaded.">
+  <meta property="og:url" content="https://www.example.com/json-formatter/">
+  <meta property="og:image" content="https://www.example.com/assets/img/og/json-formatter.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JSON Formatter &amp; Validator — Pretty Print | Kitbox">
+  <meta name="twitter:description" content="Validate, pretty-print and minify JSON with precise line and column errors and a collapsible tree view. Large payloads stay responsive and nothing is uploaded.">
+  <meta name="twitter:image" content="https://www.example.com/assets/img/og/json-formatter.png">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/icons/icon-192.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    (function(){try{var t=localStorage.getItem("kitbox:theme");
+    if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}
+    document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"JSON Formatter","description":"Validate, pretty-print and minify JSON with precise line and column errors and a collapsible tree view. Large payloads stay responsive and nothing is uploaded.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (web browser)","url":"https://www.example.com/json-formatter/","inLanguage":"en","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Kitbox","url":"https://www.example.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.example.com/"},{"@type":"ListItem","position":2,"name":"All tools","item":"https://www.example.com/tools/"},{"@type":"ListItem","position":3,"name":"JSON Formatter","item":"https://www.example.com/json-formatter/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Is my JSON uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Parsing, formatting, minifying and the tree view all run in your browser using its built-in JSON engine. Nothing is transmitted or stored."}},{"@type":"Question","name":"Why does my JSON fail to validate?","acceptedAnswer":{"@type":"Answer","text":"The most common causes are a trailing comma, single quotes instead of double quotes, unquoted keys, and comments — which JSON does not allow. The error message gives the exact line and column."}},{"@type":"Question","name":"Can it handle large files?","acceptedAnswer":{"@type":"Answer","text":"Yes. Several megabytes parse and format quickly. The tree view truncates after a few thousand nodes to keep scrolling smooth, while the formatted text stays complete."}},{"@type":"Question","name":"What indentation should I choose?","acceptedAnswer":{"@type":"Answer","text":"Two spaces is the usual default in JavaScript projects, four spaces suits deeply nested configuration files, and tabs let each reader set their own width."}},{"@type":"Question","name":"Does it support JSON5, comments or trailing commas?","acceptedAnswer":{"@type":"Answer","text":"No, and that is deliberate. The tool validates strict JSON so that what passes here will also pass in any standards-compliant parser."}},{"@type":"Question","name":"Can I download the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Copy it to the clipboard or download it as a .json file generated in your browser."}}]}</script>
+  <script defer src="/assets/js/i18n.js"></script>
+  <script defer src="/assets/js/app.js"></script>
+  <script defer src="/assets/js/tools/json-formatter.js"></script>
+</head>
+<body data-tool="json-formatter">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="lang-suggest" id="lang-suggest" hidden><div class="wrap"><p lang="ar" dir="rtl">هذه الصفحة متاحة بالعربية.</p><a class="btn btn-secondary btn-sm" href="/ar/json-formatter/" lang="ar" dir="rtl">عرض بالعربية</a><button type="button" class="btn btn-ghost btn-sm" data-dismiss-lang>Dismiss</button></div></div>
+<div class="wrap header-inner">
+  <a class="brand" href="/"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="kbg-h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D7BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><rect x="5" y="20" width="38" height="22" rx="5" fill="url(#kbg-h)"/><path d="M24 4 37 9v6c0 3.6-2.3 6.4-5.2 8.1L24 27l-7.8-3.9C13.3 21.4 11 18.6 11 15V9z" fill="#131B33" stroke="url(#kbg-h)" stroke-width="2.4" stroke-linejoin="round"/><path d="m19.5 15.5 3.2 3.2 6-6.2" stroke="#2EE6A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="27" width="10" height="5" rx="2.5" fill="#0C1222" opacity=".35"/></svg><span class="brand-name">Kitbox</span></a>
+  <nav class="primary-nav" aria-label="Main navigation"><ul><li><a href="/tools/">All tools</a></li><li><a href="/image-compressor/">Compress images</a></li><li><a href="/pdf-merge/">Merge PDF</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+  <div class="header-actions">
+    <div class="shield" data-state="idle">
+      <button type="button" class="shield-btn" aria-expanded="false" aria-controls="shield-popover">
+        <span class="shield-dot" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <span class="shield-label" data-shield-label>0 bytes uploaded</span>
+        <span class="sr-only">Privacy Shield</span>
+      </button>
+      <div class="shield-popover" id="shield-popover" role="dialog" aria-label="Privacy Shield" hidden>
+        <h2>Privacy Shield</h2>
+        <p>Your files never leave your device. Kitbox processes everything in your browser.</p>
+        <p>The page itself and a small number of pinned open-source libraries load from the network. Your documents, images and text do not.</p>
+      </div>
+    </div>
+    <a class="icon-btn lang-switch" href="/ar/json-formatter/" hreflang="ar" lang="ar" dir="rtl">العربية</a>
+    <button type="button" class="icon-btn" data-theme-toggle aria-pressed="false"
+      data-label-dark="Switch to dark theme" data-label-light="Switch to light theme" aria-label="Switch to dark theme" title="Switch to dark theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/>
+      </svg>
+    </button>
+    <button type="button" class="icon-btn nav-toggle" data-menu-toggle aria-expanded="false"
+      aria-controls="mobile-menu" aria-label="Menu" title="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</div>
+<div class="mobile-menu" id="mobile-menu" data-open="false">
+  <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-menu-head">
+      <span class="brand"><span class="brand-name">Kitbox</span></span>
+      <button type="button" class="icon-btn" data-menu-close aria-label="Close menu" title="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Main navigation"><ul><li><a href="/tools/">All tools</a></li><li><a href="/image-compressor/">Compress images</a></li><li><a href="/pdf-merge/">Merge PDF</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+  </div>
+</div>
+</header>
+<main id="main">
+<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/tools/">All tools</a></li><li><span aria-current="page">JSON Formatter</span></li></ol></nav>
+<div class="wrap-tool tool-main">
+  <h1>Format, validate and explore JSON locally</h1>
+  <p class="lead muted">Turn an unreadable one-line API response into indented, browsable JSON — with error positions that actually tell you where the problem is.</p>
+  <ul class="chips">
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>No upload</li>
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Free</li>
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>No sign-up</li>
+  </ul>
+  <noscript><p class="noscript-note">This tool runs entirely in your browser and needs JavaScript. Please enable JavaScript to use it — nothing is sent to a server either way.</p></noscript>
+  
+<div class="workspace">
+  <div class="field">
+    <label for="json-input">JSON input</label>
+    <textarea id="json-input" rows="14" spellcheck="false" placeholder='{"name": "Kitbox", "private": true}'></textarea>
+    <span class="hint" id="size-note"></span>
+  </div>
+  <div class="field" style="max-width:260px">
+    <label for="indent">Indentation</label>
+    <select id="indent">
+      <option value="2" selected>2 spaces</option>
+      <option value="4">4 spaces</option>
+      <option value="tab">Tab</option>
+    </select>
+  </div>
+  <div class="actions">
+    <button type="button" class="btn btn-primary" id="format">Format</button>
+    <button type="button" class="btn btn-secondary" id="minify">Minify</button>
+    <button type="button" class="btn btn-secondary" id="validate">Validate</button>
+    <button type="button" class="btn btn-secondary" id="copy">Copy</button>
+    <button type="button" class="btn btn-secondary" id="download">Download</button>
+    <button type="button" class="btn btn-ghost" id="reset">Clear</button>
+  </div>
+  <p class="status" id="tool-status" role="status" aria-live="polite"></p>
+  <div class="mt-3" id="tree-wrap" hidden>
+    <h2>Collapsible tree</h2>
+    <div class="json-tree" id="json-tree"></div>
+  </div>
+</div>
+
+  <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="json-formatter-below"></ins>
+</aside>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How to use this tool</h2>
+    <ol><li>Paste your JSON into the editor.</li><li>Press Validate to check it, Format to pretty-print with your chosen indentation, or Minify to strip whitespace.</li><li>Explore the collapsible tree below the editor to understand the structure.</li><li>Copy the result or download it as a .json file.</li></ol>
+  </section>
+
+  <article class="article">
+    <h2>Why formatting matters</h2>
+<p>JSON that comes out of an API is usually minified: one line, no spaces, thousands of characters. That is correct for transmission and useless for reading. Pretty-printing adds indentation and line breaks so nesting becomes visible, which turns a debugging session from guesswork into inspection. Minifying does the reverse, and is worth doing before you embed a configuration blob in a page or a build artefact, where every byte is downloaded by every visitor.</p>
+<p>Both directions here use the browser's own JSON parser and serialiser. That means the validation is exactly the validation your code will experience — not an approximation by a third-party grammar — and it is fast enough for payloads of several megabytes.</p>
+
+<h2>Finding errors quickly</h2>
+<p>A parse failure reports a character offset, which is not much help in a 40,000-character string. This tool converts that offset into a line and column, shows the parser's own message, and selects the offending character in the editor so you can see it in context. The four mistakes that cause most failures are a trailing comma after the last item, single quotes instead of double quotes, unquoted object keys, and an unescaped control character or backslash inside a string. JSON also forbids comments, which surprises people coming from JavaScript or YAML.</p>
+
+
+    <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="json-formatter-inline"></ins>
+</aside>
+    <h2>The tree view</h2>
+<p>Below the editor, valid JSON is rendered as a collapsible tree. Objects and arrays become expandable nodes labelled with their item count, and leaf values are colour-coded by type: strings, numbers, booleans and null are each distinct. This is the fastest way to answer structural questions — is <code>items</code> an array of objects or an object keyed by id? — without scrolling through indented text. To keep very large documents responsive, the tree stops expanding after a few thousand nodes and says so; the formatted text above always remains complete.</p>
+
+<h2>Practical tips</h2>
+<ul>
+  <li>Two-space indentation is the common default for JavaScript ecosystems; four spaces suits deeply nested configuration; tabs respect whoever reads the file next.</li>
+  <li>Validate before you commit a configuration file. A single missing brace can break a deployment.</li>
+  <li>Minify JSON that ships to browsers, and leave it formatted in your repository where diffs are read by humans.</li>
+  <li>If a response contains credentials or personal data, a local tool is the only acceptable place to inspect it.</li>
+  <li>Use the tree to confirm array lengths before writing a loop against unfamiliar data.</li>
+</ul>
+
+<h2>Limitations</h2>
+<p>This is a strict JSON tool, not a JSON5 or YAML tool: comments, trailing commas and unquoted keys are errors, by design, because that is what every standards-compliant parser will tell you too. Very large numbers lose precision beyond 2^53, which is a property of JSON and JavaScript rather than of this page. Key order is preserved for objects as the parser returns them, but JSON does not formally guarantee order, so do not rely on it in your own code.</p>
+
+<h2>Privacy</h2>
+<p>API responses routinely contain access tokens, customer records and internal identifiers. Pasting them into a hosted formatter means sending that data to someone else's server. Everything on this page runs in your browser: no request is made, nothing is logged, and closing the tab removes every trace.</p>
+  </article>
+
+  <section aria-labelledby="faq-h"><h2 id="faq-h">Frequently asked questions</h2><div class="faq"><details><summary>Is my JSON uploaded to a server?</summary><p>No. Parsing, formatting, minifying and the tree view all run in your browser using its built-in JSON engine. Nothing is transmitted or stored.</p></details><details><summary>Why does my JSON fail to validate?</summary><p>The most common causes are a trailing comma, single quotes instead of double quotes, unquoted keys, and comments — which JSON does not allow. The error message gives the exact line and column.</p></details><details><summary>Can it handle large files?</summary><p>Yes. Several megabytes parse and format quickly. The tree view truncates after a few thousand nodes to keep scrolling smooth, while the formatted text stays complete.</p></details><details><summary>What indentation should I choose?</summary><p>Two spaces is the usual default in JavaScript projects, four spaces suits deeply nested configuration files, and tabs let each reader set their own width.</p></details><details><summary>Does it support JSON5, comments or trailing commas?</summary><p>No, and that is deliberate. The tool validates strict JSON so that what passes here will also pass in any standards-compliant parser.</p></details><details><summary>Can I download the result?</summary><p>Yes. Copy it to the clipboard or download it as a .json file generated in your browser.</p></details></div></section>
+
+  <section class="related mt-3" aria-labelledby="rel-h">
+    <h2 id="rel-h">Related tools</h2>
+    <ul><li><a href="/word-counter/">Word Counter</a></li><li><a href="/case-converter/">Case Converter</a></li><li><a href="/qr-code-generator/">QR Code Generator</a></li></ul>
+  </section>
+
+  <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="json-formatter-end"></ins>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="kbg-f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D7BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><rect x="5" y="20" width="38" height="22" rx="5" fill="url(#kbg-f)"/><path d="M24 4 37 9v6c0 3.6-2.3 6.4-5.2 8.1L24 27l-7.8-3.9C13.3 21.4 11 18.6 11 15V9z" fill="#131B33" stroke="url(#kbg-f)" stroke-width="2.4" stroke-linejoin="round"/><path d="m19.5 15.5 3.2 3.2 6-6.2" stroke="#2EE6A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="27" width="10" height="5" rx="2.5" fill="#0C1222" opacity=".35"/></svg><span class="brand-name">Kitbox</span></a>
+      <p>Free browser-based tools for images, PDFs, text and code. Your files are processed on your device and never uploaded.</p>
+    </div>
+    <nav aria-labelledby="f-image"><h2 id="f-image">Image</h2><ul><li><a href="/image-compressor/">Image Compressor</a></li><li><a href="/image-resizer/">Image Resizer</a></li><li><a href="/image-converter/">Image Converter</a></li></ul></nav>
+    <nav aria-labelledby="f-pdf"><h2 id="f-pdf">PDF</h2><ul><li><a href="/pdf-merge/">PDF Merge</a></li><li><a href="/pdf-split/">PDF Split</a></li><li><a href="/images-to-pdf/">Images to PDF</a></li></ul></nav>
+    <nav aria-labelledby="f-text"><h2 id="f-text">Text & developer</h2><ul><li><a href="/word-counter/">Word Counter</a></li><li><a href="/case-converter/">Case Converter</a></li><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li><li><a href="/qr-code-generator/">QR Code Generator</a></li><li><a href="/password-generator/">Password Generator</a></li></ul></nav>
+    <nav aria-labelledby="f-legal"><h2 id="f-legal">Kitbox</h2><ul><li><a href="/tools/">All tools</a></li><li><a href="/about/">About Kitbox</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li><li><a href="/cookies/">Cookie Policy</a></li></ul></nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="mb-0">© <span data-year>2026</span> Kitbox. All rights reserved.</p>
+    <div class="controls">
+      <a class="btn btn-ghost btn-sm" href="/ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a>
+      <button type="button" class="btn btn-ghost btn-sm" data-theme-toggle aria-pressed="false"
+        data-label-dark="Switch to dark theme" data-label-light="Switch to light theme">Theme</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-cookie-settings>Cookie settings</button>
+    </div>
+  </div>
+</div>
+</footer>
+<div class="consent" id="consent-banner" role="dialog" aria-modal="false" aria-labelledby="consent-title" hidden>
+  <div class="consent-card">
+    <h2 id="consent-title">Your privacy choices</h2>
+    <p>Kitbox never uploads your files. We do use local storage for your theme and language preferences, and we would like to show advertising that keeps the tools free. Advertising and analytics storage stay switched off until you choose.</p>
+    <div class="consent-actions">
+      <button type="button" class="btn btn-primary" data-consent="accept">Accept all</button>
+      <button type="button" class="btn btn-secondary" data-consent="reject">Reject non-essential</button>
+      <button type="button" class="btn btn-ghost" data-consent="manage" aria-expanded="false">Manage preferences</button>
+    </div>
+    <div class="consent-prefs" data-consent-prefs hidden>
+      <label class="check"><input type="checkbox" checked disabled> Strictly necessary storage (always on)</label>
+      <label class="check"><input type="checkbox" id="consent-analytics"> Analytics storage</label>
+      <label class="check"><input type="checkbox" id="consent-ads"> Advertising storage</label>
+      <div class="consent-actions">
+        <button type="button" class="btn btn-primary btn-sm" data-consent="save">Save preferences</button>
+      </div>
+      <p class="hint">You can change this at any time from the Cookie settings link in the footer.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

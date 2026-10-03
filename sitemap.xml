@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.example.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/tools/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/tools/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/tools/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/tools/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/tools/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/tools/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/tools/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/tools/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/image-compressor/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/image-compressor/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/image-compressor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/image-compressor/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/image-compressor/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/image-compressor/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/image-compressor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/image-compressor/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/image-resizer/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/image-resizer/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/image-resizer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/image-resizer/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/image-resizer/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/image-resizer/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/image-resizer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/image-resizer/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/image-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/image-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/image-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/image-converter/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/image-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/image-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/image-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/image-converter/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/pdf-merge/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/pdf-merge/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/pdf-merge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/pdf-merge/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/pdf-merge/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/pdf-merge/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/pdf-merge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/pdf-merge/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/pdf-split/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/pdf-split/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/pdf-split/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/pdf-split/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/pdf-split/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/pdf-split/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/pdf-split/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/pdf-split/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/images-to-pdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/images-to-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/images-to-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/images-to-pdf/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/images-to-pdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/images-to-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/images-to-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/images-to-pdf/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/word-counter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/word-counter/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/word-counter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/word-counter/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/word-counter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/word-counter/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/word-counter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/word-counter/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/case-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/case-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/case-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/case-converter/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/case-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/case-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/case-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/case-converter/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/lorem-ipsum-generator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/lorem-ipsum-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/lorem-ipsum-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/lorem-ipsum-generator/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/lorem-ipsum-generator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/lorem-ipsum-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/lorem-ipsum-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/lorem-ipsum-generator/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/json-formatter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/json-formatter/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/json-formatter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/json-formatter/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/json-formatter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/json-formatter/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/json-formatter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/json-formatter/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/qr-code-generator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/qr-code-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/qr-code-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/qr-code-generator/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/qr-code-generator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/qr-code-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/qr-code-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/qr-code-generator/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/password-generator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/password-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/password-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/password-generator/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/password-generator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/password-generator/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/password-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/password-generator/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/about/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/about/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/contact/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/contact/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/privacy/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/privacy/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/terms/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/terms/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/cookies/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/cookies/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.example.com/ar/cookies/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.example.com/ar/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/cookies/"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Convert Images to PDF — JPG &amp; PNG to PDF | Kitbox</title>
+  <meta name="description" content="Turn JPG and PNG images into one PDF document. Reorder pages, pick A4, Letter or fit-to-image, set orientation and margins, and download — entirely in your browser.">
+  <link rel="canonical" href="https://www.example.com/images-to-pdf/">
+  <link rel="alternate" hreflang="en" href="https://www.example.com/images-to-pdf/">
+  <link rel="alternate" hreflang="ar" href="https://www.example.com/ar/images-to-pdf/">
+  <link rel="alternate" hreflang="x-default" href="https://www.example.com/images-to-pdf/">
+  <meta name="theme-color" content="#0C1222">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kitbox">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Convert Images to PDF — JPG &amp; PNG to PDF | Kitbox">
+  <meta property="og:description" content="Turn JPG and PNG images into one PDF document. Reorder pages, pick A4, Letter or fit-to-image, set orientation and margins, and download — entirely in your browser.">
+  <meta property="og:url" content="https://www.example.com/images-to-pdf/">
+  <meta property="og:image" content="https://www.example.com/assets/img/og/images-to-pdf.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Convert Images to PDF — JPG &amp; PNG to PDF | Kitbox">
+  <meta name="twitter:description" content="Turn JPG and PNG images into one PDF document. Reorder pages, pick A4, Letter or fit-to-image, set orientation and margins, and download — entirely in your browser.">
+  <meta name="twitter:image" content="https://www.example.com/assets/img/og/images-to-pdf.png">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/icons/icon-192.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    (function(){try{var t=localStorage.getItem("kitbox:theme");
+    if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}
+    document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Images to PDF","description":"Turn JPG and PNG images into one PDF document. Reorder pages, pick A4, Letter or fit-to-image, set orientation and margins, and download — entirely in your browser.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (web browser)","url":"https://www.example.com/images-to-pdf/","inLanguage":"en","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Kitbox","url":"https://www.example.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.example.com/"},{"@type":"ListItem","position":2,"name":"All tools","item":"https://www.example.com/tools/"},{"@type":"ListItem","position":3,"name":"Images to PDF","item":"https://www.example.com/images-to-pdf/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Which image formats can I use?","acceptedAnswer":{"@type":"Answer","text":"JPG and PNG. These embed directly into a PDF without re-encoding, which keeps the output faithful to your originals. Convert other formats first with the image converter."}},{"@type":"Question","name":"Can I control the page order?","acceptedAnswer":{"@type":"Answer","text":"Yes. Drag the rows in the list, or use the up and down buttons which also work with a keyboard and a screen reader. The preview strip always reflects the current order."}},{"@type":"Question","name":"What does fit-to-image do?","acceptedAnswer":{"@type":"Answer","text":"It makes every page exactly as large as its image, plus the margin you chose. This avoids white borders and suits documents meant for screen reading rather than printing."}},{"@type":"Question","name":"Is the text in my photos searchable?","acceptedAnswer":{"@type":"Answer","text":"No. The PDF contains images, not recognised text. Kitbox does not perform OCR, which would require either a large download or a server, and the second option would break the privacy promise."}},{"@type":"Question","name":"Why is my PDF so large?","acceptedAnswer":{"@type":"Answer","text":"Because it contains your full-resolution photographs. Compress the images first with the Kitbox image compressor, then build the PDF; a 10 MB document often drops below 1 MB with no visible difference."}},{"@type":"Question","name":"Is anything uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The document is assembled in your browser's memory with pdf-lib and saved straight to your device."}}]}</script>
+  <script defer src="/assets/js/i18n.js"></script>
+  <script defer src="/assets/js/app.js"></script>
+  <script defer crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script defer src="/assets/js/tools/images-to-pdf.js"></script>
+</head>
+<body data-tool="images-to-pdf">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="lang-suggest" id="lang-suggest" hidden><div class="wrap"><p lang="ar" dir="rtl">هذه الصفحة متاحة بالعربية.</p><a class="btn btn-secondary btn-sm" href="/ar/images-to-pdf/" lang="ar" dir="rtl">عرض بالعربية</a><button type="button" class="btn btn-ghost btn-sm" data-dismiss-lang>Dismiss</button></div></div>
+<div class="wrap header-inner">
+  <a class="brand" href="/"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="kbg-h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D7BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><rect x="5" y="20" width="38" height="22" rx="5" fill="url(#kbg-h)"/><path d="M24 4 37 9v6c0 3.6-2.3 6.4-5.2 8.1L24 27l-7.8-3.9C13.3 21.4 11 18.6 11 15V9z" fill="#131B33" stroke="url(#kbg-h)" stroke-width="2.4" stroke-linejoin="round"/><path d="m19.5 15.5 3.2 3.2 6-6.2" stroke="#2EE6A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="27" width="10" height="5" rx="2.5" fill="#0C1222" opacity=".35"/></svg><span class="brand-name">Kitbox</span></a>
+  <nav class="primary-nav" aria-label="Main navigation"><ul><li><a href="/tools/">All tools</a></li><li><a href="/image-compressor/">Compress images</a></li><li><a href="/pdf-merge/">Merge PDF</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+  <div class="header-actions">
+    <div class="shield" data-state="idle">
+      <button type="button" class="shield-btn" aria-expanded="false" aria-controls="shield-popover">
+        <span class="shield-dot" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <span class="shield-label" data-shield-label>0 bytes uploaded</span>
+        <span class="sr-only">Privacy Shield</span>
+      </button>
+      <div class="shield-popover" id="shield-popover" role="dialog" aria-label="Privacy Shield" hidden>
+        <h2>Privacy Shield</h2>
+        <p>Your files never leave your device. Kitbox processes everything in your browser.</p>
+        <p>The page itself and a small number of pinned open-source libraries load from the network. Your documents, images and text do not.</p>
+      </div>
+    </div>
+    <a class="icon-btn lang-switch" href="/ar/images-to-pdf/" hreflang="ar" lang="ar" dir="rtl">العربية</a>
+    <button type="button" class="icon-btn" data-theme-toggle aria-pressed="false"
+      data-label-dark="Switch to dark theme" data-label-light="Switch to light theme" aria-label="Switch to dark theme" title="Switch to dark theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/>
+      </svg>
+    </button>
+    <button type="button" class="icon-btn nav-toggle" data-menu-toggle aria-expanded="false"
+      aria-controls="mobile-menu" aria-label="Menu" title="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</div>
+<div class="mobile-menu" id="mobile-menu" data-open="false">
+  <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-menu-head">
+      <span class="brand"><span class="brand-name">Kitbox</span></span>
+      <button type="button" class="icon-btn" data-menu-close aria-label="Close menu" title="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Main navigation"><ul><li><a href="/tools/">All tools</a></li><li><a href="/image-compressor/">Compress images</a></li><li><a href="/pdf-merge/">Merge PDF</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+  </div>
+</div>
+</header>
+<main id="main">
+<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/tools/">All tools</a></li><li><span aria-current="page">Images to PDF</span></li></ol></nav>
+<div class="wrap-tool tool-main">
+  <h1>Turn your images into one PDF document</h1>
+  <p class="lead muted">Combine photos of documents, receipts or whiteboards into a single properly paginated PDF, with the page size, orientation and margins you actually need.</p>
+  <ul class="chips">
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>No upload</li>
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Free</li>
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>No sign-up</li>
+  </ul>
+  <noscript><p class="noscript-note">This tool runs entirely in your browser and needs JavaScript. Please enable JavaScript to use it — nothing is sent to a server either way.</p></noscript>
+  
+<div class="workspace">
+  <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-describedby="dz-hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 5h10v10H3z"/><path d="m5 13 3-3 2 2"/><path d="M13 9h8v12h-8z"/></svg>
+    <strong>Drop images here or choose files</strong>
+    <span id="dz-hint">JPG and PNG images. Each image becomes one PDF page.</span>
+    <input type="file" id="file-input" accept="image/jpeg,image/png" multiple>
+  </div>
+  <div class="field-grid mt-3">
+    <div class="field">
+      <label for="page-size">Page size</label>
+      <select id="page-size">
+        <option value="a4">A4</option>
+        <option value="letter">Letter</option>
+        <option value="fit">Fit to image</option>
+      </select>
+    </div>
+    <div class="field" id="orientation-field">
+      <label for="orientation">Orientation</label>
+      <select id="orientation">
+        <option value="portrait">Portrait</option>
+        <option value="landscape">Landscape</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="margin">Margin <span id="margin-out" class="muted"></span></label>
+      <input type="range" id="margin" min="0" max="72" value="24" step="4">
+    </div>
+    <div class="field">
+      <label for="out-name">Output file name</label>
+      <input type="text" id="out-name" value="kitbox-images">
+    </div>
+  </div>
+  <div class="actions">
+    <button type="button" class="btn btn-primary" id="run">Create PDF</button>
+    <button type="button" class="btn btn-ghost" id="reset">Start over</button>
+  </div>
+  <div class="progress" id="progress" hidden><div></div></div>
+  <p class="status" id="tool-status" role="status" aria-live="polite"></p>
+  <ul class="file-list" id="file-list"></ul>
+  <div class="preview-grid" id="preview-grid" hidden></div>
+</div>
+
+  <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="images-to-pdf-below"></ins>
+</aside>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How to use this tool</h2>
+    <ol><li>Add your JPG or PNG images. Each image becomes one page, and a preview strip shows the resulting order.</li><li>Drag rows or use the arrow buttons to arrange the pages.</li><li>Choose A4, Letter or fit-to-image, set portrait or landscape, and pick a margin.</li><li>Name the file and press Create PDF. The document is built in your browser and downloaded immediately.</li></ol>
+  </section>
+
+  <article class="article">
+    <h2>Why a PDF instead of a folder of photos</h2>
+<p>Photographs of paperwork are convenient to capture and awkward to send. Ten separate JPEGs arrive out of order, open in ten windows, and print on ten sheets with no consistent margin. A PDF solves all of that: fixed page order, predictable printing, one attachment, and a format every institution accepts. Scanning apps do this on a phone, but they usually want an account, and the files pass through a cloud service on the way.</p>
+<p>This tool builds the document with pdf-lib inside your browser. Each image is embedded as a JPEG or PNG object on its own page, scaled to fit the page box you chose while preserving its proportions, and centred within the margin you set. The result is a normal PDF that any reader can open.</p>
+
+<h2>Choosing a page size</h2>
+<p>A4 (210 × 297 mm) is the international standard and the right default for anything going to a European, Middle Eastern, Asian or African office. Letter (8.5 × 11 in) is the North American equivalent. Both place your image on a fixed sheet with white space around it, which is what you want for printing and for formal submissions.</p>
+<p>Fit-to-image behaves differently: each page takes the exact dimensions of its image, plus the margin. There is no white space and no letterboxing, which suits screenshots, comic pages, product catalogues and anything intended for screen reading rather than printing. The trade-off is that pages can vary in size within the same document.</p>
+
+
+    <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="images-to-pdf-inline"></ins>
+</aside>
+    <h2>Margins, orientation and quality</h2>
+<p>The margin is specified in PDF points, where 72 points equal one inch. Twenty-four points is roughly eight millimetres, a comfortable edge for home printers, which rarely print to the very edge of the sheet. Set it to zero for borderless screen documents. Orientation matters most for photographs taken sideways: a landscape photo on a portrait A4 page leaves large bands of white above and below, so switch the page to landscape for those.</p>
+<p>Image quality is inherited from your source files; the tool embeds them without re-encoding. If the PDF is too large to email, compress the images first with the <a href="/image-compressor/">image compressor</a> and then build the document — that is far more effective than any post-processing.</p>
+
+<h2>Tips</h2>
+<ul>
+  <li>Crop and straighten photographs of documents before adding them. A square, tightly cropped page looks like a scan rather than a snapshot.</li>
+  <li>Shoot in even, indirect light to avoid the shadow of your own hand across the page.</li>
+  <li>Keep every page in the same orientation where possible; mixed orientations are legal but awkward to read.</li>
+  <li>Check the preview strip before exporting — reordering afterwards means rebuilding the file.</li>
+  <li>If you need to insert these pages into an existing document, create the PDF here and then use <a href="/pdf-merge/">PDF merge</a>.</li>
+</ul>
+
+<h2>Limitations and troubleshooting</h2>
+<p>Only JPG and PNG are accepted, because those are the formats a PDF can embed directly without re-encoding; convert WebP or HEIC files first with the <a href="/image-converter/">image converter</a>. A very long batch of high-resolution photographs can consume a lot of memory, so build such documents in sections and merge them. There is no optical character recognition here: the output contains pictures of text, not searchable text.</p>
+
+<h2>Privacy</h2>
+<p>Photographs of passports, bank letters, tenancy agreements and medical results are routinely turned into PDFs. Because the whole process runs locally, none of those images is transmitted, stored or scanned by anyone else.</p>
+  </article>
+
+  <section aria-labelledby="faq-h"><h2 id="faq-h">Frequently asked questions</h2><div class="faq"><details><summary>Which image formats can I use?</summary><p>JPG and PNG. These embed directly into a PDF without re-encoding, which keeps the output faithful to your originals. Convert other formats first with the image converter.</p></details><details><summary>Can I control the page order?</summary><p>Yes. Drag the rows in the list, or use the up and down buttons which also work with a keyboard and a screen reader. The preview strip always reflects the current order.</p></details><details><summary>What does fit-to-image do?</summary><p>It makes every page exactly as large as its image, plus the margin you chose. This avoids white borders and suits documents meant for screen reading rather than printing.</p></details><details><summary>Is the text in my photos searchable?</summary><p>No. The PDF contains images, not recognised text. Kitbox does not perform OCR, which would require either a large download or a server, and the second option would break the privacy promise.</p></details><details><summary>Why is my PDF so large?</summary><p>Because it contains your full-resolution photographs. Compress the images first with the Kitbox image compressor, then build the PDF; a 10 MB document often drops below 1 MB with no visible difference.</p></details><details><summary>Is anything uploaded?</summary><p>No. The document is assembled in your browser's memory with pdf-lib and saved straight to your device.</p></details></div></section>
+
+  <section class="related mt-3" aria-labelledby="rel-h">
+    <h2 id="rel-h">Related tools</h2>
+    <ul><li><a href="/pdf-merge/">PDF Merge</a></li><li><a href="/pdf-split/">PDF Split</a></li><li><a href="/image-compressor/">Image Compressor</a></li></ul>
+  </section>
+
+  <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="images-to-pdf-end"></ins>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="kbg-f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D7BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><rect x="5" y="20" width="38" height="22" rx="5" fill="url(#kbg-f)"/><path d="M24 4 37 9v6c0 3.6-2.3 6.4-5.2 8.1L24 27l-7.8-3.9C13.3 21.4 11 18.6 11 15V9z" fill="#131B33" stroke="url(#kbg-f)" stroke-width="2.4" stroke-linejoin="round"/><path d="m19.5 15.5 3.2 3.2 6-6.2" stroke="#2EE6A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="27" width="10" height="5" rx="2.5" fill="#0C1222" opacity=".35"/></svg><span class="brand-name">Kitbox</span></a>
+      <p>Free browser-based tools for images, PDFs, text and code. Your files are processed on your device and never uploaded.</p>
+    </div>
+    <nav aria-labelledby="f-image"><h2 id="f-image">Image</h2><ul><li><a href="/image-compressor/">Image Compressor</a></li><li><a href="/image-resizer/">Image Resizer</a></li><li><a href="/image-converter/">Image Converter</a></li></ul></nav>
+    <nav aria-labelledby="f-pdf"><h2 id="f-pdf">PDF</h2><ul><li><a href="/pdf-merge/">PDF Merge</a></li><li><a href="/pdf-split/">PDF Split</a></li><li><a href="/images-to-pdf/">Images to PDF</a></li></ul></nav>
+    <nav aria-labelledby="f-text"><h2 id="f-text">Text & developer</h2><ul><li><a href="/word-counter/">Word Counter</a></li><li><a href="/case-converter/">Case Converter</a></li><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li><li><a href="/qr-code-generator/">QR Code Generator</a></li><li><a href="/password-generator/">Password Generator</a></li></ul></nav>
+    <nav aria-labelledby="f-legal"><h2 id="f-legal">Kitbox</h2><ul><li><a href="/tools/">All tools</a></li><li><a href="/about/">About Kitbox</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li><li><a href="/cookies/">Cookie Policy</a></li></ul></nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="mb-0">© <span data-year>2026</span> Kitbox. All rights reserved.</p>
+    <div class="controls">
+      <a class="btn btn-ghost btn-sm" href="/ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a>
+      <button type="button" class="btn btn-ghost btn-sm" data-theme-toggle aria-pressed="false"
+        data-label-dark="Switch to dark theme" data-label-light="Switch to light theme">Theme</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-cookie-settings>Cookie settings</button>
+    </div>
+  </div>
+</div>
+</footer>
+<div class="consent" id="consent-banner" role="dialog" aria-modal="false" aria-labelledby="consent-title" hidden>
+  <div class="consent-card">
+    <h2 id="consent-title">Your privacy choices</h2>
+    <p>Kitbox never uploads your files. We do use local storage for your theme and language preferences, and we would like to show advertising that keeps the tools free. Advertising and analytics storage stay switched off until you choose.</p>
+    <div class="consent-actions">
+      <button type="button" class="btn btn-primary" data-consent="accept">Accept all</button>
+      <button type="button" class="btn btn-secondary" data-consent="reject">Reject non-essential</button>
+      <button type="button" class="btn btn-ghost" data-consent="manage" aria-expanded="false">Manage preferences</button>
+    </div>
+    <div class="consent-prefs" data-consent-prefs hidden>
+      <label class="check"><input type="checkbox" checked disabled> Strictly necessary storage (always on)</label>
+      <label class="check"><input type="checkbox" id="consent-analytics"> Analytics storage</label>
+      <label class="check"><input type="checkbox" id="consent-ads"> Advertising storage</label>
+      <div class="consent-actions">
+        <button type="button" class="btn btn-primary btn-sm" data-consent="save">Save preferences</button>
+      </div>
+      <p class="hint">You can change this at any time from the Cookie settings link in the footer.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Kitbox processes files in the browser; there are no private endpoints.
+Sitemap: https://www.example.com/sitemap.xml
