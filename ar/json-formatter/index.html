@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>منسّق ومدقق JSON — تنسيق وتصغير | Kitbox</title>
+  <meta name="description" content="تحقق من صحة JSON ونسّقه وصغّره مع تحديد دقيق لرقم السطر والعمود وعرض شجري قابل للطي. يبقى الأداء سلسًا مع الملفات الكبيرة وبدون أي رفع.">
+  <link rel="canonical" href="https://www.example.com/ar/json-formatter/">
+  <link rel="alternate" hreflang="en" href="https://www.example.com/json-formatter/">
+  <link rel="alternate" hreflang="ar" href="https://www.example.com/ar/json-formatter/">
+  <link rel="alternate" hreflang="x-default" href="https://www.example.com/json-formatter/">
+  <meta name="theme-color" content="#0C1222">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kitbox">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:title" content="منسّق ومدقق JSON — تنسيق وتصغير | Kitbox">
+  <meta property="og:description" content="تحقق من صحة JSON ونسّقه وصغّره مع تحديد دقيق لرقم السطر والعمود وعرض شجري قابل للطي. يبقى الأداء سلسًا مع الملفات الكبيرة وبدون أي رفع.">
+  <meta property="og:url" content="https://www.example.com/ar/json-formatter/">
+  <meta property="og:image" content="https://www.example.com/assets/img/og/json-formatter.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="منسّق ومدقق JSON — تنسيق وتصغير | Kitbox">
+  <meta name="twitter:description" content="تحقق من صحة JSON ونسّقه وصغّره مع تحديد دقيق لرقم السطر والعمود وعرض شجري قابل للطي. يبقى الأداء سلسًا مع الملفات الكبيرة وبدون أي رفع.">
+  <meta name="twitter:image" content="https://www.example.com/assets/img/og/json-formatter.png">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/icons/icon-192.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    (function(){try{var t=localStorage.getItem("kitbox:theme");
+    if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}
+    document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"منسّق JSON","description":"تحقق من صحة JSON ونسّقه وصغّره مع تحديد دقيق لرقم السطر والعمود وعرض شجري قابل للطي. يبقى الأداء سلسًا مع الملفات الكبيرة وبدون أي رفع.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (web browser)","url":"https://www.example.com/ar/json-formatter/","inLanguage":"ar","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Kitbox","url":"https://www.example.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://www.example.com/ar/"},{"@type":"ListItem","position":2,"name":"كل الأدوات","item":"https://www.example.com/ar/tools/"},{"@type":"ListItem","position":3,"name":"منسّق JSON","item":"https://www.example.com/ar/json-formatter/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ar","mainEntity":[{"@type":"Question","name":"هل يُرفع محتوى JSON إلى خادم؟","acceptedAnswer":{"@type":"Answer","text":"لا. التحليل والتنسيق والتصغير والعرض الشجري كلها تعمل في متصفحك عبر محرك JSON المدمج، ولا يُرسل أو يُخزَّن أي شيء."}},{"@type":"Question","name":"لماذا يفشل التحقق من ملفي؟","acceptedAnswer":{"@type":"Answer","text":"الأسباب الأكثر شيوعًا هي فاصلة زائدة، أو علامات اقتباس مفردة بدل المزدوجة، أو مفاتيح بلا اقتباس، أو تعليقات لا يسمح بها JSON. وتعطيك الرسالة رقم السطر والعمود بدقة."}},{"@type":"Question","name":"هل يتعامل مع الملفات الكبيرة؟","acceptedAnswer":{"@type":"Answer","text":"نعم. عدة ميجابايتات تُحلَّل وتُنسَّق بسرعة. ويُختصر العرض الشجري بعد بضعة آلاف من العُقد للحفاظ على سلاسة التمرير بينما يبقى النص المنسّق كاملًا."}},{"@type":"Question","name":"أي مسافة بادئة أختار؟","acceptedAnswer":{"@type":"Answer","text":"مسافتان هي الافتراضي المعتاد في مشاريع جافاسكريبت، وأربع مسافات تناسب ملفات الإعدادات المتداخلة، وعلامة الجدولة تتيح لكل قارئ ضبط العرض الذي يريده."}},{"@type":"Question","name":"هل يدعم JSON5 أو التعليقات أو الفواصل الزائدة؟","acceptedAnswer":{"@type":"Answer","text":"لا، وهذا مقصود. تتحقق الأداة من JSON الصارم حتى يكون ما ينجح هنا ناجحًا في أي محلل متوافق مع المعيار."}},{"@type":"Question","name":"هل يمكنني تنزيل النتيجة؟","acceptedAnswer":{"@type":"Answer","text":"نعم. انسخها إلى الحافظة أو نزّلها كملف json يُنشأ داخل متصفحك."}}]}</script>
+  <script defer src="/assets/js/i18n.js"></script>
+  <script defer src="/assets/js/app.js"></script>
+  <script defer src="/assets/js/tools/json-formatter.js"></script>
+</head>
+<body data-tool="json-formatter">
+<a class="skip-link" href="#main">تخطّي إلى المحتوى</a>
+<header class="site-header">
+<div class="lang-suggest" id="lang-suggest" hidden><div class="wrap"><p lang="en" dir="ltr">This page is available in English.</p><a class="btn btn-secondary btn-sm" href="/json-formatter/" lang="en" dir="ltr">View in English</a><button type="button" class="btn btn-ghost btn-sm" data-dismiss-lang>إخفاء</button></div></div>
+<div class="wrap header-inner">
+  <a class="brand" href="/ar/"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="kbg-h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D7BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><rect x="5" y="20" width="38" height="22" rx="5" fill="url(#kbg-h)"/><path d="M24 4 37 9v6c0 3.6-2.3 6.4-5.2 8.1L24 27l-7.8-3.9C13.3 21.4 11 18.6 11 15V9z" fill="#131B33" stroke="url(#kbg-h)" stroke-width="2.4" stroke-linejoin="round"/><path d="m19.5 15.5 3.2 3.2 6-6.2" stroke="#2EE6A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="27" width="10" height="5" rx="2.5" fill="#0C1222" opacity=".35"/></svg><span class="brand-name">Kitbox</span></a>
+  <nav class="primary-nav" aria-label="التنقل الرئيسي"><ul><li><a href="/ar/tools/">كل الأدوات</a></li><li><a href="/ar/image-compressor/">ضغط الصور</a></li><li><a href="/ar/pdf-merge/">دمج PDF</a></li><li><a href="/ar/about/">من نحن</a></li><li><a href="/ar/contact/">اتصل بنا</a></li></ul></nav>
+  <div class="header-actions">
+    <div class="shield" data-state="idle">
+      <button type="button" class="shield-btn" aria-expanded="false" aria-controls="shield-popover">
+        <span class="shield-dot" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <span class="shield-label" data-shield-label>0 بايت تم رفعه</span>
+        <span class="sr-only">درع الخصوصية</span>
+      </button>
+      <div class="shield-popover" id="shield-popover" role="dialog" aria-label="درع الخصوصية" hidden>
+        <h2>درع الخصوصية</h2>
+        <p>ملفاتك لا تغادر جهازك أبدًا. يعالج Kitbox كل شيء داخل متصفحك.</p>
+        <p>تُحمَّل الصفحة نفسها وعدد صغير من المكتبات مفتوحة المصدر من الشبكة، أما مستنداتك وصورك ونصوصك فلا.</p>
+      </div>
+    </div>
+    <a class="icon-btn lang-switch" href="/json-formatter/" hreflang="en" lang="en" dir="ltr">English</a>
+    <button type="button" class="icon-btn" data-theme-toggle aria-pressed="false"
+      data-label-dark="التبديل إلى المظهر الداكن" data-label-light="التبديل إلى المظهر الفاتح" aria-label="التبديل إلى المظهر الداكن" title="التبديل إلى المظهر الداكن">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/>
+      </svg>
+    </button>
+    <button type="button" class="icon-btn nav-toggle" data-menu-toggle aria-expanded="false"
+      aria-controls="mobile-menu" aria-label="القائمة" title="القائمة">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</div>
+<div class="mobile-menu" id="mobile-menu" data-open="false">
+  <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="القائمة">
+    <div class="mobile-menu-head">
+      <span class="brand"><span class="brand-name">Kitbox</span></span>
+      <button type="button" class="icon-btn" data-menu-close aria-label="إغلاق القائمة" title="إغلاق القائمة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <nav aria-label="التنقل الرئيسي"><ul><li><a href="/ar/tools/">كل الأدوات</a></li><li><a href="/ar/image-compressor/">ضغط الصور</a></li><li><a href="/ar/pdf-merge/">دمج PDF</a></li><li><a href="/ar/about/">من نحن</a></li><li><a href="/ar/contact/">اتصل بنا</a></li></ul></nav>
+  </div>
+</div>
+</header>
+<main id="main">
+<nav class="breadcrumbs wrap" aria-label="مسار التنقل"><ol><li><a href="/ar/">الرئيسية</a></li><li><a href="/ar/tools/">كل الأدوات</a></li><li><span aria-current="page">منسّق JSON</span></li></ol></nav>
+<div class="wrap-tool tool-main">
+  <h1>تنسيق JSON والتحقق منه واستكشافه محليًا</h1>
+  <p class="lead muted">حوّل استجابة واجهة برمجية من سطر واحد غير مقروء إلى JSON منسّق وقابل للتصفح، مع رسائل خطأ تدلّك على الموضع فعلًا.</p>
+  <ul class="chips">
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>بدون رفع</li>
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>مجاني</li>
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>بدون تسجيل</li>
+  </ul>
+  <noscript><p class="noscript-note">تعمل هذه الأداة داخل متصفحك بالكامل وتحتاج إلى جافاسكريبت. فعّل جافاسكريبت لاستخدامها، ولن يُرسل أي شيء إلى خادم في الحالتين.</p></noscript>
+  
+<div class="workspace">
+  <div class="field">
+    <label for="json-input">مدخلات JSON</label>
+    <textarea id="json-input" rows="14" spellcheck="false" placeholder='{"name": "Kitbox", "private": true}'></textarea>
+    <span class="hint" id="size-note"></span>
+  </div>
+  <div class="field" style="max-width:260px">
+    <label for="indent">المسافة البادئة</label>
+    <select id="indent">
+      <option value="2" selected>مسافتان</option>
+      <option value="4">4 مسافات</option>
+      <option value="tab">علامة جدولة</option>
+    </select>
+  </div>
+  <div class="actions">
+    <button type="button" class="btn btn-primary" id="format">تنسيق</button>
+    <button type="button" class="btn btn-secondary" id="minify">تصغير</button>
+    <button type="button" class="btn btn-secondary" id="validate">تحقق</button>
+    <button type="button" class="btn btn-secondary" id="copy">نسخ</button>
+    <button type="button" class="btn btn-secondary" id="download">تنزيل</button>
+    <button type="button" class="btn btn-ghost" id="reset">مسح</button>
+  </div>
+  <p class="status" id="tool-status" role="status" aria-live="polite"></p>
+  <div class="mt-3" id="tree-wrap" hidden>
+    <h2>عرض شجري قابل للطي</h2>
+    <div class="json-tree" id="json-tree"></div>
+  </div>
+</div>
+
+  <aside class="ad-slot" aria-label="إعلان">
+  <span class="ad-label">إعلان</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="json-formatter-below"></ins>
+</aside>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">كيفية استخدام هذه الأداة</h2>
+    <ol><li>الصق محتوى JSON في المحرر.</li><li>اضغط تحقق للفحص، أو تنسيق للطباعة المنسّقة بالمسافة البادئة التي اخترتها، أو تصغير لإزالة المسافات.</li><li>استعرض الشجرة القابلة للطي أسفل المحرر لفهم البنية.</li><li>انسخ النتيجة أو نزّلها كملف بامتداد json.</li></ol>
+  </section>
+
+  <article class="article">
+    <h2>لماذا يهم التنسيق</h2>
+<p>محتوى JSON القادم من واجهة برمجية يكون مصغّرًا عادةً: سطر واحد بلا مسافات وآلاف المحارف. هذا صحيح للنقل وعديم الفائدة للقراءة. الطباعة المنسّقة تضيف مسافات بادئة وفواصل أسطر فيصبح التداخل مرئيًا، وتتحول جلسة التصحيح من تخمين إلى فحص. والتصغير يفعل العكس، ويستحق التنفيذ قبل تضمين كتلة إعدادات في صفحة أو في ناتج بناء، حيث يُحمّل كل بايت لكل زائر.</p>
+<p>يستخدم الاتجاهان هنا محلل ومسلسِل JSON المدمجين في المتصفح، ما يعني أن التحقق مطابق تمامًا لما سيواجهه كودك، لا تقريبًا عبر قواعد طرف ثالث، وهو سريع بما يكفي لحمولات بحجم عدة ميجابايتات.</p>
+
+<h2>العثور على الأخطاء بسرعة</h2>
+<p>فشل التحليل يُبلّغ عن إزاحة محرف، وهي معلومة قليلة الفائدة داخل نص من أربعين ألف محرف. تحوّل هذه الأداة تلك الإزاحة إلى رقم سطر وعمود، وتعرض رسالة المحلل نفسها، وتحدد المحرف المخالف في المحرر لتراه في سياقه. والأخطاء الأربعة الأكثر تسببًا في الفشل هي فاصلة زائدة بعد آخر عنصر، وعلامات اقتباس مفردة بدل المزدوجة، ومفاتيح كائنات بلا اقتباس، ومحرف تحكم أو شرطة مائلة غير مهرَّبة داخل نص. كما يمنع JSON التعليقات، وهو ما يفاجئ القادمين من جافاسكريبت أو YAML.</p>
+
+
+    <aside class="ad-slot" aria-label="إعلان">
+  <span class="ad-label">إعلان</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="json-formatter-inline"></ins>
+</aside>
+    <h2>العرض الشجري</h2>
+<p>أسفل المحرر يُعرض JSON الصالح كشجرة قابلة للطي. تصبح الكائنات والمصفوفات عُقدًا قابلة للتوسيع موسومة بعدد عناصرها، وتُلوَّن القيم الطرفية حسب نوعها، فالنصوص والأرقام والقيم المنطقية والقيمة الفارغة لكل منها لون مميز. هذه أسرع طريقة للإجابة عن أسئلة بنيوية — هل <code>items</code> مصفوفة كائنات أم كائن مفهرس بالمعرّف؟ — دون التمرير عبر نص منسّق طويل. وللحفاظ على سلاسة المستندات الضخمة تتوقف الشجرة عن التوسع بعد بضعة آلاف من العُقد وتخبرك بذلك، بينما يبقى النص المنسّق في الأعلى كاملًا.</p>
+
+<h2>نصائح عملية</h2>
+<ul>
+  <li>المسافتان هما الإعداد الشائع في بيئة جافاسكريبت، وأربع مسافات تناسب ملفات الإعدادات العميقة التداخل، وعلامة الجدولة تحترم تفضيل كل قارئ.</li>
+  <li>تحقق قبل اعتماد ملف إعدادات، فقوس واحد ناقص قد يعطّل عملية نشر كاملة.</li>
+  <li>صغّر ما يُرسل إلى المتصفحات، وأبقِ الملفات منسّقة في المستودع حيث يقرأ البشر الفروق.</li>
+  <li>إذا احتوت الاستجابة على بيانات اعتماد أو بيانات شخصية فالأداة المحلية هي المكان الوحيد المقبول لفحصها.</li>
+  <li>استخدم الشجرة لتأكيد أطوال المصفوفات قبل كتابة حلقة على بيانات غير مألوفة.</li>
+</ul>
+
+<h2>القيود</h2>
+<p>هذه أداة JSON صارمة وليست أداة JSON5 أو YAML: التعليقات والفواصل الزائدة والمفاتيح بلا اقتباس أخطاء بحكم التصميم، لأن هذا ما سيقوله أي محلل متوافق مع المعيار. والأرقام الكبيرة جدًا تفقد الدقة بعد 2^53، وهي خاصية في JSON وجافاسكريبت لا في هذه الصفحة. ويُحفظ ترتيب المفاتيح كما يعيده المحلل، لكن المعيار لا يضمن الترتيب رسميًا فلا تعتمد عليه في كودك.</p>
+
+<h2>الخصوصية</h2>
+<p>استجابات الواجهات البرمجية تحتوي عادةً على رموز وصول وسجلات عملاء ومعرّفات داخلية. لصقها في منسّق مستضاف يعني إرسال تلك البيانات إلى خادم شخص آخر. كل ما في هذه الصفحة يعمل في متصفحك: لا طلب يُرسل، ولا سجل يُكتب، وإغلاق النافذة يمحو كل أثر.</p>
+  </article>
+
+  <section aria-labelledby="faq-h"><h2 id="faq-h">الأسئلة الشائعة</h2><div class="faq"><details><summary>هل يُرفع محتوى JSON إلى خادم؟</summary><p>لا. التحليل والتنسيق والتصغير والعرض الشجري كلها تعمل في متصفحك عبر محرك JSON المدمج، ولا يُرسل أو يُخزَّن أي شيء.</p></details><details><summary>لماذا يفشل التحقق من ملفي؟</summary><p>الأسباب الأكثر شيوعًا هي فاصلة زائدة، أو علامات اقتباس مفردة بدل المزدوجة، أو مفاتيح بلا اقتباس، أو تعليقات لا يسمح بها JSON. وتعطيك الرسالة رقم السطر والعمود بدقة.</p></details><details><summary>هل يتعامل مع الملفات الكبيرة؟</summary><p>نعم. عدة ميجابايتات تُحلَّل وتُنسَّق بسرعة. ويُختصر العرض الشجري بعد بضعة آلاف من العُقد للحفاظ على سلاسة التمرير بينما يبقى النص المنسّق كاملًا.</p></details><details><summary>أي مسافة بادئة أختار؟</summary><p>مسافتان هي الافتراضي المعتاد في مشاريع جافاسكريبت، وأربع مسافات تناسب ملفات الإعدادات المتداخلة، وعلامة الجدولة تتيح لكل قارئ ضبط العرض الذي يريده.</p></details><details><summary>هل يدعم JSON5 أو التعليقات أو الفواصل الزائدة؟</summary><p>لا، وهذا مقصود. تتحقق الأداة من JSON الصارم حتى يكون ما ينجح هنا ناجحًا في أي محلل متوافق مع المعيار.</p></details><details><summary>هل يمكنني تنزيل النتيجة؟</summary><p>نعم. انسخها إلى الحافظة أو نزّلها كملف json يُنشأ داخل متصفحك.</p></details></div></section>
+
+  <section class="related mt-3" aria-labelledby="rel-h">
+    <h2 id="rel-h">أدوات ذات صلة</h2>
+    <ul><li><a href="/ar/word-counter/">عدّاد الكلمات</a></li><li><a href="/ar/case-converter/">محوّل حالة النص</a></li><li><a href="/ar/qr-code-generator/">مولد رمز QR</a></li></ul>
+  </section>
+
+  <aside class="ad-slot" aria-label="إعلان">
+  <span class="ad-label">إعلان</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="json-formatter-end"></ins>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/ar/"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="kbg-f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D7BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><rect x="5" y="20" width="38" height="22" rx="5" fill="url(#kbg-f)"/><path d="M24 4 37 9v6c0 3.6-2.3 6.4-5.2 8.1L24 27l-7.8-3.9C13.3 21.4 11 18.6 11 15V9z" fill="#131B33" stroke="url(#kbg-f)" stroke-width="2.4" stroke-linejoin="round"/><path d="m19.5 15.5 3.2 3.2 6-6.2" stroke="#2EE6A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="27" width="10" height="5" rx="2.5" fill="#0C1222" opacity=".35"/></svg><span class="brand-name">Kitbox</span></a>
+      <p>أدوات مجانية تعمل داخل المتصفح للصور وملفات PDF والنصوص والبرمجة. تُعالَج ملفاتك على جهازك ولا تُرفع أبدًا.</p>
+    </div>
+    <nav aria-labelledby="f-image"><h2 id="f-image">الصور</h2><ul><li><a href="/ar/image-compressor/">ضغط الصور</a></li><li><a href="/ar/image-resizer/">تغيير حجم الصور</a></li><li><a href="/ar/image-converter/">تحويل الصور</a></li></ul></nav>
+    <nav aria-labelledby="f-pdf"><h2 id="f-pdf">ملفات PDF</h2><ul><li><a href="/ar/pdf-merge/">دمج ملفات PDF</a></li><li><a href="/ar/pdf-split/">تقسيم ملفات PDF</a></li><li><a href="/ar/images-to-pdf/">تحويل الصور إلى PDF</a></li></ul></nav>
+    <nav aria-labelledby="f-text"><h2 id="f-text">النصوص والمطوّرون</h2><ul><li><a href="/ar/word-counter/">عدّاد الكلمات</a></li><li><a href="/ar/case-converter/">محوّل حالة النص</a></li><li><a href="/ar/json-formatter/">منسّق JSON</a></li><li><a href="/ar/lorem-ipsum-generator/">مولد نص بديل</a></li><li><a href="/ar/qr-code-generator/">مولد رمز QR</a></li><li><a href="/ar/password-generator/">مولد كلمات المرور</a></li></ul></nav>
+    <nav aria-labelledby="f-legal"><h2 id="f-legal">Kitbox</h2><ul><li><a href="/ar/tools/">كل الأدوات</a></li><li><a href="/ar/about/">عن Kitbox</a></li><li><a href="/ar/contact/">اتصل بنا</a></li><li><a href="/ar/privacy/">سياسة الخصوصية</a></li><li><a href="/ar/terms/">شروط الاستخدام</a></li><li><a href="/ar/cookies/">سياسة ملفات تعريف الارتباط</a></li></ul></nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="mb-0">© <span data-year>2026</span> Kitbox. جميع الحقوق محفوظة.</p>
+    <div class="controls">
+      <a class="btn btn-ghost btn-sm" href="/" hreflang="en" lang="en" dir="ltr">English</a>
+      <button type="button" class="btn btn-ghost btn-sm" data-theme-toggle aria-pressed="false"
+        data-label-dark="التبديل إلى المظهر الداكن" data-label-light="التبديل إلى المظهر الفاتح">المظهر</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-cookie-settings>إعدادات ملفات تعريف الارتباط</button>
+    </div>
+  </div>
+</div>
+</footer>
+<div class="consent" id="consent-banner" role="dialog" aria-modal="false" aria-labelledby="consent-title" hidden>
+  <div class="consent-card">
+    <h2 id="consent-title">خياراتك في الخصوصية</h2>
+    <p>لا يرفع Kitbox ملفاتك أبدًا. نستخدم التخزين المحلي لحفظ تفضيلات المظهر واللغة، ونودّ عرض إعلانات تبقي الأدوات مجانية. يظل تخزين الإعلانات والتحليلات معطّلًا حتى تختار.</p>
+    <div class="consent-actions">
+      <button type="button" class="btn btn-primary" data-consent="accept">قبول الكل</button>
+      <button type="button" class="btn btn-secondary" data-consent="reject">رفض غير الضروري</button>
+      <button type="button" class="btn btn-ghost" data-consent="manage" aria-expanded="false">إدارة التفضيلات</button>
+    </div>
+    <div class="consent-prefs" data-consent-prefs hidden>
+      <label class="check"><input type="checkbox" checked disabled> التخزين الضروري (مفعّل دائمًا)</label>
+      <label class="check"><input type="checkbox" id="consent-analytics"> تخزين التحليلات</label>
+      <label class="check"><input type="checkbox" id="consent-ads"> تخزين الإعلانات</label>
+      <div class="consent-actions">
+        <button type="button" class="btn btn-primary btn-sm" data-consent="save">حفظ التفضيلات</button>
+      </div>
+      <p class="hint">يمكنك تغيير ذلك في أي وقت من رابط إعدادات ملفات تعريف الارتباط في التذييل.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

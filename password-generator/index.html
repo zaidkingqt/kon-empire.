@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strong Password Generator — Secure &amp; Offline | Kitbox</title>
+  <meta name="description" content="Generate strong passwords and passphrases with crypto.getRandomValues in your browser. Control length, character sets and ambiguity, and see a real entropy estimate.">
+  <link rel="canonical" href="https://www.example.com/password-generator/">
+  <link rel="alternate" hreflang="en" href="https://www.example.com/password-generator/">
+  <link rel="alternate" hreflang="ar" href="https://www.example.com/ar/password-generator/">
+  <link rel="alternate" hreflang="x-default" href="https://www.example.com/password-generator/">
+  <meta name="theme-color" content="#0C1222">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kitbox">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Strong Password Generator — Secure &amp; Offline | Kitbox">
+  <meta property="og:description" content="Generate strong passwords and passphrases with crypto.getRandomValues in your browser. Control length, character sets and ambiguity, and see a real entropy estimate.">
+  <meta property="og:url" content="https://www.example.com/password-generator/">
+  <meta property="og:image" content="https://www.example.com/assets/img/og/password-generator.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Strong Password Generator — Secure &amp; Offline | Kitbox">
+  <meta name="twitter:description" content="Generate strong passwords and passphrases with crypto.getRandomValues in your browser. Control length, character sets and ambiguity, and see a real entropy estimate.">
+  <meta name="twitter:image" content="https://www.example.com/assets/img/og/password-generator.png">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/icons/icon-192.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    (function(){try{var t=localStorage.getItem("kitbox:theme");
+    if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}
+    document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Password Generator","description":"Generate strong passwords and passphrases with crypto.getRandomValues in your browser. Control length, character sets and ambiguity, and see a real entropy estimate.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (web browser)","url":"https://www.example.com/password-generator/","inLanguage":"en","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Kitbox","url":"https://www.example.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.example.com/"},{"@type":"ListItem","position":2,"name":"All tools","item":"https://www.example.com/tools/"},{"@type":"ListItem","position":3,"name":"Password Generator","item":"https://www.example.com/password-generator/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"How random are these passwords?","acceptedAnswer":{"@type":"Answer","text":"They come from crypto.getRandomValues(), the browser's cryptographically secure random number generator, which draws from the operating system's entropy pool. Math.random() is never used anywhere in this tool."}},{"@type":"Question","name":"Is my password sent to a server?","acceptedAnswer":{"@type":"Answer","text":"No. It is generated and displayed entirely in your browser. Kitbox has no backend that could receive it, and nothing is written to storage or logs."}},{"@type":"Question","name":"How long should my password be?","acceptedAnswer":{"@type":"Answer","text":"Sixteen characters is a sensible minimum for ordinary accounts and twenty or more for anything valuable. For master passwords and recovery keys, aim for an entropy figure above 100 bits."}},{"@type":"Question","name":"What is a passphrase and when should I use one?","acceptedAnswer":{"@type":"Answer","text":"A passphrase is several unrelated words joined by a separator. Use one whenever you have to type the password by hand — a device login, a disk password, or your password manager's master password."}},{"@type":"Question","name":"What does excluding ambiguous characters do?","acceptedAnswer":{"@type":"Answer","text":"It removes characters that are easily confused in print, such as capital O and zero, lowercase l and the digit one, and the pipe. It slightly lowers entropy but prevents transcription errors."}},{"@type":"Question","name":"Does Kitbox remember generated passwords?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing is saved. Reloading or closing the page discards the value, so copy it into your password manager before leaving."}}]}</script>
+  <script defer src="/assets/js/i18n.js"></script>
+  <script defer src="/assets/js/app.js"></script>
+  <script defer src="/assets/js/tools/password-generator.js"></script>
+</head>
+<body data-tool="password-generator">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="lang-suggest" id="lang-suggest" hidden><div class="wrap"><p lang="ar" dir="rtl">هذه الصفحة متاحة بالعربية.</p><a class="btn btn-secondary btn-sm" href="/ar/password-generator/" lang="ar" dir="rtl">عرض بالعربية</a><button type="button" class="btn btn-ghost btn-sm" data-dismiss-lang>Dismiss</button></div></div>
+<div class="wrap header-inner">
+  <a class="brand" href="/"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="kbg-h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D7BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><rect x="5" y="20" width="38" height="22" rx="5" fill="url(#kbg-h)"/><path d="M24 4 37 9v6c0 3.6-2.3 6.4-5.2 8.1L24 27l-7.8-3.9C13.3 21.4 11 18.6 11 15V9z" fill="#131B33" stroke="url(#kbg-h)" stroke-width="2.4" stroke-linejoin="round"/><path d="m19.5 15.5 3.2 3.2 6-6.2" stroke="#2EE6A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="27" width="10" height="5" rx="2.5" fill="#0C1222" opacity=".35"/></svg><span class="brand-name">Kitbox</span></a>
+  <nav class="primary-nav" aria-label="Main navigation"><ul><li><a href="/tools/">All tools</a></li><li><a href="/image-compressor/">Compress images</a></li><li><a href="/pdf-merge/">Merge PDF</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+  <div class="header-actions">
+    <div class="shield" data-state="idle">
+      <button type="button" class="shield-btn" aria-expanded="false" aria-controls="shield-popover">
+        <span class="shield-dot" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <span class="shield-label" data-shield-label>0 bytes uploaded</span>
+        <span class="sr-only">Privacy Shield</span>
+      </button>
+      <div class="shield-popover" id="shield-popover" role="dialog" aria-label="Privacy Shield" hidden>
+        <h2>Privacy Shield</h2>
+        <p>Your files never leave your device. Kitbox processes everything in your browser.</p>
+        <p>The page itself and a small number of pinned open-source libraries load from the network. Your documents, images and text do not.</p>
+      </div>
+    </div>
+    <a class="icon-btn lang-switch" href="/ar/password-generator/" hreflang="ar" lang="ar" dir="rtl">العربية</a>
+    <button type="button" class="icon-btn" data-theme-toggle aria-pressed="false"
+      data-label-dark="Switch to dark theme" data-label-light="Switch to light theme" aria-label="Switch to dark theme" title="Switch to dark theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/>
+      </svg>
+    </button>
+    <button type="button" class="icon-btn nav-toggle" data-menu-toggle aria-expanded="false"
+      aria-controls="mobile-menu" aria-label="Menu" title="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</div>
+<div class="mobile-menu" id="mobile-menu" data-open="false">
+  <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-menu-head">
+      <span class="brand"><span class="brand-name">Kitbox</span></span>
+      <button type="button" class="icon-btn" data-menu-close aria-label="Close menu" title="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Main navigation"><ul><li><a href="/tools/">All tools</a></li><li><a href="/image-compressor/">Compress images</a></li><li><a href="/pdf-merge/">Merge PDF</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+  </div>
+</div>
+</header>
+<main id="main">
+<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/tools/">All tools</a></li><li><span aria-current="page">Password Generator</span></li></ol></nav>
+<div class="wrap-tool tool-main">
+  <h1>Generate strong passwords that never touch a server</h1>
+  <p class="lead muted">Cryptographically secure random passwords and memorable passphrases, with a transparent entropy estimate instead of a vague colour bar.</p>
+  <ul class="chips">
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>No upload</li>
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Free</li>
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>No sign-up</li>
+  </ul>
+  <noscript><p class="noscript-note">This tool runs entirely in your browser and needs JavaScript. Please enable JavaScript to use it — nothing is sent to a server either way.</p></noscript>
+  
+<div class="workspace">
+  <h2 class="sr-only">Generated password</h2>
+  <output class="output-box" id="password-out" data-value="" aria-live="polite"></output>
+  <div class="field mt-3">
+    <div class="meter" id="strength-meter"><div></div></div>
+    <p class="hint"><span id="strength-label"></span> · <span id="entropy-label"></span></p>
+  </div>
+
+  <fieldset style="border:0;padding:0;margin:0">
+    <legend class="field-label">Password type</legend>
+    <div class="check-grid">
+      <label class="check"><input type="radio" name="pw-mode" value="chars" checked> Random characters</label>
+      <label class="check"><input type="radio" name="pw-mode" value="phrase"> Passphrase (words)</label>
+    </div>
+  </fieldset>
+
+  <div id="char-fields">
+    <div class="field">
+      <label for="pw-length">Length <span id="pw-length-out" class="muted"></span></label>
+      <input type="range" id="pw-length" min="8" max="64" value="20" step="1">
+    </div>
+    <div class="check-grid">
+      <label class="check"><input type="checkbox" id="c-upper" checked> Uppercase A–Z</label>
+      <label class="check"><input type="checkbox" id="c-lower" checked> Lowercase a–z</label>
+      <label class="check"><input type="checkbox" id="c-number" checked> Numbers 0–9</label>
+      <label class="check"><input type="checkbox" id="c-symbol" checked> Symbols !@#$</label>
+      <label class="check"><input type="checkbox" id="c-ambiguous"> Exclude ambiguous characters</label>
+    </div>
+  </div>
+
+  <div id="phrase-fields" hidden>
+    <div class="field">
+      <label for="pw-words">Number of words <span id="pw-words-out" class="muted"></span></label>
+      <input type="range" id="pw-words" min="3" max="10" value="5" step="1">
+    </div>
+    <div class="field">
+      <label for="pw-separator">Separator</label>
+      <input type="text" id="pw-separator" value="-" maxlength="3">
+    </div>
+    <div class="check-grid">
+      <label class="check"><input type="checkbox" id="pw-capitalize" checked> Capitalise each word</label>
+      <label class="check"><input type="checkbox" id="pw-number-word" checked> Append a 4-digit number</label>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button type="button" class="btn btn-primary" id="generate">Generate password</button>
+    <button type="button" class="btn btn-secondary" id="copy">Copy</button>
+  </div>
+  <p class="status" id="tool-status" role="status" aria-live="polite"></p>
+</div>
+
+  <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="password-generator-below"></ins>
+</aside>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How to use this tool</h2>
+    <ol><li>Choose random characters for maximum strength, or a passphrase when you need something you can type and remember.</li><li>Set the length or the number of words, and select which character sets to include.</li><li>Turn on exclude ambiguous characters if the password will be read aloud or copied by hand.</li><li>Press Generate, check the entropy estimate, and copy the result into your password manager.</li></ol>
+  </section>
+
+  <article class="article">
+    <h2>Randomness is the whole product</h2>
+<p>A password generator is only as good as its source of randomness. <code>Math.random()</code> — used by a surprising number of web tools — is a fast pseudo-random generator that is explicitly documented as unsuitable for security purposes; its output can be predicted from previous values. This tool uses <code>crypto.getRandomValues()</code>, the Web Crypto interface to the operating system's cryptographically secure random source, and it rejects modulo bias by discarding values that would skew the distribution. The shuffle that mixes the required character classes into the result uses the same source.</p>
+<p>Just as important: the password is created in your browser and stays there. It is not generated on a server, not logged, and not sent anywhere. The only way it leaves your device is if you copy it yourself.</p>
+
+<h2>Reading the entropy estimate</h2>
+<p>Entropy, measured in bits, states how many guesses an attacker needs on average. Each additional bit doubles that number. A 20-character password drawn from a 90-character alphabet carries roughly 130 bits, which is far beyond anything brute force can reach. Below 40 bits a password is weak against an offline attack on a leaked hash; 60 to 80 bits is reasonable for ordinary accounts; above 100 bits is appropriate for password-manager master passwords, disk encryption and recovery keys.</p>
+<p>The figure shown here is calculated from the actual generation parameters — alphabet size and length, or word-list size and word count — not from a heuristic that guesses at a password you typed. That makes it honest, and it also explains why a long passphrase of common words can be stronger than a short string of symbols.</p>
+
+
+    <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="password-generator-inline"></ins>
+</aside>
+    <h2>Passphrases versus random characters</h2>
+<p>Random characters give the most entropy per keystroke and are ideal for anything stored in a password manager, where you never type it. Passphrases — several unrelated words joined by a separator — are far easier to read from a screen, type on a phone keyboard, or dictate over the phone. Five words from the built-in list of nearly two hundred common words, plus a four-digit number, land comfortably in strong territory while remaining typeable. Use a passphrase for your device login and your password-manager master password; use random characters for everything the manager fills in for you.</p>
+
+<h2>Practical security advice</h2>
+<ul>
+  <li>Never reuse a password. Credential-stuffing attacks rely entirely on reuse, and a breach at one site then compromises all the others.</li>
+  <li>Use a password manager. It is the only realistic way to keep dozens of unique, long passwords.</li>
+  <li>Turn on two-factor authentication wherever it is offered; it protects you even if a password leaks.</li>
+  <li>Enable the exclude-ambiguous option when a password must be read aloud, written down or typed from a screen — it removes characters such as O, 0, l, 1 and the pipe.</li>
+  <li>Change a password immediately when a service reports a breach, and check whether you reused it anywhere.</li>
+  <li>Length beats complexity. A 24-character lowercase passphrase is stronger than an eight-character string full of symbols.</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+<p>Some sites still cap password length or ban symbols. Reduce the length and deselect the symbol set rather than inventing your own variation, and note the restriction in your manager. If a site rejects a pasted password, generate a passphrase instead — it is realistic to type. If the generator reports that no character types are selected, re-enable at least one set.</p>
+
+<h2>Privacy</h2>
+<p>Nothing is transmitted, nothing is stored, and nothing is remembered between page loads. Reloading the page discards the generated value entirely, so copy it into your manager before you navigate away.</p>
+  </article>
+
+  <section aria-labelledby="faq-h"><h2 id="faq-h">Frequently asked questions</h2><div class="faq"><details><summary>How random are these passwords?</summary><p>They come from crypto.getRandomValues(), the browser's cryptographically secure random number generator, which draws from the operating system's entropy pool. Math.random() is never used anywhere in this tool.</p></details><details><summary>Is my password sent to a server?</summary><p>No. It is generated and displayed entirely in your browser. Kitbox has no backend that could receive it, and nothing is written to storage or logs.</p></details><details><summary>How long should my password be?</summary><p>Sixteen characters is a sensible minimum for ordinary accounts and twenty or more for anything valuable. For master passwords and recovery keys, aim for an entropy figure above 100 bits.</p></details><details><summary>What is a passphrase and when should I use one?</summary><p>A passphrase is several unrelated words joined by a separator. Use one whenever you have to type the password by hand — a device login, a disk password, or your password manager's master password.</p></details><details><summary>What does excluding ambiguous characters do?</summary><p>It removes characters that are easily confused in print, such as capital O and zero, lowercase l and the digit one, and the pipe. It slightly lowers entropy but prevents transcription errors.</p></details><details><summary>Does Kitbox remember generated passwords?</summary><p>No. Nothing is saved. Reloading or closing the page discards the value, so copy it into your password manager before leaving.</p></details></div></section>
+
+  <section class="related mt-3" aria-labelledby="rel-h">
+    <h2 id="rel-h">Related tools</h2>
+    <ul><li><a href="/qr-code-generator/">QR Code Generator</a></li><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/word-counter/">Word Counter</a></li></ul>
+  </section>
+
+  <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="password-generator-end"></ins>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="kbg-f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D7BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><rect x="5" y="20" width="38" height="22" rx="5" fill="url(#kbg-f)"/><path d="M24 4 37 9v6c0 3.6-2.3 6.4-5.2 8.1L24 27l-7.8-3.9C13.3 21.4 11 18.6 11 15V9z" fill="#131B33" stroke="url(#kbg-f)" stroke-width="2.4" stroke-linejoin="round"/><path d="m19.5 15.5 3.2 3.2 6-6.2" stroke="#2EE6A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="27" width="10" height="5" rx="2.5" fill="#0C1222" opacity=".35"/></svg><span class="brand-name">Kitbox</span></a>
+      <p>Free browser-based tools for images, PDFs, text and code. Your files are processed on your device and never uploaded.</p>
+    </div>
+    <nav aria-labelledby="f-image"><h2 id="f-image">Image</h2><ul><li><a href="/image-compressor/">Image Compressor</a></li><li><a href="/image-resizer/">Image Resizer</a></li><li><a href="/image-converter/">Image Converter</a></li></ul></nav>
+    <nav aria-labelledby="f-pdf"><h2 id="f-pdf">PDF</h2><ul><li><a href="/pdf-merge/">PDF Merge</a></li><li><a href="/pdf-split/">PDF Split</a></li><li><a href="/images-to-pdf/">Images to PDF</a></li></ul></nav>
+    <nav aria-labelledby="f-text"><h2 id="f-text">Text & developer</h2><ul><li><a href="/word-counter/">Word Counter</a></li><li><a href="/case-converter/">Case Converter</a></li><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li><li><a href="/qr-code-generator/">QR Code Generator</a></li><li><a href="/password-generator/">Password Generator</a></li></ul></nav>
+    <nav aria-labelledby="f-legal"><h2 id="f-legal">Kitbox</h2><ul><li><a href="/tools/">All tools</a></li><li><a href="/about/">About Kitbox</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li><li><a href="/cookies/">Cookie Policy</a></li></ul></nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="mb-0">© <span data-year>2026</span> Kitbox. All rights reserved.</p>
+    <div class="controls">
+      <a class="btn btn-ghost btn-sm" href="/ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a>
+      <button type="button" class="btn btn-ghost btn-sm" data-theme-toggle aria-pressed="false"
+        data-label-dark="Switch to dark theme" data-label-light="Switch to light theme">Theme</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-cookie-settings>Cookie settings</button>
+    </div>
+  </div>
+</div>
+</footer>
+<div class="consent" id="consent-banner" role="dialog" aria-modal="false" aria-labelledby="consent-title" hidden>
+  <div class="consent-card">
+    <h2 id="consent-title">Your privacy choices</h2>
+    <p>Kitbox never uploads your files. We do use local storage for your theme and language preferences, and we would like to show advertising that keeps the tools free. Advertising and analytics storage stay switched off until you choose.</p>
+    <div class="consent-actions">
+      <button type="button" class="btn btn-primary" data-consent="accept">Accept all</button>
+      <button type="button" class="btn btn-secondary" data-consent="reject">Reject non-essential</button>
+      <button type="button" class="btn btn-ghost" data-consent="manage" aria-expanded="false">Manage preferences</button>
+    </div>
+    <div class="consent-prefs" data-consent-prefs hidden>
+      <label class="check"><input type="checkbox" checked disabled> Strictly necessary storage (always on)</label>
+      <label class="check"><input type="checkbox" id="consent-analytics"> Analytics storage</label>
+      <label class="check"><input type="checkbox" id="consent-ads"> Advertising storage</label>
+      <div class="consent-actions">
+        <button type="button" class="btn btn-primary btn-sm" data-consent="save">Save preferences</button>
+      </div>
+      <p class="hint">You can change this at any time from the Cookie settings link in the footer.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

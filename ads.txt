@@ -1,0 +1,4 @@
+# Kitbox authorised digital sellers.
+# Replace pub-XXXXXXXXXXXXXXXX with your AdSense publisher ID
+# (the same value as ADSENSE_PUBLISHER_ID in /assets/js/app.js).
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

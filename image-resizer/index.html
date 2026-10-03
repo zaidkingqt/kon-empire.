@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Resizer — Resize Photos by Pixels or % | Kitbox</title>
+  <meta name="description" content="Resize images by pixels or percentage with aspect-ratio lock and ready-made social presets. Batch processing, format choice and instant download in your browser.">
+  <link rel="canonical" href="https://www.example.com/image-resizer/">
+  <link rel="alternate" hreflang="en" href="https://www.example.com/image-resizer/">
+  <link rel="alternate" hreflang="ar" href="https://www.example.com/ar/image-resizer/">
+  <link rel="alternate" hreflang="x-default" href="https://www.example.com/image-resizer/">
+  <meta name="theme-color" content="#0C1222">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kitbox">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Image Resizer — Resize Photos by Pixels or % | Kitbox">
+  <meta property="og:description" content="Resize images by pixels or percentage with aspect-ratio lock and ready-made social presets. Batch processing, format choice and instant download in your browser.">
+  <meta property="og:url" content="https://www.example.com/image-resizer/">
+  <meta property="og:image" content="https://www.example.com/assets/img/og/image-resizer.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Image Resizer — Resize Photos by Pixels or % | Kitbox">
+  <meta name="twitter:description" content="Resize images by pixels or percentage with aspect-ratio lock and ready-made social presets. Batch processing, format choice and instant download in your browser.">
+  <meta name="twitter:image" content="https://www.example.com/assets/img/og/image-resizer.png">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/icons/icon-192.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    (function(){try{var t=localStorage.getItem("kitbox:theme");
+    if(!t){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}
+    document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Resizer","description":"Resize images by pixels or percentage with aspect-ratio lock and ready-made social presets. Batch processing, format choice and instant download in your browser.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (web browser)","url":"https://www.example.com/image-resizer/","inLanguage":"en","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Kitbox","url":"https://www.example.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.example.com/"},{"@type":"ListItem","position":2,"name":"All tools","item":"https://www.example.com/tools/"},{"@type":"ListItem","position":3,"name":"Image Resizer","item":"https://www.example.com/image-resizer/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Can I resize several images at once?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add as many files as you like; they are processed sequentially so the page stays responsive, and you can download them individually or together as a ZIP archive."}},{"@type":"Question","name":"Will resizing reduce the file size too?","acceptedAnswer":{"@type":"Answer","text":"Usually yes, substantially — fewer pixels means fewer bytes. You also control the output quality, so you can tune size and sharpness independently."}},{"@type":"Question","name":"What does the aspect-ratio lock do?","acceptedAnswer":{"@type":"Answer","text":"It keeps the original width-to-height proportion. Type a width and the height is calculated for you, which prevents stretched or squashed results."}},{"@type":"Question","name":"Can I make an image bigger?","acceptedAnswer":{"@type":"Answer","text":"You can, by entering larger dimensions or a percentage above 100. Interpolation cannot add real detail, so expect a softer picture; enlarging beyond about 150% rarely looks good."}},{"@type":"Question","name":"Which preset should I use for a passport photo?","acceptedAnswer":{"@type":"Answer","text":"The built-in passport preset outputs 413 × 531 pixels, which corresponds to 35 × 45 mm at 300 DPI. Requirements vary by country, so always check the official specification before submitting."}},{"@type":"Question","name":"Does the tool work offline?","acceptedAnswer":{"@type":"Answer","text":"The page itself needs to load from the network, but once it has, resizing runs entirely on your device. The optional ZIP download loads one small library from a public CDN."}}]}</script>
+  <script defer src="/assets/js/i18n.js"></script>
+  <script defer src="/assets/js/app.js"></script>
+  <script defer src="/assets/js/tools/image-resizer.js"></script>
+</head>
+<body data-tool="image-resizer">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="lang-suggest" id="lang-suggest" hidden><div class="wrap"><p lang="ar" dir="rtl">هذه الصفحة متاحة بالعربية.</p><a class="btn btn-secondary btn-sm" href="/ar/image-resizer/" lang="ar" dir="rtl">عرض بالعربية</a><button type="button" class="btn btn-ghost btn-sm" data-dismiss-lang>Dismiss</button></div></div>
+<div class="wrap header-inner">
+  <a class="brand" href="/"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="kbg-h" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D7BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><rect x="5" y="20" width="38" height="22" rx="5" fill="url(#kbg-h)"/><path d="M24 4 37 9v6c0 3.6-2.3 6.4-5.2 8.1L24 27l-7.8-3.9C13.3 21.4 11 18.6 11 15V9z" fill="#131B33" stroke="url(#kbg-h)" stroke-width="2.4" stroke-linejoin="round"/><path d="m19.5 15.5 3.2 3.2 6-6.2" stroke="#2EE6A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="27" width="10" height="5" rx="2.5" fill="#0C1222" opacity=".35"/></svg><span class="brand-name">Kitbox</span></a>
+  <nav class="primary-nav" aria-label="Main navigation"><ul><li><a href="/tools/">All tools</a></li><li><a href="/image-compressor/">Compress images</a></li><li><a href="/pdf-merge/">Merge PDF</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+  <div class="header-actions">
+    <div class="shield" data-state="idle">
+      <button type="button" class="shield-btn" aria-expanded="false" aria-controls="shield-popover">
+        <span class="shield-dot" aria-hidden="true"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        <span class="shield-label" data-shield-label>0 bytes uploaded</span>
+        <span class="sr-only">Privacy Shield</span>
+      </button>
+      <div class="shield-popover" id="shield-popover" role="dialog" aria-label="Privacy Shield" hidden>
+        <h2>Privacy Shield</h2>
+        <p>Your files never leave your device. Kitbox processes everything in your browser.</p>
+        <p>The page itself and a small number of pinned open-source libraries load from the network. Your documents, images and text do not.</p>
+      </div>
+    </div>
+    <a class="icon-btn lang-switch" href="/ar/image-resizer/" hreflang="ar" lang="ar" dir="rtl">العربية</a>
+    <button type="button" class="icon-btn" data-theme-toggle aria-pressed="false"
+      data-label-dark="Switch to dark theme" data-label-light="Switch to light theme" aria-label="Switch to dark theme" title="Switch to dark theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/>
+      </svg>
+    </button>
+    <button type="button" class="icon-btn nav-toggle" data-menu-toggle aria-expanded="false"
+      aria-controls="mobile-menu" aria-label="Menu" title="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</div>
+<div class="mobile-menu" id="mobile-menu" data-open="false">
+  <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-menu-head">
+      <span class="brand"><span class="brand-name">Kitbox</span></span>
+      <button type="button" class="icon-btn" data-menu-close aria-label="Close menu" title="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Main navigation"><ul><li><a href="/tools/">All tools</a></li><li><a href="/image-compressor/">Compress images</a></li><li><a href="/pdf-merge/">Merge PDF</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+  </div>
+</div>
+</header>
+<main id="main">
+<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/tools/">All tools</a></li><li><span aria-current="page">Image Resizer</span></li></ol></nav>
+<div class="wrap-tool tool-main">
+  <h1>Resize images to exact dimensions in your browser</h1>
+  <p class="lead muted">Hit a precise pixel size, scale a whole batch by percentage, or use a ready-made preset for Instagram, YouTube, Facebook and passport photos.</p>
+  <ul class="chips">
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>No upload</li>
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Free</li>
+    <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>No sign-up</li>
+  </ul>
+  <noscript><p class="noscript-note">This tool runs entirely in your browser and needs JavaScript. Please enable JavaScript to use it — nothing is sent to a server either way.</p></noscript>
+  
+<div class="workspace">
+  <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-describedby="dz-hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M14 10h6M14 10v6"/></svg>
+    <strong>Drop images here or choose files</strong>
+    <span id="dz-hint">JPG, PNG or WebP. Batch resizing is supported.</span>
+    <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" multiple>
+  </div>
+
+  <fieldset class="mt-3" style="border:0;padding:0;margin:0">
+    <legend class="field-label">Resize method</legend>
+    <div class="check-grid">
+      <label class="check"><input type="radio" name="mode" value="pixels" checked> By pixels</label>
+      <label class="check"><input type="radio" name="mode" value="percent"> By percentage</label>
+    </div>
+  </fieldset>
+
+  <div id="px-fields">
+    <div class="field-grid">
+      <div class="field">
+        <label for="out-width">Width (px)</label>
+        <input type="number" id="out-width" min="1" step="1">
+      </div>
+      <div class="field">
+        <label for="out-height">Height (px)</label>
+        <input type="number" id="out-height" min="1" step="1">
+      </div>
+    </div>
+    <label class="check"><input type="checkbox" id="lock-ratio" checked> Lock aspect ratio</label>
+  </div>
+
+  <div id="pct-fields" hidden>
+    <div class="field">
+      <label for="scale-percent">Scale <span id="scale-percent-out" class="muted"></span></label>
+      <input type="range" id="scale-percent" min="5" max="200" value="50" step="5">
+    </div>
+  </div>
+
+  <div class="field-grid">
+    <div class="field">
+      <label for="preset">Preset size</label>
+      <select id="preset">
+        <option value="">No preset</option>
+        <option value="instagram-post">Instagram post — 1080 × 1080</option>
+        <option value="instagram-story">Instagram story — 1080 × 1920</option>
+        <option value="youtube-thumbnail">YouTube thumbnail — 1280 × 720</option>
+        <option value="facebook-cover">Facebook cover — 820 × 312</option>
+        <option value="passport">Passport photo — 413 × 531</option>
+        <option value="favicon">Favicon source — 512 × 512</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="out-format">Output format</label>
+      <select id="out-format">
+        <option value="image/jpeg">JPG</option>
+        <option value="image/png">PNG</option>
+        <option value="image/webp">WebP</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="quality">Quality <span id="quality-out" class="muted"></span></label>
+      <input type="range" id="quality" min="40" max="100" value="85" step="1">
+    </div>
+  </div>
+
+  <div class="actions">
+    <button type="button" class="btn btn-primary" id="run">Resize images</button>
+    <button type="button" class="btn btn-secondary" id="download-zip" hidden>Download all (ZIP)</button>
+    <button type="button" class="btn btn-ghost" id="reset">Start over</button>
+  </div>
+  <div class="progress" id="progress" hidden><div></div></div>
+  <p class="status" id="tool-status" role="status" aria-live="polite"></p>
+  <ul class="file-list" id="file-list"></ul>
+</div>
+
+  <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="image-resizer-below"></ins>
+</aside>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How to use this tool</h2>
+    <ol><li>Add one or more JPG, PNG or WebP images using the drop area, the file picker, or Ctrl + V.</li><li>Choose whether to resize by pixels or by percentage, then enter the target values. Keep the aspect-ratio lock on to avoid distortion.</li><li>Pick a preset if you are targeting a known platform size, and select the output format and quality.</li><li>Press Resize images and download each result, or grab everything at once as a ZIP file.</li></ol>
+  </section>
+
+  <article class="article">
+    <h2>What image resizing really means</h2>
+<p>Resizing changes the number of pixels in an image. Downscaling throws data away and is almost always safe; upscaling invents pixels by interpolation and can only ever look softer than the original. This tool uses high-quality smoothing when it redraws your picture, which avoids the jagged edges you get from naive nearest-neighbour scaling.</p>
+<p>The entire operation happens on a canvas inside your browser. Your photo is decoded from your own disk, drawn at the requested size, and encoded again in the format you choose. Nothing is uploaded, so there is no waiting room, no queue and no retention policy to read.</p>
+
+<h2>Pixels, percentages and aspect ratio</h2>
+<p>Use pixel mode when a platform or a layout dictates an exact size — a 1200-pixel-wide blog header, a 512-pixel app icon source, a 413 × 531 passport photograph. Use percentage mode when you simply need everything smaller: a batch of mixed-size photographs scaled to 50% keeps their relative proportions without you having to calculate anything.</p>
+<p>The aspect-ratio lock is on by default. With it enabled, entering a width fills in the matching height so circles stay circular and faces are not stretched. Turn it off only when you deliberately want to squeeze an image into a fixed frame, and expect visible distortion if the original proportions are far from the target.</p>
+
+
+    <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="image-resizer-inline"></ins>
+</aside>
+    <h2>The presets, and when to use them</h2>
+<p>Social platforms re-compress whatever you give them, and they do a better job when the dimensions already match their layout. The Instagram post preset produces the square 1080 × 1080 that the feed expects; the story preset uses the 9:16 frame of 1080 × 1920. YouTube thumbnails are 1280 × 720, Facebook covers 820 × 312, and the favicon preset gives you a clean 512 × 512 master from which every smaller icon size can be derived. The passport preset uses the common 413 × 531 pixel layout for a 35 × 45 mm photo at 300 DPI — always confirm the requirements of the authority you are applying to, because countries differ.</p>
+
+<h2>Practical tips</h2>
+<ul>
+  <li>Resize from the largest original you have. Going 4000 → 1200 once beats going 4000 → 2000 → 1200.</li>
+  <li>Choose PNG for logos, screenshots and anything with transparency; choose JPG or WebP for photographs.</li>
+  <li>If the output needs to serve a retina display, export at twice the CSS pixel size and let the browser scale it down.</li>
+  <li>For a favicon, start at 512 × 512 and keep the artwork simple — fine details disappear at 32 pixels.</li>
+  <li>Batch work is easiest when the source images share an orientation; otherwise use percentage mode.</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+<p>If a resized photo looks soft, you probably upscaled it; there is no way to recover detail that was never captured. If the output file is unexpectedly large, lower the quality slider or switch to WebP. If a PNG with transparency is exported as JPG, transparent pixels are filled with white here — use the <a href="/image-converter/">image converter</a> if you need control over that fill colour. If dimension fields seem to fight you, check whether the aspect-ratio lock is on.</p>
+
+<h2>Privacy</h2>
+<p>Resizing is a common step for identity documents, children's school photos and medical paperwork. Because this tool never transmits your file, those images stay on your device for their entire life cycle, and the privacy shield in the header stays at zero bytes uploaded.</p>
+  </article>
+
+  <section aria-labelledby="faq-h"><h2 id="faq-h">Frequently asked questions</h2><div class="faq"><details><summary>Can I resize several images at once?</summary><p>Yes. Add as many files as you like; they are processed sequentially so the page stays responsive, and you can download them individually or together as a ZIP archive.</p></details><details><summary>Will resizing reduce the file size too?</summary><p>Usually yes, substantially — fewer pixels means fewer bytes. You also control the output quality, so you can tune size and sharpness independently.</p></details><details><summary>What does the aspect-ratio lock do?</summary><p>It keeps the original width-to-height proportion. Type a width and the height is calculated for you, which prevents stretched or squashed results.</p></details><details><summary>Can I make an image bigger?</summary><p>You can, by entering larger dimensions or a percentage above 100. Interpolation cannot add real detail, so expect a softer picture; enlarging beyond about 150% rarely looks good.</p></details><details><summary>Which preset should I use for a passport photo?</summary><p>The built-in passport preset outputs 413 × 531 pixels, which corresponds to 35 × 45 mm at 300 DPI. Requirements vary by country, so always check the official specification before submitting.</p></details><details><summary>Does the tool work offline?</summary><p>The page itself needs to load from the network, but once it has, resizing runs entirely on your device. The optional ZIP download loads one small library from a public CDN.</p></details></div></section>
+
+  <section class="related mt-3" aria-labelledby="rel-h">
+    <h2 id="rel-h">Related tools</h2>
+    <ul><li><a href="/image-compressor/">Image Compressor</a></li><li><a href="/image-converter/">Image Converter</a></li><li><a href="/images-to-pdf/">Images to PDF</a></li></ul>
+  </section>
+
+  <aside class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto" data-full-width-responsive="true" data-ad-region="image-resizer-end"></ins>
+</aside>
+</div>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="kbg-f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D7BFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><rect x="5" y="20" width="38" height="22" rx="5" fill="url(#kbg-f)"/><path d="M24 4 37 9v6c0 3.6-2.3 6.4-5.2 8.1L24 27l-7.8-3.9C13.3 21.4 11 18.6 11 15V9z" fill="#131B33" stroke="url(#kbg-f)" stroke-width="2.4" stroke-linejoin="round"/><path d="m19.5 15.5 3.2 3.2 6-6.2" stroke="#2EE6A6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="27" width="10" height="5" rx="2.5" fill="#0C1222" opacity=".35"/></svg><span class="brand-name">Kitbox</span></a>
+      <p>Free browser-based tools for images, PDFs, text and code. Your files are processed on your device and never uploaded.</p>
+    </div>
+    <nav aria-labelledby="f-image"><h2 id="f-image">Image</h2><ul><li><a href="/image-compressor/">Image Compressor</a></li><li><a href="/image-resizer/">Image Resizer</a></li><li><a href="/image-converter/">Image Converter</a></li></ul></nav>
+    <nav aria-labelledby="f-pdf"><h2 id="f-pdf">PDF</h2><ul><li><a href="/pdf-merge/">PDF Merge</a></li><li><a href="/pdf-split/">PDF Split</a></li><li><a href="/images-to-pdf/">Images to PDF</a></li></ul></nav>
+    <nav aria-labelledby="f-text"><h2 id="f-text">Text & developer</h2><ul><li><a href="/word-counter/">Word Counter</a></li><li><a href="/case-converter/">Case Converter</a></li><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li><li><a href="/qr-code-generator/">QR Code Generator</a></li><li><a href="/password-generator/">Password Generator</a></li></ul></nav>
+    <nav aria-labelledby="f-legal"><h2 id="f-legal">Kitbox</h2><ul><li><a href="/tools/">All tools</a></li><li><a href="/about/">About Kitbox</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li><li><a href="/cookies/">Cookie Policy</a></li></ul></nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="mb-0">© <span data-year>2026</span> Kitbox. All rights reserved.</p>
+    <div class="controls">
+      <a class="btn btn-ghost btn-sm" href="/ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a>
+      <button type="button" class="btn btn-ghost btn-sm" data-theme-toggle aria-pressed="false"
+        data-label-dark="Switch to dark theme" data-label-light="Switch to light theme">Theme</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-cookie-settings>Cookie settings</button>
+    </div>
+  </div>
+</div>
+</footer>
+<div class="consent" id="consent-banner" role="dialog" aria-modal="false" aria-labelledby="consent-title" hidden>
+  <div class="consent-card">
+    <h2 id="consent-title">Your privacy choices</h2>
+    <p>Kitbox never uploads your files. We do use local storage for your theme and language preferences, and we would like to show advertising that keeps the tools free. Advertising and analytics storage stay switched off until you choose.</p>
+    <div class="consent-actions">
+      <button type="button" class="btn btn-primary" data-consent="accept">Accept all</button>
+      <button type="button" class="btn btn-secondary" data-consent="reject">Reject non-essential</button>
+      <button type="button" class="btn btn-ghost" data-consent="manage" aria-expanded="false">Manage preferences</button>
+    </div>
+    <div class="consent-prefs" data-consent-prefs hidden>
+      <label class="check"><input type="checkbox" checked disabled> Strictly necessary storage (always on)</label>
+      <label class="check"><input type="checkbox" id="consent-analytics"> Analytics storage</label>
+      <label class="check"><input type="checkbox" id="consent-ads"> Advertising storage</label>
+      <div class="consent-actions">
+        <button type="button" class="btn btn-primary btn-sm" data-consent="save">Save preferences</button>
+      </div>
+      <p class="hint">You can change this at any time from the Cookie settings link in the footer.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
